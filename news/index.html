@@ -53,13 +53,15 @@
 
     <section class="hero">
       <h1 class="h1">News</h1>
-      <p class="sub">Short list for MVP. Later this will be a feed generated automatically.</p>
+      <p class="sub">Latest updates from TON ecosystem. This page is generated automatically from <code>/news/feed.json</code>.</p>
     </section>
 
-    <div class="grid">
+    <!-- FEED -->
+    <div id="news-feed" class="grid">
+      <!-- Fallback while loading -->
       <div class="card">
-        <h2><a href="/news/welcome/">Welcome: how this hub will work</a></h2>
-        <div class="meta">Example article • 2026-01-28</div>
+        <h2>Loading…</h2>
+        <div class="meta">Fetching latest posts</div>
       </div>
     </div>
 
@@ -67,5 +69,98 @@
       <div>Disclaimer: informational only, not financial advice. Never share seed phrases.</div>
     </div>
   </div>
+
+  <script>
+    (async function () {
+      const FEED_URL = "/news/feed.json";
+      const root = document.getElementById("news-feed");
+
+      function escapeHtml(s) {
+        return String(s)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      function normalizeUrl(u) {
+        if (!u) return "#";
+        const s = String(u).trim();
+        if (s.startsWith("http://") || s.startsWith("https://") || s.startsWith("/")) return s;
+        return "/" + s;
+      }
+
+      function formatDate(v) {
+        if (!v) return "";
+        // Accept ISO strings and also raw text (we'll keep raw if parsing fails)
+        const d = new Date(v);
+        if (isNaN(d.getTime())) return String(v);
+        // Nice stable format: YYYY-MM-DD
+        const yyyy = d.getFullYear();
+        const mm = String(d.getMonth() + 1).padStart(2, "0");
+        const dd = String(d.getDate()).padStart(2, "0");
+        return `${yyyy}-${mm}-${dd}`;
+      }
+
+      function renderEmpty() {
+        root.innerHTML = `
+          <div class="card">
+            <h2>No news yet</h2>
+            <div class="meta">The feed is connected. Articles will appear here automatically after the next bot run.</div>
+          </div>
+          <div class="card">
+            <h2><a href="/news/welcome/">Welcome: how this hub will work</a></h2>
+            <div class="meta">Example article • 2026-01-28</div>
+          </div>
+        `;
+      }
+
+      try {
+        const res = await fetch(FEED_URL, { cache: "no-store" });
+        if (!res.ok) throw new Error("Feed HTTP " + res.status);
+        const data = await res.json();
+
+        const items = Array.isArray(data.items) ? data.items : [];
+        if (!items.length) {
+          renderEmpty();
+          return;
+        }
+
+        // newest first
+        items.sort((a, b) => {
+          const da = new Date(a.published_at || a.date || 0).getTime() || 0;
+          const db = new Date(b.published_at || b.date || 0).getTime() || 0;
+          return db - da;
+        });
+
+        const cards = items.slice(0, 50).map(it => {
+          const title = escapeHtml(it.title || "Untitled");
+          const url = normalizeUrl(it.url || it.path);
+          const date = formatDate(it.published_at || it.date || "");
+          const excerpt = it.excerpt || it.summary || it.description || "";
+          const safeExcerpt = escapeHtml(excerpt).slice(0, 220); // short preview
+
+          return `
+            <div class="card">
+              <h2><a href="${url}">${title}</a></h2>
+              <div class="meta">${date ? `• ${date}` : ""}</div>
+              ${safeExcerpt ? `<div style="margin-top:10px;opacity:.9;line-height:1.5;">${safeExcerpt}${excerpt.length > 220 ? "…" : ""}</div>` : ""}
+            </div>
+          `;
+        }).join("");
+
+        root.innerHTML = cards;
+      } catch (e) {
+        root.innerHTML = `
+          <div class="card">
+            <h2>Feed error</h2>
+            <div class="meta">Could not load /news/feed.json. Try hard refresh (Ctrl+F5).</div>
+          </div>
+        `;
+        console.error(e);
+      }
+    })();
+  </script>
 </body>
 </html>
