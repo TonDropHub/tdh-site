@@ -4,35 +4,34 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>TON Drop Hub — Actionable TON news, airdrops, and quests</title>
+  <title>TON Drop Hub — Actionable TON news</title>
 
   <!-- SEO -->
-  <meta name="description" content="Actionable TON ecosystem news, airdrops, quests, and guides — packaged into short, actionable posts with sources and safety notes." />
+  <meta name="description" content="Actionable TON ecosystem news, airdrops, and quests — in one hub." />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#0b1020" />
   <meta name="color-scheme" content="dark light" />
 
-  <!-- Canonical (update later if you add a custom domain) -->
+  <!-- Canonical -->
   <link rel="canonical" href="https://tdh-site-cie.pages.dev/" />
 
-  <!-- Icons -->
-  <link rel="icon" href="/assets/favicon.png" type="image/png" />
-
-  <!-- Open Graph (Telegram, Facebook, etc.) -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="TON Drop Hub" />
-  <meta property="og:title" content="TON Drop Hub — Actionable TON news, airdrops, and quests" />
-  <meta property="og:description" content="Actionable TON ecosystem news, airdrops, quests, and guides — packaged into short, actionable posts with sources and safety notes." />
+  <meta property="og:title" content="TON Drop Hub — Actionable TON news" />
+  <meta property="og:description" content="Actionable TON ecosystem news, airdrops, and quests — in one hub." />
   <meta property="og:url" content="https://tdh-site-cie.pages.dev/" />
   <meta property="og:image" content="https://tdh-site-cie.pages.dev/assets/og.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="TON Drop Hub — actionable TON news, airdrops and quests" />
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="TON Drop Hub — Actionable TON news, airdrops, and quests" />
-  <meta name="twitter:description" content="Actionable TON ecosystem news, airdrops, quests, and guides — packaged into short, actionable posts with sources and safety notes." />
+  <meta name="twitter:title" content="TON Drop Hub — Actionable TON news" />
+  <meta name="twitter:description" content="Actionable TON ecosystem news, airdrops, and quests — in one hub." />
   <meta name="twitter:image" content="https://tdh-site-cie.pages.dev/assets/og.jpg" />
+  <meta name="twitter:image:alt" content="TON Drop Hub — actionable TON news, airdrops and quests" />
 
   <link rel="stylesheet" href="/assets/style.css" />
 </head>
@@ -43,7 +42,7 @@
         <a class="brand" href="/">TON Drop Hub</a>
         <div class="pills">
           <a class="pill" href="/news/">News</a>
-          <a class="pill" href="/airdrops/">Airdrops & Quests</a>
+          <a class="pill" href="/airdrops/">Airdrops &amp; Quests</a>
           <a class="pill" href="/guides/">Guides</a>
           <a class="pill" href="/projects/">Projects</a>
           <a class="pill" href="/about/">About</a>
@@ -54,40 +53,48 @@
 
     <section class="hero">
       <h1 class="h1">Actionable TON news, airdrops, and quests — in one hub.</h1>
-      <p class="sub">This is the MVP of your own content hub. Articles live here, and Telegram/X posts can link back to this site. Next step: automate publishing from your bot.</p>
+      <p class="sub">
+        This is the MVP of your own content hub. Articles live here, and Telegram/X posts can link back to this site.
+      </p>
     </section>
 
+    <!-- TOP: Latest article (auto from /news/feed.json) -->
     <div class="grid">
-      <div class="card span6">
-        <h2>Latest article</h2>
-        <div class="kv">
-          <div><b><a href="/news/welcome/">Welcome: how this hub will work</a></b></div>
-          <div class="meta">TL;DR, checklist, risks, and sources. This format is what we will auto-generate.</div>
+      <div class="card">
+        <div class="meta" style="margin-bottom:10px;">Latest article</div>
+
+        <h2 style="margin-top:0;">
+          <a id="latest-title" href="/news/">Loading…</a>
+        </h2>
+
+        <div class="meta" id="latest-meta"></div>
+
+        <p class="sub" id="latest-excerpt" style="margin-top:10px;"></p>
+
+        <div style="margin-top:12px;">
+          <a class="pill" href="/news/">Open News →</a>
         </div>
       </div>
+    </div>
 
-      <div class="card span6">
-        <h2>Next automation</h2>
-        <div class="kv">
-          <div><b>Bot → Site → Telegram/X</b></div>
-          <div class="meta">The bot publishes a full article here first, then posts a short version to Telegram and X with a link to this page.</div>
-        </div>
-      </div>
-
-      <div class="card span4">
+    <!-- CATEGORY CARDS -->
+    <div class="grid" style="margin-top:18px;">
+      <div class="card">
         <h2>News</h2>
         <div class="meta">Daily updates and summaries.</div>
-        <div class="meta"><a href="/news/">Open News →</a></div>
+        <div style="margin-top:10px;"><a class="pill" href="/news/">Open News →</a></div>
       </div>
-      <div class="card span4">
-        <h2>Airdrops & Quests</h2>
+
+      <div class="card">
+        <h2>Airdrops &amp; Quests</h2>
         <div class="meta">Checklists + safety notes.</div>
-        <div class="meta"><a href="/airdrops/">Open Airdrops →</a></div>
+        <div style="margin-top:10px;"><a class="pill" href="/airdrops/">Open Airdrops →</a></div>
       </div>
-      <div class="card span4">
+
+      <div class="card">
         <h2>Guides</h2>
         <div class="meta">Evergreen how-tos and onboarding.</div>
-        <div class="meta"><a href="/guides/">Open Guides →</a></div>
+        <div style="margin-top:10px;"><a class="pill" href="/guides/">Open Guides →</a></div>
       </div>
     </div>
 
@@ -95,5 +102,43 @@
       <div>Disclaimer: informational only, not financial advice. Never share seed phrases.</div>
     </div>
   </div>
+
+  <script>
+    (async () => {
+      const titleEl = document.getElementById("latest-title");
+      const metaEl = document.getElementById("latest-meta");
+      const excerptEl = document.getElementById("latest-excerpt");
+
+      const fallback = () => {
+        titleEl.textContent = "No articles yet — open News";
+        titleEl.href = "/news/";
+        metaEl.textContent = "";
+        excerptEl.textContent = "The feed is connected. Articles will appear here automatically after the next bot run.";
+      };
+
+      try {
+        const r = await fetch("/news/feed.json", { cache: "no-store" });
+        if (!r.ok) return fallback();
+
+        const feed = await r.json();
+        const items = Array.isArray(feed.items) ? feed.items : [];
+        const item = items[0];
+        if (!item) return fallback();
+
+        const url = (item.url && typeof item.url === "string") ? item.url : "/news/";
+        const title = (item.title && typeof item.title === "string") ? item.title : "Latest update";
+        const excerpt = (item.excerpt && typeof item.excerpt === "string") ? item.excerpt : "";
+        const dt = (item.published_at && typeof item.published_at === "string") ? item.published_at.slice(0, 10) : "";
+
+        titleEl.textContent = title;
+        titleEl.href = url;
+
+        metaEl.textContent = dt ? ("News • " + dt) : "News";
+        excerptEl.textContent = excerpt;
+      } catch (e) {
+        fallback();
+      }
+    })();
+  </script>
 </body>
 </html>
