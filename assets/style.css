@@ -1,322 +1,266 @@
-/* TON Drop Hub — full style.css (drop-in)
-   Purpose: clean dark UI, readable typography, premium cards, responsive grids.
+/* TON Drop Hub — assets/style.css
+   Clean dark UI with one accent color, responsive cards, no "purple visited" links.
+   Drop-in replacement (paste entire file).
 */
 
 :root{
-  --bg0:#070a12;
+  --bg0:#070a14;
   --bg1:#0b1020;
+  --card: rgba(255,255,255,.06);
+  --card2: rgba(255,255,255,.04);
+  --border: rgba(255,255,255,.10);
 
-  --card: rgba(255,255,255,.045);
-  --card2: rgba(255,255,255,.065);
+  --text:#eaf0ff;
+  --muted: rgba(234,240,255,.72);
+  --soft: rgba(234,240,255,.55);
 
-  --border: rgba(255,255,255,.12);
-  --border2: rgba(255,255,255,.18);
+  --accent:#5de0ff;   /* cyan */
+  --accent2:#22c55e;  /* subtle green for success tags if needed */
 
-  --text: rgba(255,255,255,.92);
-  --muted: rgba(255,255,255,.70);
-  --muted2: rgba(255,255,255,.56);
-
-  --accent:#39c6ff;   /* TON-ish cyan */
-  --accent2:#7c5cff;  /* subtle violet */
-
-  --shadow: 0 10px 30px rgba(0,0,0,.35);
-  --shadow2: 0 16px 50px rgba(0,0,0,.45);
-
+  --shadow: 0 18px 60px rgba(0,0,0,.40);
   --radius: 18px;
   --radius2: 22px;
 
-  --maxw: 1040px;
-
-  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  --container: 1040px;
 }
 
-/* Reset-ish */
-*{ box-sizing: border-box; }
-html, body{ height: 100%; }
+*{box-sizing:border-box}
+html,body{height:100%}
 body{
-  margin: 0;
-  color: var(--text);
-  font-family: var(--sans);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
+  margin:0;
+  color:var(--text);
   background:
-    radial-gradient(900px 520px at 25% 15%, rgba(57,198,255,.11), transparent 60%),
-    radial-gradient(720px 480px at 85% 20%, rgba(124,92,255,.10), transparent 62%),
+    radial-gradient(1200px 600px at 25% -10%, rgba(93,224,255,.18), transparent 55%),
+    radial-gradient(900px 700px at 95% 10%, rgba(99,102,241,.18), transparent 55%),
+    radial-gradient(900px 800px at 70% 120%, rgba(34,197,94,.10), transparent 60%),
     linear-gradient(180deg, var(--bg0), var(--bg1));
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
 }
 
-img{ max-width: 100%; height: auto; display: block; }
-a{ color: inherit; }
-p{ margin: 0 0 14px; }
-ul, ol{ margin: 0 0 14px 18px; }
-li{ margin: 6px 0; }
-hr{
-  border: 0;
-  height: 1px;
-  background: rgba(255,255,255,.10);
-  margin: 22px 0;
-}
+/* Remove default "visited purple" */
+a{ color: var(--accent); text-decoration:none; }
+a:visited{ color: var(--accent); }
+a:hover{ text-decoration:underline; }
+a:focus-visible{ outline: 2px solid rgba(93,224,255,.55); outline-offset: 3px; border-radius:10px; }
 
-/* Layout */
+/* Layout helpers */
 .container{
-  max-width: var(--maxw);
+  max-width: var(--container);
   margin: 0 auto;
-  padding: 28px 18px 46px;
+  padding: 26px 18px 60px;
 }
 
-/* Top nav */
-.nav{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
+hr{
+  border:0;
+  height:1px;
+  background: rgba(255,255,255,.08);
+  margin: 20px 0;
+}
 
-  padding: 14px 16px;
-  border: 1px solid rgba(255,255,255,.10);
+/* Top nav (supports multiple markup variants) */
+.nav, header.nav, nav.nav, nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding: 12px 14px;
+  margin: 0 0 26px;
+  background: rgba(10,14,28,.62);
+  border:1px solid var(--border);
   border-radius: var(--radius2);
-
-  background: rgba(10, 14, 30, .55);
+  box-shadow: var(--shadow);
   backdrop-filter: blur(10px);
-
-  box-shadow: 0 8px 30px rgba(0,0,0,.25);
+  -webkit-backdrop-filter: blur(10px);
 }
 
-.nav .left{
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  min-width: 0;
+.nav .left, header.nav .left, nav .left{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  flex-wrap:wrap;
 }
 
-.brand{
-  font-weight: 700;
-  letter-spacing: .01em;
-  text-decoration: none;
-  white-space: nowrap;
-}
-.brand:hover{
-  color: var(--accent);
-}
-
-.pills{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-/* Pill buttons / links */
-.pill{
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 14px;
+.brand, .nav .brand, header.nav .brand, nav .brand{
+  font-weight: 800;
+  letter-spacing: .2px;
   color: var(--text);
+  text-decoration:none;
+  font-size: 15px;
+}
+.brand:hover{ text-decoration:none; color: var(--text); opacity:.95; }
 
-  padding: 8px 12px;
-  border: 1px solid var(--border);
+/* Pills: will style links inside .pills even if they don't have class="pill" */
+.pills{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.pills a, .pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding: 8px 10px;
   border-radius: 999px;
-
+  border:1px solid rgba(255,255,255,.10);
   background: rgba(255,255,255,.04);
-  backdrop-filter: blur(10px);
-
-  transition: transform .15s ease, border-color .15s ease, background .15s ease, color .15s ease, box-shadow .15s ease;
+  color: rgba(234,240,255,.84);
+  font-size: 13px;
+  text-decoration:none;
 }
-.pill:hover{
-  transform: translateY(-1px);
-  border-color: rgba(57,198,255,.45);
-  background: rgba(57,198,255,.08);
-  box-shadow: 0 10px 22px rgba(0,0,0,.22);
+.pills a:visited, .pill:visited{ color: rgba(234,240,255,.84); }
+.pills a:hover, .pill:hover{
+  text-decoration:none;
+  border-color: rgba(93,224,255,.35);
+  background: rgba(93,224,255,.08);
 }
-.pill:active{ transform: translateY(0px); }
+.pills a[aria-current="page"], .pill.active{
+  border-color: rgba(93,224,255,.55);
+  background: rgba(93,224,255,.12);
+}
 
-/* Badge */
+/* MVP badge */
 .badge{
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-
-  padding: 7px 10px;
+  display:inline-flex;
+  align-items:center;
+  padding: 6px 10px;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.14);
-  color: rgba(255,255,255,.74);
-
-  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+  color: rgba(234,240,255,.78);
+  font-size: 12px;
+  white-space: nowrap;
 }
 
 /* Hero */
 .hero{
-  margin-top: 26px;
-  margin-bottom: 18px;
+  margin: 8px 0 22px;
 }
-
-.h1{
-  margin: 0 0 10px;
-  font-size: clamp(28px, 4vw, 44px);
-  letter-spacing: -0.02em;
-  line-height: 1.12;
+.h1, h1{
+  margin: 0 0 8px;
+  font-size: clamp(30px, 4.2vw, 44px);
+  line-height:1.08;
+  letter-spacing: -0.6px;
 }
-.sub{
+.sub, .subtitle{
   margin: 0;
   color: var(--muted);
-  max-width: 78ch;
-  line-height: 1.55;
-  font-size: 15.5px;
+  font-size: 15px;
+  max-width: 70ch;
 }
 
-/* Grids */
+/* Cards & grids */
 .grid{
-  display: grid;
-  gap: 16px;
-}
-.grid-single{ grid-template-columns: 1fr; }
-.grid-3{ grid-template-columns: 1fr; }
-
-@media (min-width: 900px){
-  .grid-3{ grid-template-columns: repeat(3, 1fr); }
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 14px;
 }
 
-/* Cards */
 .card{
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: var(--radius);
+  grid-column: span 12;
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.04));
+  border: 1px solid var(--border);
+  border-radius: var(--radius2);
   padding: 16px 16px 14px;
-
-  background: linear-gradient(180deg, var(--card), rgba(255,255,255,.02));
-  transition: transform .15s ease, border-color .15s ease, background .15s ease, box-shadow .15s ease;
-}
-.card:hover{
-  transform: translateY(-2px);
-  border-color: rgba(57,198,255,.22);
-  box-shadow: var(--shadow);
-  background: linear-gradient(180deg, var(--card2), rgba(255,255,255,.03));
+  box-shadow: 0 10px 40px rgba(0,0,0,.28);
 }
 
-.card-feature{
-  padding: 20px;
-}
-.card h2{
-  margin: 0 0 10px;
+.card h2, .card h3{
+  margin: 0 0 8px;
   font-size: 18px;
   line-height: 1.25;
 }
-.card-feature h2{
-  font-size: 20px;
+.card h2 a, .card h3 a{
+  color: var(--text);
+  text-decoration:none;
 }
-.card h2 a{
-  text-decoration: none;
-}
-.card h2 a:hover{
-  color: var(--accent);
-}
+.card h2 a:hover, .card h3 a:hover{ text-decoration:none; color: rgba(93,224,255,.95); }
 
 .meta{
+  color: var(--soft);
+  font-size: 12.5px;
+}
+
+.card p{
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Buttons (used for “Open News →” etc.) */
+.btn, .button, a.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top: 12px;
+  padding: 9px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(93,224,255,.35);
+  background: rgba(93,224,255,.10);
+  color: rgba(234,240,255,.94);
   font-size: 13px;
-  color: var(--muted2);
-  line-height: 1.35;
+  text-decoration:none;
+}
+.btn:visited, .button:visited{ color: rgba(234,240,255,.94); }
+.btn:hover, .button:hover{
+  text-decoration:none;
+  background: rgba(93,224,255,.16);
+  border-color: rgba(93,224,255,.55);
+}
+
+/* Homepage layout helpers */
+.card.featured{
+  padding: 18px 18px 16px;
+}
+.featured .meta{ margin-bottom: 8px; }
+
+/* 2-column sections on wider screens */
+@media (min-width: 860px){
+  .card.featured{ grid-column: span 8; }
+  .card.side{ grid-column: span 4; }
+  .card.third{ grid-column: span 4; }
+}
+
+/* Lists inside articles */
+ul, ol{
+  color: var(--muted);
+}
+li{ margin: 6px 0; }
+
+/* Article page typography */
+.article, .post, main.article{
+  max-width: 820px;
+}
+.article h1, .post h1{ margin-top: 0; }
+.article h2, .post h2{ margin: 26px 0 10px; }
+.article p, .post p{
+  color: rgba(234,240,255,.86);
+  font-size: 15.5px;
+}
+.small, .note{
+  color: var(--soft);
+  font-size: 13px;
+}
+
+/* Source note block */
+.source-note, .source, .sources{
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,.10);
+  color: var(--soft);
+  font-size: 13px;
 }
 
 /* Footer */
 .footer{
-  margin-top: 22px;
-  padding-top: 18px;
-  color: rgba(255,255,255,.50);
+  margin-top: 26px;
+  color: rgba(234,240,255,.58);
   font-size: 12.5px;
 }
 
-/* Article / content styles (works even without special wrappers) */
-h1, h2, h3{
-  color: var(--text);
-}
-h1{
-  font-size: clamp(26px, 3.4vw, 38px);
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  margin: 18px 0 12px;
-}
-h2{
-  margin: 22px 0 10px;
-  font-size: 18px;
-  line-height: 1.25;
-}
-h3{
-  margin: 18px 0 10px;
-  font-size: 16px;
-  line-height: 1.25;
-}
-
-p{
-  line-height: 1.68;
-  color: rgba(255,255,255,.86);
-}
-
-/* Make regular links look like links in article text */
-article a, .container a:not(.pill):not(.brand){
-  color: var(--accent);
-  text-decoration: none;
-}
-article a:hover, .container a:not(.pill):not(.brand):hover{
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-/* Code blocks */
-code{
-  font-family: var(--mono);
-  font-size: .95em;
-  color: rgba(255,255,255,.90);
-  background: rgba(255,255,255,.06);
-  padding: 2px 6px;
-  border-radius: 8px;
-  border: 1px solid rgba(255,255,255,.10);
-}
-pre{
-  overflow: auto;
-  padding: 14px 14px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(0,0,0,.25);
-  box-shadow: 0 10px 26px rgba(0,0,0,.20);
-  margin: 14px 0 18px;
-}
-pre code{
-  background: transparent;
-  border: 0;
-  padding: 0;
-}
-
-/* Subtle content blocks (optional classes, safe if not used) */
-.kicker, .breadcrumbs{
-  color: rgba(255,255,255,.55);
-  font-size: 13px;
-  margin-top: 14px;
-}
-.kicker a, .breadcrumbs a{
-  color: rgba(255,255,255,.72);
-}
-.kicker a:hover, .breadcrumbs a:hover{
-  color: var(--accent);
-  text-decoration: none;
-}
-
-/* Make long article pages nicer on wide screens */
-@media (min-width: 900px){
-  .container{
-    padding-left: 22px;
-    padding-right: 22px;
-  }
-  .card{
-    padding: 18px 18px 16px;
-  }
-}
-
-/* Reduce motion preference */
+/* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce){
-  .pill, .card{ transition: none; }
-  .pill:hover, .card:hover{ transform: none; }
+  *{ scroll-behavior:auto !important; transition:none !important; animation:none !important; }
 }
