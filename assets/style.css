@@ -1,67 +1,193 @@
+/* TON Drop Hub — full style.css (drop-in)
+   Purpose: clean dark UI, readable typography, premium cards, responsive grids.
+*/
+
 :root{
   --bg0:#070a12;
   --bg1:#0b1020;
-  --card: rgba(255,255,255,.04);
-  --card2: rgba(255,255,255,.06);
-  --border: rgba(255,255,255,.10);
+
+  --card: rgba(255,255,255,.045);
+  --card2: rgba(255,255,255,.065);
+
+  --border: rgba(255,255,255,.12);
+  --border2: rgba(255,255,255,.18);
+
   --text: rgba(255,255,255,.92);
-  --muted: rgba(255,255,255,.66);
-  --muted2: rgba(255,255,255,.52);
-  --accent:#39c6ff;         /* TON-ish cyan */
-  --accent2:#7c5cff;        /* subtle violet */
+  --muted: rgba(255,255,255,.70);
+  --muted2: rgba(255,255,255,.56);
+
+  --accent:#39c6ff;   /* TON-ish cyan */
+  --accent2:#7c5cff;  /* subtle violet */
+
   --shadow: 0 10px 30px rgba(0,0,0,.35);
+  --shadow2: 0 16px 50px rgba(0,0,0,.45);
+
   --radius: 18px;
+  --radius2: 22px;
+
+  --maxw: 1040px;
+
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
 }
 
+/* Reset-ish */
+*{ box-sizing: border-box; }
+html, body{ height: 100%; }
 body{
+  margin: 0;
   color: var(--text);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
   background:
-    radial-gradient(900px 500px at 25% 15%, rgba(57,198,255,.10), transparent 60%),
-    radial-gradient(700px 450px at 85% 20%, rgba(124,92,255,.10), transparent 60%),
+    radial-gradient(900px 520px at 25% 15%, rgba(57,198,255,.11), transparent 60%),
+    radial-gradient(720px 480px at 85% 20%, rgba(124,92,255,.10), transparent 62%),
     linear-gradient(180deg, var(--bg0), var(--bg1));
 }
 
+img{ max-width: 100%; height: auto; display: block; }
+a{ color: inherit; }
+p{ margin: 0 0 14px; }
+ul, ol{ margin: 0 0 14px 18px; }
+li{ margin: 6px 0; }
+hr{
+  border: 0;
+  height: 1px;
+  background: rgba(255,255,255,.10);
+  margin: 22px 0;
+}
+
+/* Layout */
 .container{
-  max-width: 1040px;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 28px 18px 46px;
 }
 
-.h1{
-  letter-spacing: -0.02em;
-  line-height: 1.12;
+/* Top nav */
+.nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+
+  padding: 14px 16px;
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: var(--radius2);
+
+  background: rgba(10, 14, 30, .55);
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 8px 30px rgba(0,0,0,.25);
 }
 
-.sub{
-  color: var(--muted);
-  max-width: 72ch;
+.nav .left{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
 }
 
-.nav .brand{
-  color: var(--text);
+.brand{
+  font-weight: 700;
+  letter-spacing: .01em;
   text-decoration: none;
+  white-space: nowrap;
 }
-.nav .brand:hover{
+.brand:hover{
   color: var(--accent);
 }
 
+.pills{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Pill buttons / links */
 .pill{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text);
+
+  padding: 8px 12px;
   border: 1px solid var(--border);
+  border-radius: 999px;
+
   background: rgba(255,255,255,.04);
   backdrop-filter: blur(10px);
-  border-radius: 999px;
-  transition: transform .15s ease, border-color .15s ease, background .15s ease, color .15s ease;
+
+  transition: transform .15s ease, border-color .15s ease, background .15s ease, color .15s ease, box-shadow .15s ease;
 }
 .pill:hover{
   transform: translateY(-1px);
   border-color: rgba(57,198,255,.45);
   background: rgba(57,198,255,.08);
-  color: var(--text);
+  box-shadow: 0 10px 22px rgba(0,0,0,.22);
+}
+.pill:active{ transform: translateY(0px); }
+
+/* Badge */
+.badge{
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14);
+  color: rgba(255,255,255,.74);
+
+  background: rgba(255,255,255,.05);
 }
 
+/* Hero */
+.hero{
+  margin-top: 26px;
+  margin-bottom: 18px;
+}
+
+.h1{
+  margin: 0 0 10px;
+  font-size: clamp(28px, 4vw, 44px);
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+}
+.sub{
+  margin: 0;
+  color: var(--muted);
+  max-width: 78ch;
+  line-height: 1.55;
+  font-size: 15.5px;
+}
+
+/* Grids */
+.grid{
+  display: grid;
+  gap: 16px;
+}
+.grid-single{ grid-template-columns: 1fr; }
+.grid-3{ grid-template-columns: 1fr; }
+
+@media (min-width: 900px){
+  .grid-3{ grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Cards */
 .card{
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255,255,255,.12);
   border-radius: var(--radius);
+  padding: 16px 16px 14px;
+
   background: linear-gradient(180deg, var(--card), rgba(255,255,255,.02));
-  box-shadow: none;
   transition: transform .15s ease, border-color .15s ease, background .15s ease, box-shadow .15s ease;
 }
 .card:hover{
@@ -74,34 +200,123 @@ body{
 .card-feature{
   padding: 20px;
 }
-.card-feature h2 a{
-  color: var(--text);
+.card h2{
+  margin: 0 0 10px;
+  font-size: 18px;
+  line-height: 1.25;
+}
+.card-feature h2{
+  font-size: 20px;
+}
+.card h2 a{
   text-decoration: none;
 }
-.card-feature h2 a:hover{
+.card h2 a:hover{
   color: var(--accent);
 }
 
 .meta{
+  font-size: 13px;
   color: var(--muted2);
+  line-height: 1.35;
 }
 
-/* Layout grids */
-.grid{
-  display: grid;
-  gap: 16px;
+/* Footer */
+.footer{
+  margin-top: 22px;
+  padding-top: 18px;
+  color: rgba(255,255,255,.50);
+  font-size: 12.5px;
 }
 
-.grid-single{
-  grid-template-columns: 1fr;
+/* Article / content styles (works even without special wrappers) */
+h1, h2, h3{
+  color: var(--text);
+}
+h1{
+  font-size: clamp(26px, 3.4vw, 38px);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 18px 0 12px;
+}
+h2{
+  margin: 22px 0 10px;
+  font-size: 18px;
+  line-height: 1.25;
+}
+h3{
+  margin: 18px 0 10px;
+  font-size: 16px;
+  line-height: 1.25;
 }
 
-.grid-3{
-  grid-template-columns: 1fr;
+p{
+  line-height: 1.68;
+  color: rgba(255,255,255,.86);
 }
 
+/* Make regular links look like links in article text */
+article a, .container a:not(.pill):not(.brand){
+  color: var(--accent);
+  text-decoration: none;
+}
+article a:hover, .container a:not(.pill):not(.brand):hover{
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Code blocks */
+code{
+  font-family: var(--mono);
+  font-size: .95em;
+  color: rgba(255,255,255,.90);
+  background: rgba(255,255,255,.06);
+  padding: 2px 6px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,.10);
+}
+pre{
+  overflow: auto;
+  padding: 14px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.25);
+  box-shadow: 0 10px 26px rgba(0,0,0,.20);
+  margin: 14px 0 18px;
+}
+pre code{
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+/* Subtle content blocks (optional classes, safe if not used) */
+.kicker, .breadcrumbs{
+  color: rgba(255,255,255,.55);
+  font-size: 13px;
+  margin-top: 14px;
+}
+.kicker a, .breadcrumbs a{
+  color: rgba(255,255,255,.72);
+}
+.kicker a:hover, .breadcrumbs a:hover{
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* Make long article pages nicer on wide screens */
 @media (min-width: 900px){
-  .grid-3{
-    grid-template-columns: repeat(3, 1fr);
+  .container{
+    padding-left: 22px;
+    padding-right: 22px;
   }
+  .card{
+    padding: 18px 18px 16px;
+  }
+}
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce){
+  .pill, .card{ transition: none; }
+  .pill:hover, .card:hover{ transform: none; }
 }
