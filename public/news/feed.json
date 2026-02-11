@@ -1,6 +1,13 @@
 {
-  "updated": "2026-02-11T05:43:43Z",
+  "updated": "2026-02-11T06:00:23Z",
   "items": [
+    {
+      "id": "452",
+      "title": "TON Foundation Introduces TON Pay SDK for Crypto Payments The TON Foundation has",
+      "url": "/news/452-ton-foundation-introduces-ton-pay-sdk-for-crypto-payments-the-ton-foun/",
+      "published_at": "2026-02-11T06:00:23Z",
+      "excerpt": ""
+    },
     {
       "id": "451",
       "title": "TON Foundation Rolls Out Unified Crypto Payment Interface The TON Foundation has",
@@ -357,13 +364,6 @@
       "url": "/news/403-hamster-kombat-reveals-daily-combo-for-february-4-2026/",
       "published_at": "2026-02-05T05:07:33Z",
       "excerpt": "Hamster Kombat has released its daily combo for February 4, 2026, as part of its ongoing play-to-earn activities. These daily challenges continue to encourage players to engage with the game and strategize for extra in-g…"
-    },
-    {
-      "id": "402",
-      "title": "Hamster Kombat Launches New Cipher Challenge for February 3",
-      "url": "/news/402-hamster-kombat-launches-new-cipher-challenge-for-february-3/",
-      "published_at": "2026-02-05T02:06:58Z",
-      "excerpt": "Hamster Kombat fans have another daily puzzle to solve as the platform drops its latest cipher challenge for February 3, 2026. Players who crack today’s code can earn themselves a batch of free HMSTR coins to use within…"
     }
   ]
 }
