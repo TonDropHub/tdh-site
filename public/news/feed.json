@@ -1,6 +1,13 @@
 {
-  "updated": "2026-02-11T05:02:41Z",
+  "updated": "2026-02-11T05:43:43Z",
   "items": [
+    {
+      "id": "451",
+      "title": "TON Foundation Rolls Out Unified Crypto Payment Interface The TON Foundation has",
+      "url": "/news/451-ton-foundation-rolls-out-unified-crypto-payment-interface-the-ton-foun/",
+      "published_at": "2026-02-11T05:43:43Z",
+      "excerpt": ""
+    },
     {
       "id": "450",
       "title": "TON Pay Brings Seamless Crypto Payments to Mini Apps TON Pay has introduced a new feature that allows users to",
@@ -357,13 +364,6 @@
       "url": "/news/402-hamster-kombat-launches-new-cipher-challenge-for-february-3/",
       "published_at": "2026-02-05T02:06:58Z",
       "excerpt": "Hamster Kombat fans have another daily puzzle to solve as the platform drops its latest cipher challenge for February 3, 2026. Players who crack today’s code can earn themselves a batch of free HMSTR coins to use within…"
-    },
-    {
-      "id": "401",
-      "title": "TON Coin: Exploring the Network, How It Works, and What’s Next",
-      "url": "/news/401-ton-coin-exploring-the-network-how-it-works-and-whats-next/",
-      "published_at": "2026-02-05T01:53:52Z",
-      "excerpt": "TON Coin, the native digital asset of The Open Network, is drawing attention as a fast, scalable blockchain designed for a broad range of applications. The network aims to handle millions of transactions per second, with…"
     }
   ]
 }
