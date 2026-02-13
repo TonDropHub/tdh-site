@@ -1,6 +1,13 @@
 {
-  "updated": "2026-02-13T14:23:33Z",
+  "updated": "2026-02-13T15:03:18Z",
   "items": [
+    {
+      "id": "514",
+      "title": "Blum Trading Bot Rolls Out Support for Solana Trading",
+      "url": "/news/514-blum-trading-bot-rolls-out-support-for-solana-trading/",
+      "published_at": "2026-02-13T15:03:18Z",
+      "excerpt": "Blum’s trading bot has expanded its capabilities and now supports Solana trading. This update gives users access to one of the most popular blockchain networks available, enhancing the platform's utility and appeal. With…"
+    },
     {
       "id": "510",
       "title": "Tomarket Launches Daily Combo With Free $TOMA Token Claim on February 13, 2026",
@@ -357,13 +364,6 @@
       "url": "/news/419-ton-coin-an-overview-of-the-open-network-and-its-future/",
       "published_at": "2026-02-06T14:57:50Z",
       "excerpt": "TON Coin is the native token of The Open Network, a blockchain platform created to enable fast transactions, scalable applications, and an accessible user experience. With a strong emphasis on speed and efficiency, TON i…"
-    },
-    {
-      "id": "418",
-      "title": "Toncoin Shows Signs of Recovery as Bearish Momentum Wanes",
-      "url": "/news/418-toncoin-shows-signs-of-recovery-as-bearish-momentum-wanes/",
-      "published_at": "2026-02-06T14:42:11Z",
-      "excerpt": "Toncoin (TON) has seen renewed confidence as recent market activity hints at a potential recovery. Derivatives data points to growing bullish sentiment, while the downward pressure on the price appears to be fading. This…"
     }
   ]
 }
