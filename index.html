@@ -34,16 +34,20 @@
   <meta name="twitter:image:alt" content="TON Drop Hub — actionable TON news, airdrops and quests" />
 
   <link rel="stylesheet" href="/assets/style.css" />
+  <script src="/assets/home.js" defer></script>
 </head>
 <body>
   <div class="container">
     <div class="nav">
       <div class="left">
-        <!-- Brand: logo + text, clickable to homepage -->
+        <!-- Logo file should be in /assets/ as logo.png (or change src if your filename differs) -->
         <a class="brand" href="/">
-          <!-- Replace filename below with your real logo name in /assets/ -->
-          <img class="brand-logo" src="/assets/logo.png" alt="TON Drop Hub" />
-          <span class="brand-text">TON Drop Hub</span>
+          <img src="/assets/logo.png" alt="TON Drop Hub" />
+          <span class="wordmark">
+            <span class="ton">TON</span>
+            <span class="drop">DROP</span>
+            <span class="hub">HUB</span>
+          </span>
         </a>
 
         <div class="pills">
@@ -51,26 +55,19 @@
           <a class="pill" href="/airdrops/">Airdrops &amp; Quests</a>
           <a class="pill" href="/guides/">Guides</a>
           <a class="pill" href="/projects/">Projects</a>
+          <a class="pill" href="/about/">About</a>
         </div>
       </div>
+
       <span class="badge">MVP</span>
     </div>
 
     <section class="hero">
       <h1 class="h1">Actionable TON news, airdrops, and quests — in one hub.</h1>
       <p class="sub">
-        We track TON ecosystem updates, Telegram mini-apps, and quest/airdrop opportunities and turn them into short, actionable posts.
+        We track TON ecosystem updates, Telegram mini-apps, and quest/airdrop opportunities — and turn them into short, actionable posts.
+        This site is the core hub; Telegram/X (and later Instagram/Facebook) posts link back here.
       </p>
-
-      <div class="hero-note" style="margin-top:14px;">
-        <div class="meta" style="margin-bottom:8px;">What you’ll get here</div>
-        <div class="sub" style="line-height:1.7;">
-          • TON &amp; Toncoin ecosystem news (mini-apps, DeFi, tools)<br/>
-          • Airdrops/quests in Telegram mini-apps (public announcements)<br/>
-          • Simple checklists: what to do, requirements, deadlines<br/>
-          • Safety notes: red flags, risk warnings, scam indicators
-        </div>
-      </div>
     </section>
 
     <!-- TOP: Latest article (auto from /news/feed.json) -->
@@ -79,55 +76,59 @@
         <div class="meta" style="margin-bottom:10px;">Latest article</div>
 
         <h2 style="margin-top:0;">
-          <a id="latest-title" href="/news/">Loading…</a>
+          <a class="link-title" id="latest-title" href="/news/">Loading…</a>
         </h2>
 
         <div class="meta" id="latest-meta"></div>
 
-        <p class="sub" id="latest-excerpt" style="margin-top:10px;"></p>
+        <p class="excerpt" id="latest-excerpt" style="margin-top:10px;"></p>
 
-        <div style="margin-top:12px;">
+        <div class="btnrow">
           <a class="pill" href="/news/">Open News →</a>
         </div>
       </div>
     </div>
 
-    <!-- 4 CATEGORY CARDS: latest item per section -->
-    <div class="grid" style="margin-top:18px; display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:14px;">
+    <!-- 4 SECTION CARDS (each shows latest post in that section) -->
+    <div class="grid grid-4" style="margin-top:16px;">
       <div class="card">
-        <h2>News</h2>
-        <div class="meta" id="news-meta">Loading…</div>
-        <p class="sub" id="news-excerpt" style="margin-top:10px;"></p>
-        <div style="margin-top:10px;">
-          <a class="pill" id="news-link" href="/news/">Open News →</a>
-        </div>
+        <div class="meta">Latest in News</div>
+        <h2 style="margin-top:10px;">
+          <a class="link-title" id="news-title" href="/news/">Loading…</a>
+        </h2>
+        <div class="meta" id="news-meta" style="margin-top:6px;"></div>
+        <p class="excerpt" id="news-excerpt" style="margin-top:10px;"></p>
+        <div class="btnrow"><a class="pill" href="/news/">Open →</a></div>
       </div>
 
       <div class="card">
-        <h2>Airdrops &amp; Quests</h2>
-        <div class="meta" id="airdrops-meta">Loading…</div>
-        <p class="sub" id="airdrops-excerpt" style="margin-top:10px;"></p>
-        <div style="margin-top:10px;">
-          <a class="pill" id="airdrops-link" href="/airdrops/">Open Airdrops →</a>
-        </div>
+        <div class="meta">Latest in Airdrops &amp; Quests</div>
+        <h2 style="margin-top:10px;">
+          <a class="link-title" id="airdrops-title" href="/airdrops/">Loading…</a>
+        </h2>
+        <div class="meta" id="airdrops-meta" style="margin-top:6px;"></div>
+        <p class="excerpt" id="airdrops-excerpt" style="margin-top:10px;"></p>
+        <div class="btnrow"><a class="pill" href="/airdrops/">Open →</a></div>
       </div>
 
       <div class="card">
-        <h2>Guides</h2>
-        <div class="meta" id="guides-meta">Loading…</div>
-        <p class="sub" id="guides-excerpt" style="margin-top:10px;"></p>
-        <div style="margin-top:10px;">
-          <a class="pill" id="guides-link" href="/guides/">Open Guides →</a>
-        </div>
+        <div class="meta">Latest in Guides</div>
+        <h2 style="margin-top:10px;">
+          <a class="link-title" id="guides-title" href="/guides/">Loading…</a>
+        </h2>
+        <div class="meta" id="guides-meta" style="margin-top:6px;"></div>
+        <p class="excerpt" id="guides-excerpt" style="margin-top:10px;"></p>
+        <div class="btnrow"><a class="pill" href="/guides/">Open →</a></div>
       </div>
 
       <div class="card">
-        <h2>Projects</h2>
-        <div class="meta" id="projects-meta">Loading…</div>
-        <p class="sub" id="projects-excerpt" style="margin-top:10px;"></p>
-        <div style="margin-top:10px;">
-          <a class="pill" id="projects-link" href="/projects/">Open Projects →</a>
-        </div>
+        <div class="meta">Latest in Projects</div>
+        <h2 style="margin-top:10px;">
+          <a class="link-title" id="projects-title" href="/projects/">Loading…</a>
+        </h2>
+        <div class="meta" id="projects-meta" style="margin-top:6px;"></div>
+        <p class="excerpt" id="projects-excerpt" style="margin-top:10px;"></p>
+        <div class="btnrow"><a class="pill" href="/projects/">Open →</a></div>
       </div>
     </div>
 
@@ -135,108 +136,5 @@
       <div>Disclaimer: informational only, not financial advice. Never share seed phrases.</div>
     </div>
   </div>
-
-  <script>
-    (async () => {
-      // ---------- helpers ----------
-      const safeText = (v) => (typeof v === "string" ? v : "");
-      const pickFirstItem = (feed) => {
-        const items = Array.isArray(feed?.items) ? feed.items : [];
-        return items[0] || null;
-      };
-      const fmtDate = (iso) => (typeof iso === "string" ? iso.slice(0, 10) : "");
-
-      async function loadFeed(path) {
-        const r = await fetch(path, { cache: "no-store" });
-        if (!r.ok) return null;
-        return await r.json();
-      }
-
-      function setCard(prefix, data, fallbackHref) {
-        const metaEl = document.getElementById(prefix + "-meta");
-        const excerptEl = document.getElementById(prefix + "-excerpt");
-        const linkEl = document.getElementById(prefix + "-link");
-
-        if (!data) {
-          metaEl.textContent = "No posts yet";
-          excerptEl.textContent = "This section will update automatically after the next bot run.";
-          linkEl.href = fallbackHref;
-          return;
-        }
-
-        const title = safeText(data.title) || "Latest update";
-        const excerpt = safeText(data.excerpt);
-        const url = safeText(data.url) || fallbackHref;
-        const dt = fmtDate(data.published_at);
-
-        metaEl.textContent = (dt ? (title + " • " + dt) : title);
-        excerptEl.textContent = excerpt;
-        linkEl.href = url;
-      }
-
-      // ---------- top latest (News feed) ----------
-      const titleEl = document.getElementById("latest-title");
-      const metaEl = document.getElementById("latest-meta");
-      const excerptEl = document.getElementById("latest-excerpt");
-
-      const topFallback = () => {
-        titleEl.textContent = "No articles yet — open News";
-        titleEl.href = "/news/";
-        metaEl.textContent = "";
-        excerptEl.textContent = "The feed is connected. Articles will appear here automatically after the next bot run.";
-      };
-
-      try {
-        const newsFeed = await loadFeed("/news/feed.json");
-        const item = pickFirstItem(newsFeed);
-        if (!item) topFallback();
-        else {
-          const url = safeText(item.url) || "/news/";
-          const title = safeText(item.title) || "Latest update";
-          const excerpt = safeText(item.excerpt);
-          const dt = fmtDate(item.published_at);
-
-          titleEl.textContent = title;
-          titleEl.href = url;
-
-          metaEl.textContent = dt ? ("News • " + dt) : "News";
-          excerptEl.textContent = excerpt;
-        }
-      } catch (e) {
-        topFallback();
-      }
-
-      // ---------- 4 sections latest ----------
-      try {
-        const [news, airdrops, guides, projects] = await Promise.all([
-          loadFeed("/news/feed.json"),
-          loadFeed("/airdrops/feed.json"),
-          loadFeed("/guides/feed.json"),
-          loadFeed("/projects/feed.json"),
-        ]);
-
-        setCard("news", pickFirstItem(news), "/news/");
-        setCard("airdrops", pickFirstItem(airdrops), "/airdrops/");
-        setCard("guides", pickFirstItem(guides), "/guides/");
-        setCard("projects", pickFirstItem(projects), "/projects/");
-      } catch (e) {
-        setCard("news", null, "/news/");
-        setCard("airdrops", null, "/airdrops/");
-        setCard("guides", null, "/guides/");
-        setCard("projects", null, "/projects/");
-      }
-    })();
-  </script>
-
-  <style>
-    /* Responsive: on small screens make 4-cards wrap nicely even if style.css doesn't have grid-4 */
-    @media (max-width: 1100px) {
-      .grid[style*="repeat(4"] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
-    }
-    @media (max-width: 640px) {
-      .grid[style*="repeat(4"] { grid-template-columns: 1fr !important; }
-      .brand-text { display:none; }
-    }
-  </style>
 </body>
 </html>
