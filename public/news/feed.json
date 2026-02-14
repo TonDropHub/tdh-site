@@ -1,6 +1,13 @@
 {
-  "updated": "2026-02-13T15:03:18Z",
+  "updated": "2026-02-14T02:03:18Z",
   "items": [
+    {
+      "id": "517",
+      "title": "Bitcoin Cash and Toncoin Rebound as New Crypto Presale Attracts Attention",
+      "url": "/news/517-bitcoin-cash-and-toncoin-rebound-as-new-crypto-presale-attracts-attent/",
+      "published_at": "2026-02-14T02:03:18Z",
+      "excerpt": "The cryptocurrency market has seen renewed interest in Bitcoin Cash (BCH) and Toncoin (TON), both of which have shown signs of recovery following recent downturns. At the same time, a newly launched token presale called…"
+    },
     {
       "id": "514",
       "title": "Blum Trading Bot Rolls Out Support for Solana Trading",
@@ -357,13 +364,6 @@
       "url": "/news/420-duck-my-duck-expands-its-tap-to-earn-game-what-users-should-know/",
       "published_at": "2026-02-07T02:06:41Z",
       "excerpt": "Duck My Duck, a tap-to-earn game that's recently been gaining attention, has introduced new features aimed at increasing player engagement. The game encourages users to tap on digital ducks to earn points, with the poten…"
-    },
-    {
-      "id": "419",
-      "title": "TON Coin: An Overview of The Open Network and Its Future",
-      "url": "/news/419-ton-coin-an-overview-of-the-open-network-and-its-future/",
-      "published_at": "2026-02-06T14:57:50Z",
-      "excerpt": "TON Coin is the native token of The Open Network, a blockchain platform created to enable fast transactions, scalable applications, and an accessible user experience. With a strong emphasis on speed and efficiency, TON i…"
     }
   ]
 }
