@@ -1,6 +1,13 @@
 {
-  "updated": "2026-02-14T04:15:51Z",
+  "updated": "2026-02-14T05:03:25Z",
   "items": [
+    {
+      "id": "522",
+      "title": "TON Unveils Strategy to Stake Toncoin Reserves and Use Cash Flows for Buybacks",
+      "url": "/news/522-ton-unveils-strategy-to-stake-toncoin-reserves-and-use-cash-flows-for/",
+      "published_at": "2026-02-14T05:03:25Z",
+      "excerpt": "The team behind TON has announced a new approach to managing its Toncoin reserves, with fresh plans to put a portion of its holdings into staking. The initiative was revealed as part of ongoing efforts to strengthen the…"
+    },
     {
       "id": "520",
       "title": "Hamster Kombat Shares Daily Combo for February 14, 2026 in Play-to-Earn Feature",
@@ -357,13 +364,6 @@
       "published_label": "2026-02-07 13:42 (UTC+07:00)",
       "published_local": "2026-02-07T13:42:54+07:00",
       "excerpt": "2026-02-07 13:42 (UTC+07:00) — Hamster Kombat has unveiled its latest daily cipher challenge for February 6, 2026, inviting players to take part and test their puzzle-solving abilities. This daily cipher feature has stea…"
-    },
-    {
-      "id": "421",
-      "title": "Hamster Kombat Shares Daily Combo for February 6, 2026",
-      "url": "/news/421-hamster-kombat-shares-daily-combo-for-february-6-2026/",
-      "published_at": "2026-02-07T05:02:20Z",
-      "excerpt": "Hamster Kombat has announced its new daily combo for February 6, 2026, continuing its ongoing play-to-earn campaign. Players can use this latest combo in the game to move forward and possibly improve their results for th…"
     }
   ]
 }
