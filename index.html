@@ -2,6 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+<script>
+(function(){
+  try{
+    var t = (localStorage.getItem('tdh_theme')||'').toLowerCase();
+    if(t==='dark' || t==='light'){
+      document.documentElement.setAttribute('data-theme', t);
+    }
+  }catch(e){}
+})();
+</script>
+
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   <title>TON Drop Hub — Actionable TON news</title>

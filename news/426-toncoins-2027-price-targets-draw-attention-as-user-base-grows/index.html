@@ -2,6 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+<script>
+(function(){
+  try{
+    var t = (localStorage.getItem('tdh_theme')||'').toLowerCase();
+    if(t==='dark' || t==='light'){
+      document.documentElement.setAttribute('data-theme', t);
+    }
+  }catch(e){}
+})();
+</script>
+
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Toncoin’s 2027 Price Targets Draw Attention as User Base Grows — TON Drop Hub</title>
 
@@ -25,6 +36,7 @@
   <meta name="twitter:image" content="https://tdh-site-cie.pages.dev/assets/og.jpg" />
 
   <link rel="stylesheet" href="/assets/style.css" />
+<script src="/assets/site.js" defer></script>
 </head>
 <body>
   <div class="container">
