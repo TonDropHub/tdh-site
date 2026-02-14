@@ -1,229 +1,155 @@
-/* TDH site.js (v4)
-   - Persists light/dark theme across ALL pages (localStorage)
-   - Ensures the top nav uses the same logo/wordmark + adds theme toggle if missing
-   - Marks active nav pill based on current path
+:root{
+  --bg:#0b1020;
+  --fg:#e9edff;
+  --muted:rgba(233,237,255,.74);
+  --muted2:rgba(233,237,255,.62);
+  --nav-bg:rgba(255,255,255,.04);
+  --nav-border:rgba(255,255,255,.10);
+  --card-bg:rgba(255,255,255,.06);
+  --card-border:rgba(255,255,255,.10);
+  --pill-bg:rgba(255,255,255,.06);
+  --pill-border:rgba(255,255,255,.12);
+  --shadow:0 16px 50px rgba(0,0,0,.35);
+  --shadow-soft:0 10px 30px rgba(0,0,0,.28);
+  --accent1:#00c8ff;
+  --accent2:#0090f0;
+}
 
-   Install:
-   1) Save as: /assets/site.js
-   2) Add to <head> of every page/template:
-        <script src="/assets/site.js" defer></script>
-      (Optional but recommended to avoid flash:
-        <script>(function(){try{var t=localStorage.getItem('tdh_theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
-      placed BEFORE the CSS link.)
-*/
+*{box-sizing:border-box}
 
-(function(){
-  const THEME_KEY = 'tdh_theme';
-  const DEFAULT_THEME = 'dark';
+html,body{margin:0;padding:0}
 
-  function getSavedTheme(){
-    try{
-      const t = localStorage.getItem(THEME_KEY);
-      return (t === 'light' || t === 'dark') ? t : null;
-    }catch(e){
-      return null;
-    }
-  }
+body{
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
+  background:
+    radial-gradient(1200px 800px at 20% 10%, rgba(54,194,255,.16), transparent 60%),
+    radial-gradient(1000px 700px at 90% 30%, rgba(124,92,255,.14), transparent 55%),
+    #0b1020;
+  color:var(--fg);
+  line-height:1.45;
+}
 
-  function applyTheme(theme){
-    const t = (theme === 'light' || theme === 'dark') ? theme : DEFAULT_THEME;
-    document.documentElement.setAttribute('data-theme', t);
-    try{ localStorage.setItem(THEME_KEY, t); }catch(e){}
-  }
+a{color:inherit;text-decoration:none}
 
-  // Apply ASAP (still runs before DOMContentLoaded because defer).
-  (function(){
-    const saved = getSavedTheme();
-    if(saved) document.documentElement.setAttribute('data-theme', saved);
-  })();
+.container{max-width:1100px;margin:0 auto;padding:26px 18px 48px}
 
-  function ensureStyleLink(){
-    // Some legacy/generated pages might miss the stylesheet.
-    const has = Array.from(document.querySelectorAll('link[rel="stylesheet"]'))
-      .some(l => (l.getAttribute('href') || '').trim() === '/assets/style.css');
-    if(!has){
-      const link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = '/assets/style.css';
-      document.head.appendChild(link);
-    }
-  }
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 14px;border-radius:18px;
+  background:var(--nav-bg);
+  border:1px solid var(--nav-border);
+  backdrop-filter: blur(10px);
+  box-shadow:var(--shadow-soft);
+}
 
-  function createThemeToggleButton(){
-    const btn = document.createElement('button');
-    btn.className = 'theme-toggle';
-    btn.type = 'button';
-    btn.id = 'theme-toggle';
-    btn.setAttribute('aria-label', 'Toggle theme');
-    btn.setAttribute('title', 'Toggle theme');
+.nav .left{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.nav .right{display:flex;align-items:center;gap:10px;flex-shrink:0}
 
-    // Two icons, CSS hides the one that doesn't match current theme.
-    btn.innerHTML = `
-      <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Z"></path>
-        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
-      </svg>
-      <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M21 12.79A8 8 0 1 1 11.21 3a6.5 6.5 0 0 0 9.79 9.79Z"></path>
-      </svg>
-    `;
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
+.brand-logo{
+  width:28px;height:28px;border-radius:8px;
+  object-fit:contain;
+  background:transparent;
+  border:1px solid rgba(255,255,255,.10);
+}
 
-    btn.addEventListener('click', () => {
-      const cur = document.documentElement.getAttribute('data-theme') || DEFAULT_THEME;
-      const next = (cur === 'light') ? 'dark' : 'light';
-      applyTheme(next);
-    });
+.wordmark{display:flex;align-items:baseline;gap:6px;font-weight:900}
+.wordmark .ton{color:#fff}
 
-    return btn;
-  }
+/* Match the logo palette (cyan -> blue). */
+.wordmark .drop{
+  background:linear-gradient(90deg,var(--accent1),var(--accent2));
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+}
+.wordmark .hub{
+  background:linear-gradient(90deg,var(--accent2),var(--accent1));
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+}
 
-  function normalizeBrand(brandEl){
-    if(!brandEl) return;
-    // Avoid re-writing if already normalized.
-    if(brandEl.querySelector('.brand-logo') && brandEl.querySelector('.wordmark')) return;
+.pills{display:flex;gap:8px;flex-wrap:wrap}
+.pill{
+  padding:7px 10px;border-radius:999px;
+  background:var(--pill-bg);
+  border:1px solid var(--pill-border);
+  font-weight:600;font-size:13px;
+}
 
-    // Keep href if exists.
-    const href = brandEl.getAttribute('href') || '/';
+.pill:hover{filter:brightness(1.1)}
 
-    brandEl.setAttribute('href', href);
-    brandEl.classList.add('brand');
+.badge{
+  padding:6px 10px;border-radius:999px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.10);
+  font-weight:700;font-size:12px;opacity:.95
+}
 
-    // Logo path is case-sensitive on Cloudflare Pages.
-    // Fallback: try /assets/logo.png then /assets/Logo.png.
+.hero{margin-top:28px}
+.h1{font-size:56px;line-height:1.05;margin:0 0 14px}
+.sub{max-width:780px;color:var(--muted);font-size:15px;margin:0}
 
-    brandEl.innerHTML = `
-      <img class="brand-logo" src="/assets/logo.png" alt="TON Drop Hub" onerror="this.onerror=null;this.src='/assets/Logo.png';" />
-      <span class="wordmark">
-        <span class="ton">TON</span>
-        <span class="drop">DROP</span>
-        <span class="hub">HUB</span>
-      </span>
-    `;
-  }
+.grid{display:grid;gap:14px}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:1060px){
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .h1{font-size:44px}
+}
+@media (max-width:560px){
+  .grid-4{grid-template-columns:1fr}
+  .h1{font-size:36px}
+}
 
-  function ensureRightBlock(navEl){
-    if(!navEl) return null;
-    let right = navEl.querySelector('.right');
-    if(right) return right;
+.card{
+  border-radius:18px;
+  padding:16px 16px 14px;
+  background:var(--card-bg);
+  border:1px solid var(--card-border);
+  box-shadow:var(--shadow-soft);
+  min-height:160px;
+}
 
-    right = document.createElement('div');
-    right.className = 'right';
+.card h2{font-size:20px;margin:0}
 
-    // Move existing badge into right if it's a direct child.
-    const badge = navEl.querySelector('.badge');
-    if(badge && badge.parentElement === navEl){
-      navEl.removeChild(badge);
-      right.appendChild(badge);
-    }
+.meta{color:var(--muted2);font-size:12px;letter-spacing:.6px;text-transform:uppercase}
 
-    navEl.appendChild(right);
-    return right;
-  }
+.excerpt{margin:0;color:var(--muted);font-size:14px;max-height:5.2em;overflow:hidden}
 
-  function ensureThemeToggle(navEl){
-    if(!navEl) return;
-    const right = ensureRightBlock(navEl);
-    if(!right) return;
+.btnrow{margin-top:12px}
+.link-title{color:var(--fg)}
 
-    // If a toggle already exists anywhere in nav, don't duplicate.
-    if(navEl.querySelector('#theme-toggle')) return;
+.footer{margin-top:26px;color:var(--muted2);font-size:12px}
 
-    const btn = createThemeToggleButton();
-    // Insert before badge if badge is there.
-    const badge = right.querySelector('.badge');
-    if(badge) right.insertBefore(btn, badge);
-    else right.appendChild(btn);
-  }
+/* Theme toggle */
+.theme-toggle{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:38px;height:34px;
+  border-radius:999px;
+  background:var(--pill-bg);
+  border:1px solid var(--pill-border);
+  cursor:pointer;
+  box-shadow:none;
+}
+.theme-toggle:hover{filter:brightness(1.1)}
+.theme-toggle:active{transform:translateY(1px)}
+.theme-toggle .icon{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+html[data-theme="dark"] .theme-toggle .icon-moon{display:none}
+html[data-theme="light"] .theme-toggle .icon-sun{display:none}
 
-  function markActivePill(navEl){
-    if(!navEl) return;
-    const path = (location.pathname || '/').toLowerCase();
-
-    const pills = navEl.querySelectorAll('.pill');
-    pills.forEach(a => a.classList.remove('active'));
-
-    const match = (href) => {
-      if(!href) return false;
-      const h = href.toLowerCase();
-      if(h === '/') return path === '/' || path === '';
-      // Treat "/news/" as active for "/news/..." etc.
-      return path.startsWith(h);
-    };
-
-    for(const a of pills){
-      const href = a.getAttribute('href');
-      if(match(href)){
-        a.classList.add('active');
-        break;
-      }
-    }
-  }
-
-  function buildNavElement(){
-    const nav = document.createElement('div');
-    nav.className = 'nav';
-
-    nav.innerHTML = `
-      <div class="left">
-        <a class="brand" href="/">TON Drop Hub</a>
-        <div class="pills">
-          <a class="pill" href="/news/">News</a>
-          <a class="pill" href="/airdrops/">Airdrops &amp; Quests</a>
-          <a class="pill" href="/guides/">Guides</a>
-          <a class="pill" href="/projects/">Projects</a>
-          <a class="pill" href="/about/">About</a>
-        </div>
-      </div>
-      <span class="badge">MVP</span>
-    `;
-
-    return nav;
-  }
-
-function ensureNavNormalized(){
-    let navEl = document.querySelector('.nav');
-    if(!navEl){
-      // Some legacy/generated pages might have no header at all.
-      // We inject a consistent nav at the top.
-      navEl = buildNavElement();
-      const container = document.querySelector('.container');
-      if(container) container.prepend(navEl);
-      else document.body.prepend(navEl);
-    }
-
-    // Ensure left wrapper exists
-    const left = navEl.querySelector('.left') || navEl;
-
-    // Normalize brand
-    const brand = left.querySelector('a.brand') || left.querySelector('a[href="/"]') || left.querySelector('a');
-    normalizeBrand(brand);
-
-    // Ensure pills have class pill (some legacy templates might miss)
-    left.querySelectorAll('a').forEach(a => {
-      const href = (a.getAttribute('href') || '').trim();
-      if(href.startsWith('/') && href !== '/' && !a.classList.contains('brand')){
-        if(!a.classList.contains('pill') && a.parentElement && a.parentElement.classList.contains('pills')){
-          a.classList.add('pill');
-        }
-      }
-    });
-
-    ensureThemeToggle(navEl);
-    markActivePill(navEl);
-
-    // Make nav sticky across all pages.
-    navEl.style.position = navEl.style.position || 'sticky';
-    navEl.style.top = navEl.style.top || '14px';
-    navEl.style.zIndex = navEl.style.zIndex || '50';
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    ensureStyleLink();
-
-    // Apply saved theme definitively (and persist default if missing).
-    const saved = getSavedTheme();
-    applyTheme(saved || (document.documentElement.getAttribute('data-theme') || DEFAULT_THEME));
-
-    ensureNavNormalized();
-  });
-})();
+/* LIGHT THEME OVERRIDES */
+html[data-theme="light"] body{
+  background:
+    radial-gradient(1200px 800px at 20% 10%, rgba(0,144,240,.12), transparent 60%),
+    radial-gradient(1000px 700px at 90% 30%, rgba(0,200,255,.10), transparent 55%),
+    #f5f7ff;
+  color:#0b1020;
+}
+html[data-theme="light"] .wordmark .ton{color:#0b1020}
+html[data-theme="light"] .brand-logo{border-color:rgba(0,0,0,.10)}
+html[data-theme="light"] .nav{background:rgba(0,0,0,.03);border-color:rgba(0,0,0,.08);box-shadow:0 10px 30px rgba(0,0,0,.10)}
+html[data-theme="light"] .pill{background:rgba(0,0,0,.04);border-color:rgba(0,0,0,.10);color:#0b1020}
+html[data-theme="light"] .badge{background:rgba(0,0,0,.05);border-color:rgba(0,0,0,.10);color:#0b1020}
+html[data-theme="light"] .card{background:rgba(0,0,0,.03);border-color:rgba(0,0,0,.08);box-shadow:0 10px 30px rgba(0,0,0,.10)}
+html[data-theme="light"] .meta{color:rgba(0,0,0,.58)}
+html[data-theme="light"] .sub, html[data-theme="light"] .excerpt{color:rgba(0,0,0,.74)}
+html[data-theme="light"] .footer{color:rgba(0,0,0,.60)}
