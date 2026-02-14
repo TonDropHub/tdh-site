@@ -33,16 +33,29 @@
   <meta name="twitter:image" content="https://tdh-site-cie.pages.dev/assets/og.jpg" />
   <meta name="twitter:image:alt" content="TON Drop Hub — actionable TON news, airdrops and quests" />
 
+  <!-- Apply theme BEFORE CSS loads (avoids flash) -->
+  <script>
+    (() => {
+      try {
+        const KEY = "tdh_theme";
+        const saved = localStorage.getItem(KEY);
+        const sys = (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) ? "light" : "dark";
+        document.documentElement.dataset.theme = (saved === "light" || saved === "dark") ? saved : sys;
+      } catch (e) {}
+    })();
+  </script>
+
   <link rel="stylesheet" href="/assets/style.css" />
+  <script src="/assets/site.js" defer></script>
   <script src="/assets/home.js" defer></script>
 </head>
 <body>
   <div class="container">
     <div class="nav">
       <div class="left">
-        <!-- Logo file should be in /assets/ as logo.png (or change src if your filename differs) -->
+        <!-- IMPORTANT: Cloudflare Pages is case-sensitive. Put the file exactly as /assets/logo.png -->
         <a class="brand" href="/">
-          <img src="/assets/logo.png" alt="TON Drop Hub" />
+          <img class="brand-logo" src="/assets/logo.png" alt="TON Drop Hub" />
           <span class="wordmark">
             <span class="ton">TON</span>
             <span class="drop">DROP</span>
@@ -59,7 +72,21 @@
         </div>
       </div>
 
-      <span class="badge">MVP</span>
+      <div class="right">
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">
+          <!-- shown in DARK theme (switch to LIGHT) -->
+          <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"></path>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          </svg>
+          <!-- shown in LIGHT theme (switch to DARK) -->
+          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.8A8.5 8.5 0 0 1 11.2 3a7 7 0 1 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+
+        <span class="badge">MVP</span>
+      </div>
     </div>
 
     <section class="hero">
@@ -69,25 +96,6 @@
         This site is the core hub; Telegram/X (and later Instagram/Facebook) posts link back here.
       </p>
     </section>
-
-    <!-- TOP: Latest article (auto from /news/feed.json) -->
-    <div class="grid grid-single">
-      <div class="card card-feature">
-        <div class="meta" style="margin-bottom:10px;">Latest article</div>
-
-        <h2 style="margin-top:0;">
-          <a class="link-title" id="latest-title" href="/news/">Loading…</a>
-        </h2>
-
-        <div class="meta" id="latest-meta"></div>
-
-        <p class="excerpt" id="latest-excerpt" style="margin-top:10px;"></p>
-
-        <div class="btnrow">
-          <a class="pill" href="/news/">Open News →</a>
-        </div>
-      </div>
-    </div>
 
     <!-- 4 SECTION CARDS (each shows latest post in that section) -->
     <div class="grid grid-4" style="margin-top:16px;">
