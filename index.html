@@ -39,7 +39,13 @@
   <div class="container">
     <div class="nav">
       <div class="left">
-        <a class="brand" href="/">TON Drop Hub</a>
+        <!-- Brand: logo + text, clickable to homepage -->
+        <a class="brand" href="/">
+          <!-- Replace filename below with your real logo name in /assets/ -->
+          <img class="brand-logo" src="/assets/logo.png" alt="TON Drop Hub" />
+          <span class="brand-text">TON Drop Hub</span>
+        </a>
+
         <div class="pills">
           <a class="pill" href="/news/">News</a>
           <a class="pill" href="/airdrops/">Airdrops &amp; Quests</a>
@@ -53,8 +59,18 @@
     <section class="hero">
       <h1 class="h1">Actionable TON news, airdrops, and quests — in one hub.</h1>
       <p class="sub">
-        This is the MVP of your own content hub. Articles live here, and Telegram/X posts can link back to this site.
+        We track TON ecosystem updates, Telegram mini-apps, and quest/airdrop opportunities and turn them into short, actionable posts.
       </p>
+
+      <div class="hero-note" style="margin-top:14px;">
+        <div class="meta" style="margin-bottom:8px;">What you’ll get here</div>
+        <div class="sub" style="line-height:1.7;">
+          • TON &amp; Toncoin ecosystem news (mini-apps, DeFi, tools)<br/>
+          • Airdrops/quests in Telegram mini-apps (public announcements)<br/>
+          • Simple checklists: what to do, requirements, deadlines<br/>
+          • Safety notes: red flags, risk warnings, scam indicators
+        </div>
+      </div>
     </section>
 
     <!-- TOP: Latest article (auto from /news/feed.json) -->
@@ -76,8 +92,8 @@
       </div>
     </div>
 
-    <!-- 4 CATEGORY CARDS with latest item per section -->
-    <div class="grid grid-4" style="margin-top:18px;">
+    <!-- 4 CATEGORY CARDS: latest item per section -->
+    <div class="grid" style="margin-top:18px; display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:14px;">
       <div class="card">
         <h2>News</h2>
         <div class="meta" id="news-meta">Loading…</div>
@@ -211,5 +227,16 @@
       }
     })();
   </script>
+
+  <style>
+    /* Responsive: on small screens make 4-cards wrap nicely even if style.css doesn't have grid-4 */
+    @media (max-width: 1100px) {
+      .grid[style*="repeat(4"] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+    }
+    @media (max-width: 640px) {
+      .grid[style*="repeat(4"] { grid-template-columns: 1fr !important; }
+      .brand-text { display:none; }
+    }
+  </style>
 </body>
 </html>
