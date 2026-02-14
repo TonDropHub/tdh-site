@@ -45,7 +45,6 @@
           <a class="pill" href="/airdrops/">Airdrops &amp; Quests</a>
           <a class="pill" href="/guides/">Guides</a>
           <a class="pill" href="/projects/">Projects</a>
-          <a class="pill" href="/about/">About</a>
         </div>
       </div>
       <span class="badge">MVP</span>
@@ -77,24 +76,42 @@
       </div>
     </div>
 
-    <!-- CATEGORY CARDS -->
-    <div class="grid grid-3" style="margin-top:18px;">
+    <!-- 4 CATEGORY CARDS with latest item per section -->
+    <div class="grid grid-4" style="margin-top:18px;">
       <div class="card">
         <h2>News</h2>
-        <div class="meta">Daily updates and summaries.</div>
-        <div style="margin-top:10px;"><a class="pill" href="/news/">Open News →</a></div>
+        <div class="meta" id="news-meta">Loading…</div>
+        <p class="sub" id="news-excerpt" style="margin-top:10px;"></p>
+        <div style="margin-top:10px;">
+          <a class="pill" id="news-link" href="/news/">Open News →</a>
+        </div>
       </div>
 
       <div class="card">
         <h2>Airdrops &amp; Quests</h2>
-        <div class="meta">Checklists + safety notes.</div>
-        <div style="margin-top:10px;"><a class="pill" href="/airdrops/">Open Airdrops →</a></div>
+        <div class="meta" id="airdrops-meta">Loading…</div>
+        <p class="sub" id="airdrops-excerpt" style="margin-top:10px;"></p>
+        <div style="margin-top:10px;">
+          <a class="pill" id="airdrops-link" href="/airdrops/">Open Airdrops →</a>
+        </div>
       </div>
 
       <div class="card">
         <h2>Guides</h2>
-        <div class="meta">Evergreen how-tos and onboarding.</div>
-        <div style="margin-top:10px;"><a class="pill" href="/guides/">Open Guides →</a></div>
+        <div class="meta" id="guides-meta">Loading…</div>
+        <p class="sub" id="guides-excerpt" style="margin-top:10px;"></p>
+        <div style="margin-top:10px;">
+          <a class="pill" id="guides-link" href="/guides/">Open Guides →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Projects</h2>
+        <div class="meta" id="projects-meta">Loading…</div>
+        <p class="sub" id="projects-excerpt" style="margin-top:10px;"></p>
+        <div style="margin-top:10px;">
+          <a class="pill" id="projects-link" href="/projects/">Open Projects →</a>
+        </div>
       </div>
     </div>
 
@@ -105,11 +122,48 @@
 
   <script>
     (async () => {
+      // ---------- helpers ----------
+      const safeText = (v) => (typeof v === "string" ? v : "");
+      const pickFirstItem = (feed) => {
+        const items = Array.isArray(feed?.items) ? feed.items : [];
+        return items[0] || null;
+      };
+      const fmtDate = (iso) => (typeof iso === "string" ? iso.slice(0, 10) : "");
+
+      async function loadFeed(path) {
+        const r = await fetch(path, { cache: "no-store" });
+        if (!r.ok) return null;
+        return await r.json();
+      }
+
+      function setCard(prefix, data, fallbackHref) {
+        const metaEl = document.getElementById(prefix + "-meta");
+        const excerptEl = document.getElementById(prefix + "-excerpt");
+        const linkEl = document.getElementById(prefix + "-link");
+
+        if (!data) {
+          metaEl.textContent = "No posts yet";
+          excerptEl.textContent = "This section will update automatically after the next bot run.";
+          linkEl.href = fallbackHref;
+          return;
+        }
+
+        const title = safeText(data.title) || "Latest update";
+        const excerpt = safeText(data.excerpt);
+        const url = safeText(data.url) || fallbackHref;
+        const dt = fmtDate(data.published_at);
+
+        metaEl.textContent = (dt ? (title + " • " + dt) : title);
+        excerptEl.textContent = excerpt;
+        linkEl.href = url;
+      }
+
+      // ---------- top latest (News feed) ----------
       const titleEl = document.getElementById("latest-title");
       const metaEl = document.getElementById("latest-meta");
       const excerptEl = document.getElementById("latest-excerpt");
 
-      const fallback = () => {
+      const topFallback = () => {
         titleEl.textContent = "No articles yet — open News";
         titleEl.href = "/news/";
         metaEl.textContent = "";
@@ -117,26 +171,43 @@
       };
 
       try {
-        const r = await fetch("/news/feed.json", { cache: "no-store" });
-        if (!r.ok) return fallback();
+        const newsFeed = await loadFeed("/news/feed.json");
+        const item = pickFirstItem(newsFeed);
+        if (!item) topFallback();
+        else {
+          const url = safeText(item.url) || "/news/";
+          const title = safeText(item.title) || "Latest update";
+          const excerpt = safeText(item.excerpt);
+          const dt = fmtDate(item.published_at);
 
-        const feed = await r.json();
-        const items = Array.isArray(feed.items) ? feed.items : [];
-        const item = items[0];
-        if (!item) return fallback();
+          titleEl.textContent = title;
+          titleEl.href = url;
 
-        const url = (item.url && typeof item.url === "string") ? item.url : "/news/";
-        const title = (item.title && typeof item.title === "string") ? item.title : "Latest update";
-        const excerpt = (item.excerpt && typeof item.excerpt === "string") ? item.excerpt : "";
-        const dt = (item.published_at && typeof item.published_at === "string") ? item.published_at.slice(0, 10) : "";
-
-        titleEl.textContent = title;
-        titleEl.href = url;
-
-        metaEl.textContent = dt ? ("News • " + dt) : "News";
-        excerptEl.textContent = excerpt;
+          metaEl.textContent = dt ? ("News • " + dt) : "News";
+          excerptEl.textContent = excerpt;
+        }
       } catch (e) {
-        fallback();
+        topFallback();
+      }
+
+      // ---------- 4 sections latest ----------
+      try {
+        const [news, airdrops, guides, projects] = await Promise.all([
+          loadFeed("/news/feed.json"),
+          loadFeed("/airdrops/feed.json"),
+          loadFeed("/guides/feed.json"),
+          loadFeed("/projects/feed.json"),
+        ]);
+
+        setCard("news", pickFirstItem(news), "/news/");
+        setCard("airdrops", pickFirstItem(airdrops), "/airdrops/");
+        setCard("guides", pickFirstItem(guides), "/guides/");
+        setCard("projects", pickFirstItem(projects), "/projects/");
+      } catch (e) {
+        setCard("news", null, "/news/");
+        setCard("airdrops", null, "/airdrops/");
+        setCard("guides", null, "/guides/");
+        setCard("projects", null, "/projects/");
       }
     })();
   </script>
