@@ -1,6 +1,13 @@
 {
-  "updated": "2026-02-15T08:07:24Z",
+  "updated": "2026-02-15T11:02:07Z",
   "items": [
+    {
+      "id": "533",
+      "title": "Self-Custodial TON Wallet Introduces Cross-Chain Deposit Feature",
+      "url": "/news/533-self-custodial-ton-wallet-introduces-cross-chain-deposit-feature/",
+      "published_at": "2026-02-15T11:02:07Z",
+      "excerpt": "A new update has been rolled out for the self-custodial wallet linked to the TON ecosystem, making it easier for users to manage assets across different blockchains. This feature now allows users to deposit tokens from v…"
+    },
     {
       "id": "529",
       "title": "Toncoin price activity slows as token trades near key $1.50 threshold",
@@ -343,15 +350,6 @@
       "url": "/news/431-hamster-kombat-daily-cipher-offers-another-puzzle-for-hmstr-coin-hunte/",
       "published_at": "2026-02-08T05:17:31Z",
       "excerpt": "Hamster Kombat introduced its latest daily cipher challenge on February 7, 2026, giving players a fresh opportunity to crack the code and earn extra HMSTR coins. This ongoing event remains popular among the game's commun…"
-    },
-    {
-      "id": "430",
-      "title": "Hamster Kombat Offers 5 Million Coins in February 7 Daily Combo",
-      "url": "/news/430-hamster-kombat-offers-5-million-coins-in-february-7-daily-combo/",
-      "published_at": "2026-02-08T05:02:30Z",
-      "published_label": "2026-02-08 12:02 (UTC+07:00)",
-      "published_local": "2026-02-08T12:02:30+07:00",
-      "excerpt": "2026-02-08 12:02 (UTC+07:00) — Hamster Kombat players have something to look forward to with the launch of the daily combo challenge for February 7, 2026, featuring a massive pool of 5 million in-game coins. The event ha…"
     }
   ]
 }
