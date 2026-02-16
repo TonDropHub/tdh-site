@@ -1,6 +1,13 @@
 {
-  "updated": "2026-02-16T02:02:33Z",
+  "updated": "2026-02-16T05:02:07Z",
   "items": [
+    {
+      "id": "536",
+      "title": "Toncoin Review for 2026: Adoption Milestones, Tokenomics, and Network Challenges",
+      "url": "/news/536-toncoin-review-for-2026-adoption-milestones-tokenomics-and-network-cha/",
+      "published_at": "2026-02-16T05:02:07Z",
+      "excerpt": "Toncoin (TON) continues to attract attention in the crypto world, especially as 2026 unfolds. The network’s integration with popular messaging apps has played a significant role in raising its profile. Many users are dra…"
+    },
     {
       "id": "535",
       "title": "BlockDAG Mainnet Launch Draws Attention as BNB and Toncoin See Slowdown",
@@ -343,13 +350,6 @@
       "url": "/news/434-ton-foundation-highlights-web3-payments-at-major-hong-kong-event/",
       "published_at": "2026-02-08T11:06:16Z",
       "excerpt": "The TON Foundation recently brought together industry leaders and innovators in Hong Kong to highlight the growing importance of Web3 payments. The event provided a platform for discussing advances in blockchain payment…"
-    },
-    {
-      "id": "433",
-      "title": "Hamster Kombat Unveils DAO for Token Holders",
-      "url": "/news/433-hamster-kombat-unveils-dao-for-token-holders/",
-      "published_at": "2026-02-08T08:02:45Z",
-      "excerpt": "Hamster Kombat has announced the creation of a decentralized autonomous organization (DAO) designed to give token holders a direct voice in the project’s decision-making. With this new DAO structure, holders of Hamster K…"
     }
   ]
 }
