@@ -1,6 +1,13 @@
 {
-  "updated": "2026-02-16T05:02:07Z",
+  "updated": "2026-02-16T08:01:37Z",
   "items": [
+    {
+      "id": "532",
+      "title": "A Fresh Look at Telegram Mini Apps: What They Offer and Where They Fall Short",
+      "url": "/news/532-a-fresh-look-at-telegram-mini-apps-what-they-offer-and-where-they-fall/",
+      "published_at": "2026-02-16T08:01:37Z",
+      "excerpt": "Telegram Mini Apps are becoming a notable feature for users and developers interested in extending messaging platforms beyond simple chat. These lightweight applications can run within the Telegram environment, providing…"
+    },
     {
       "id": "536",
       "title": "Toncoin Review for 2026: Adoption Milestones, Tokenomics, and Network Challenges",
@@ -343,13 +350,6 @@
       "url": "/news/435-bitrue-rolls-out-tomarket-daily-combo-for-february-7-2026/",
       "published_at": "2026-02-08T11:06:27Z",
       "excerpt": "Bitrue has introduced its Tomarket Daily Combo for February 7, 2026, giving users access to a new range of trading opportunities. While the specific tokens or assets included in today’s combo were not specified at the ti…"
-    },
-    {
-      "id": "434",
-      "title": "TON Foundation Highlights Web3 Payments at Major Hong Kong Event",
-      "url": "/news/434-ton-foundation-highlights-web3-payments-at-major-hong-kong-event/",
-      "published_at": "2026-02-08T11:06:16Z",
-      "excerpt": "The TON Foundation recently brought together industry leaders and innovators in Hong Kong to highlight the growing importance of Web3 payments. The event provided a platform for discussing advances in blockchain payment…"
     }
   ]
 }
