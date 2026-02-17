@@ -1,6 +1,13 @@
 {
-  "updated": "2026-02-17T02:03:08Z",
+  "updated": "2026-02-17T05:01:55Z",
   "items": [
+    {
+      "id": "541",
+      "title": "TON Wallet Brings Cross-Chain Deposits, Streamlining Crypto Transfers",
+      "url": "/news/541-ton-wallet-brings-cross-chain-deposits-streamlining-crypto-transfers/",
+      "published_at": "2026-02-17T05:01:55Z",
+      "excerpt": "TON Wallet has introduced a new feature enabling cross-chain deposits, aiming to make it easier for users to fund their accounts with assets from different blockchains. This update is designed to simplify the process of…"
+    },
     {
       "id": "540",
       "title": "Hamster Kombat Daily Cipher Arrives for 17 February 2026",
@@ -343,13 +350,6 @@
       "url": "/news/439-toncoin-outlook-whats-next-as-the-ton-ecosystem-grows/",
       "published_at": "2026-02-09T02:03:09Z",
       "excerpt": "Toncoin continues to attract attention as conversations about its future potential intensify, especially with the recent growth in the TON ecosystem. Developers and various projects are building a diverse array of applic…"
-    },
-    {
-      "id": "438",
-      "title": "Hamster Kombat Daily Cipher Challenge Launches for February 8, 2026",
-      "url": "/news/438-hamster-kombat-daily-cipher-challenge-launches-for-february-8-2026/",
-      "published_at": "2026-02-08T14:01:56Z",
-      "excerpt": "The Hamster Kombat project has launched its latest daily cipher challenge, giving players another chance to test their puzzle-solving skills on February 8, 2026. These daily ciphers have become a staple of the game, attr…"
     }
   ]
 }
