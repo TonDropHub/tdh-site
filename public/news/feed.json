@@ -1,6 +1,13 @@
 {
-  "updated": "2026-02-18T05:07:15Z",
+  "updated": "2026-02-18T08:07:57Z",
   "items": [
+    {
+      "id": "506",
+      "title": "TON Wallet in Telegram Introduces Cross-Chain Deposit Feature",
+      "url": "/news/506-ton-wallet-in-telegram-introduces-cross-chain-deposit-feature/",
+      "published_at": "2026-02-18T08:07:57Z",
+      "excerpt": "TON Wallet, integrated within the popular messaging platform Telegram, has launched a new feature supporting cross-chain deposits. This development enables users to transfer assets from multiple blockchain networks into…"
+    },
     {
       "id": "509",
       "title": "Tomarket Offers Free $TOMA Tokens in Daily Combo for February 14, 2026",
@@ -342,13 +349,6 @@
       "title": "Hamster Kombat Shares Latest Daily Combo for Play-to-Earn Players The team behind Hamster Kombat has released their newest daily combo, givi",
       "url": "/news/445-hamster-kombat-shares-latest-daily-combo-for-play-to-earn-players-the/",
       "published_at": "2026-02-10T08:02:32Z",
-      "excerpt": ""
-    },
-    {
-      "id": "444",
-      "title": "BlockDAG Sets Final $0.00025 Offer While Toncoin and Cronos Face Upward Battle BlockDAG has announced its final chance for users to purchase",
-      "url": "/news/444-blockdag-sets-final-000025-offer-while-toncoin-and-cronos-face-upward/",
-      "published_at": "2026-02-10T05:02:19Z",
       "excerpt": ""
     }
   ]
