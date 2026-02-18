@@ -1,6 +1,13 @@
 {
-  "updated": "2026-02-18T08:07:57Z",
+  "updated": "2026-02-18T11:02:38Z",
   "items": [
+    {
+      "id": "547",
+      "title": "TON Foundation teams up with Banxa to expand stablecoin payments in APAC",
+      "url": "/news/547-ton-foundation-teams-up-with-banxa-to-expand-stablecoin-payments-in-ap/",
+      "published_at": "2026-02-18T11:02:38Z",
+      "excerpt": "The TON Foundation has announced a new partnership with Banxa, a payments infrastructure provider, aiming to boost the use of stablecoin payments across the Asia-Pacific (APAC) region. Through this collaboration, users a…"
+    },
     {
       "id": "506",
       "title": "TON Wallet in Telegram Introduces Cross-Chain Deposit Feature",
@@ -342,13 +349,6 @@
       "title": "Hamster Kombat Unveils Latest Daily Cipher Challenge Hamster Kombat has introduced its latest daily cipher, giving players a new puzzle to s",
       "url": "/news/446-hamster-kombat-unveils-latest-daily-cipher-challenge-hamster-kombat-ha/",
       "published_at": "2026-02-10T11:03:24Z",
-      "excerpt": ""
-    },
-    {
-      "id": "445",
-      "title": "Hamster Kombat Shares Latest Daily Combo for Play-to-Earn Players The team behind Hamster Kombat has released their newest daily combo, givi",
-      "url": "/news/445-hamster-kombat-shares-latest-daily-combo-for-play-to-earn-players-the/",
-      "published_at": "2026-02-10T08:02:32Z",
       "excerpt": ""
     }
   ]
