@@ -1,6 +1,13 @@
 {
-  "updated": "2026-02-20T11:06:48Z",
+  "updated": "2026-02-20T14:06:47Z",
   "items": [
+    {
+      "id": "569",
+      "title": "Toncoin Introduces Fresh AppKit Features Slated for Early May 2026",
+      "url": "/news/569-toncoin-introduces-fresh-appkit-features-slated-for-early-may-2026/",
+      "published_at": "2026-02-20T14:06:47Z",
+      "excerpt": "Toncoin has announced new developments for its AppKit, with a set of updates scheduled to arrive on May 1, 2026. This addition is intended to enhance functionality for both users and developers building on the Toncoin pl…"
+    },
     {
       "id": "570",
       "title": "Toncoin Price Forecast Highlights a Potential $30 Target by 2030",
@@ -342,13 +349,6 @@
       "title": "Tomarket Features Eudaimonia and Co in Latest Daily Combo Tomarket’s latest daily",
       "url": "/news/457-tomarket-features-eudaimonia-and-co-in-latest-daily-combo-tomarkets-la/",
       "published_at": "2026-02-12T05:02:46Z",
-      "excerpt": ""
-    },
-    {
-      "id": "456",
-      "title": "TON Foundation Introduces TON Pay for Effortless Crypto Payments The TON Foundation",
-      "url": "/news/456-ton-foundation-introduces-ton-pay-for-effortless-crypto-payments-the-t/",
-      "published_at": "2026-02-12T02:03:13Z",
       "excerpt": ""
     }
   ]
