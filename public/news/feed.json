@@ -1,6 +1,13 @@
 {
-  "updated": "2026-02-19T14:07:58Z",
+  "updated": "2026-02-20T02:03:35Z",
   "items": [
+    {
+      "id": "568",
+      "title": "Ton Blockchain Improves AppKit and Announces Toncoin Livestream on February 20",
+      "url": "/news/568-ton-blockchain-improves-appkit-and-announces-toncoin-livestream-on-feb/",
+      "published_at": "2026-02-20T02:03:35Z",
+      "excerpt": "The Ton blockchain ecosystem has rolled out an update to its AppKit, highlighting its ongoing commitment to enhancing developer tools. With this initiative, the platform seeks to streamline the app creation process and i…"
+    },
     {
       "id": "565",
       "title": "Reports Suggest Alexei Navalny Was Poisoned With Deadly Frog Toxin",
@@ -342,13 +349,6 @@
       "title": "Hamster Kombat Shares Latest Play-to-Earn Combo Update Hamster Kombat has introduced",
       "url": "/news/453-hamster-kombat-shares-latest-play-to-earn-combo-update-hamster-kombat/",
       "published_at": "2026-02-11T08:03:30Z",
-      "excerpt": ""
-    },
-    {
-      "id": "452",
-      "title": "TON Foundation Introduces TON Pay SDK for Crypto Payments The TON Foundation has",
-      "url": "/news/452-ton-foundation-introduces-ton-pay-sdk-for-crypto-payments-the-ton-foun/",
-      "published_at": "2026-02-11T06:00:23Z",
       "excerpt": ""
     }
   ]
