@@ -1,6 +1,13 @@
 {
-  "updated": "2026-02-21T08:03:14Z",
+  "updated": "2026-02-21T11:06:22Z",
   "items": [
+    {
+      "id": "581",
+      "title": "Tapswap Postpones Token Generation Event Due to Market Volatility",
+      "url": "/news/581-tapswap-postpones-token-generation-event-due-to-market-volatility/",
+      "published_at": "2026-02-21T11:06:22Z",
+      "excerpt": "Tapswap has decided to postpone its planned Token Generation Event, citing current market uncertainties as the main reason for the delay. The platform, known for its work in Web3 and crypto-based applications, did not an…"
+    },
     {
       "id": "582",
       "title": "Telegram Eyes Expanded Use of TON Blockchain for Tokenized Emojis and Stickers",
@@ -342,13 +349,6 @@
       "title": "BlockDAG Grabs Attention With Final Token Price, While Toncoin and Cronos See Mixed",
       "url": "/news/461-blockdag-grabs-attention-with-final-token-price-while-toncoin-and-cron/",
       "published_at": "2026-02-13T02:07:04Z",
-      "excerpt": ""
-    },
-    {
-      "id": "460",
-      "title": "Bitrue Shares New Tomarket Daily Combo Update and Rewards Bitrue has announced the",
-      "url": "/news/460-bitrue-shares-new-tomarket-daily-combo-update-and-rewards-bitrue-has-a/",
-      "published_at": "2026-02-12T14:07:05Z",
       "excerpt": ""
     }
   ]
