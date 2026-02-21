@@ -1,6 +1,13 @@
 {
-  "updated": "2026-02-21T05:02:31Z",
+  "updated": "2026-02-21T08:03:14Z",
   "items": [
+    {
+      "id": "582",
+      "title": "Telegram Eyes Expanded Use of TON Blockchain for Tokenized Emojis and Stickers",
+      "url": "/news/582-telegram-eyes-expanded-use-of-ton-blockchain-for-tokenized-emojis-and/",
+      "published_at": "2026-02-21T08:03:14Z",
+      "excerpt": "Telegram has announced plans to deepen its integration with the TON blockchain, with a special focus on bringing tokenized emojis and stickers to its platform. This move signals the messaging service’s continued commitme…"
+    },
     {
       "id": "580",
       "title": "AddTon Debuts AddLabs for TON-Based Smart Contract and App Development",
@@ -342,13 +349,6 @@
       "title": "Bitrue Shares New Tomarket Daily Combo Update and Rewards Bitrue has announced the",
       "url": "/news/460-bitrue-shares-new-tomarket-daily-combo-update-and-rewards-bitrue-has-a/",
       "published_at": "2026-02-12T14:07:05Z",
-      "excerpt": ""
-    },
-    {
-      "id": "459",
-      "title": "Hamster Kombat Rolls Out Fresh Cipher Challenge With HMSTR Coin Rewards Hamster",
-      "url": "/news/459-hamster-kombat-rolls-out-fresh-cipher-challenge-with-hmstr-coin-reward/",
-      "published_at": "2026-02-12T11:02:24Z",
       "excerpt": ""
     }
   ]
