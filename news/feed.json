@@ -1,6 +1,13 @@
 {
-  "updated": "2026-02-21T02:02:43Z",
+  "updated": "2026-02-21T05:02:31Z",
   "items": [
+    {
+      "id": "580",
+      "title": "AddTon Debuts AddLabs for TON-Based Smart Contract and App Development",
+      "url": "/news/580-addton-debuts-addlabs-for-ton-based-smart-contract-and-app-development/",
+      "published_at": "2026-02-21T05:02:31Z",
+      "excerpt": "AddTon has launched AddLabs, a development platform designed for building smart contracts and applications within the TON ecosystem. This new platform is aimed at both newcomers and experienced developers who want to exp…"
+    },
     {
       "id": "577",
       "title": "Toncoin Set for Discussion in Upcoming “Real Talk” Session on 20 February 2026",
@@ -342,13 +349,6 @@
       "title": "Hamster Kombat Rolls Out Fresh Cipher Challenge With HMSTR Coin Rewards Hamster",
       "url": "/news/459-hamster-kombat-rolls-out-fresh-cipher-challenge-with-hmstr-coin-reward/",
       "published_at": "2026-02-12T11:02:24Z",
-      "excerpt": ""
-    },
-    {
-      "id": "458",
-      "title": "Hamster Kombat Players Race to Secure 5 Million Coin Combo Hamster Kombat has sparked",
-      "url": "/news/458-hamster-kombat-players-race-to-secure-5-million-coin-combo-hamster-kom/",
-      "published_at": "2026-02-12T08:07:31Z",
       "excerpt": ""
     }
   ]
