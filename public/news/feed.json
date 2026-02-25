@@ -1,6 +1,13 @@
 {
-  "updated": "2026-02-25T11:03:33Z",
+  "updated": "2026-02-25T14:01:44Z",
   "items": [
+    {
+      "id": "557",
+      "title": "TON Foundation expands stablecoin payment options for Asian businesses through Banxa",
+      "url": "/news/557-ton-foundation-expands-stablecoin-payment-options-for-asian-businesses/",
+      "published_at": "2026-02-25T14:01:44Z",
+      "excerpt": "The TON Foundation has unveiled a new payment processing solution designed to support stablecoin transactions for businesses operating in Asia. This initiative is being rolled out in collaboration with Banxa, a company k…"
+    },
     {
       "id": "604",
       "title": "Toncoin Sees Ongoing Correction as Market Sentiment Turns Bearish",
@@ -343,13 +350,6 @@
       "url": "/news/534-toncoins-position-in-2026-adoption-tokenomics-and-ongoing-network-chal/",
       "published_at": "2026-02-15T14:02:49Z",
       "excerpt": "Toncoin (TON) has remained a prominent player in the crypto world as 2026 unfolds, largely thanks to its integration with widely used social platforms. By taking advantage of its broad adoption, Toncoin has maintained an…"
-    },
-    {
-      "id": "533",
-      "title": "Self-Custodial TON Wallet Introduces Cross-Chain Deposit Feature",
-      "url": "/news/533-self-custodial-ton-wallet-introduces-cross-chain-deposit-feature/",
-      "published_at": "2026-02-15T11:02:07Z",
-      "excerpt": "A new update has been rolled out for the self-custodial wallet linked to the TON ecosystem, making it easier for users to manage assets across different blockchains. This feature now allows users to deposit tokens from v…"
     }
   ]
 }
