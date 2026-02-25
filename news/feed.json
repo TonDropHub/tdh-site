@@ -1,6 +1,13 @@
 {
-  "updated": "2026-02-25T08:04:15Z",
+  "updated": "2026-02-25T11:03:33Z",
   "items": [
+    {
+      "id": "604",
+      "title": "Toncoin Sees Ongoing Correction as Market Sentiment Turns Bearish",
+      "url": "/news/604-toncoin-sees-ongoing-correction-as-market-sentiment-turns-bearish/",
+      "published_at": "2026-02-25T11:03:33Z",
+      "excerpt": "Toncoin has entered a notable correction phase, with the recent trend suggesting further downward movement. The token has experienced persistent selling pressure, raising questions about where the next large support area…"
+    },
     {
       "id": "605",
       "title": "TON to Disable Toncoin Bridge to Ethereum and BNB Smart Chain Starting May 10",
@@ -343,13 +350,6 @@
       "url": "/news/533-self-custodial-ton-wallet-introduces-cross-chain-deposit-feature/",
       "published_at": "2026-02-15T11:02:07Z",
       "excerpt": "A new update has been rolled out for the self-custodial wallet linked to the TON ecosystem, making it easier for users to manage assets across different blockchains. This feature now allows users to deposit tokens from v…"
-    },
-    {
-      "id": "529",
-      "title": "Toncoin price activity slows as token trades near key $1.50 threshold",
-      "url": "/news/529-toncoin-price-activity-slows-as-token-trades-near-key-150-threshold/",
-      "published_at": "2026-02-15T08:07:24Z",
-      "excerpt": "Toncoin has recently seen its price hovering close to the $1.50 mark, drawing attention from market watchers interested in how the cryptocurrency will move next. The token has yet to make any definitive push above or bel…"
     }
   ]
 }
