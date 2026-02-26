@@ -1,6 +1,13 @@
 {
-  "updated": "2026-02-26T08:02:14Z",
+  "updated": "2026-02-26T11:03:09Z",
   "items": [
+    {
+      "id": "616",
+      "title": "TON Wallet Expands Income Options Within Telegram Ecosystem",
+      "url": "/news/616-ton-wallet-expands-income-options-within-telegram-ecosystem/",
+      "published_at": "2026-02-26T11:03:09Z",
+      "excerpt": "TON Wallet has announced a new opportunity for users to earn income directly through Telegram, introducing fresh possibilities within the popular messaging app. This step emphasizes TON Wallet’s commitment to delivering…"
+    },
     {
       "id": "612",
       "title": "Toncoin (TON) Eyes Resistance After Bouncing From Support",
@@ -343,13 +350,6 @@
       "url": "/news/537-top-toncoin-ton-wallets-to-consider-in-2026/",
       "published_at": "2026-02-16T11:02:49Z",
       "excerpt": "A variety of digital wallets is emerging for Toncoin (TON) users ahead of 2026, reflecting the growing interest in secure and convenient methods for storing and managing TON tokens. As demand rises, users are increasingl…"
-    },
-    {
-      "id": "532",
-      "title": "A Fresh Look at Telegram Mini Apps: What They Offer and Where They Fall Short",
-      "url": "/news/532-a-fresh-look-at-telegram-mini-apps-what-they-offer-and-where-they-fall/",
-      "published_at": "2026-02-16T08:01:37Z",
-      "excerpt": "Telegram Mini Apps are becoming a notable feature for users and developers interested in extending messaging platforms beyond simple chat. These lightweight applications can run within the Telegram environment, providing…"
     }
   ]
 }
