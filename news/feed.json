@@ -1,6 +1,13 @@
 {
-  "updated": "2026-02-27T11:02:32Z",
+  "updated": "2026-02-27T14:06:23Z",
   "items": [
+    {
+      "id": "631",
+      "title": "TON Wallet Introduces DeFi Vaults With Yield Opportunities Up to 18% APY",
+      "url": "/news/631-ton-wallet-introduces-defi-vaults-with-yield-opportunities-up-to-18-ap/",
+      "published_at": "2026-02-27T14:06:23Z",
+      "excerpt": "Users of TON Wallet now have a new way to participate in decentralized finance, thanks to the platform's integration of DeFi vaults. This update gives users the opportunity to explore earning options, with reported retur…"
+    },
     {
       "id": "628",
       "title": "Toncoin Bears Eye $1.25 Mark as Downward Trends Continue",
@@ -343,13 +350,6 @@
       "url": "/news/507-ton-wallet-in-telegram-adds-wrapped-bitcoin-and-ethereum-support/",
       "published_at": "2026-02-17T14:07:08Z",
       "excerpt": "Users of the wallet integrated within Telegram now have broader crypto options at their fingertips. The TON Wallet, previously focused on native TON tokens, has expanded its capabilities to support wrapped versions of bo…"
-    },
-    {
-      "id": "542",
-      "title": "Tomarket Offers Daily Promo With Instant $TOMA Token Claims on February 17, 2026",
-      "url": "/news/542-tomarket-offers-daily-promo-with-instant-toma-token-claims-on-february/",
-      "published_at": "2026-02-17T11:02:56Z",
-      "excerpt": "Tomarket has introduced a special daily combo event for February 17, 2026, giving users the chance to instantly claim free $TOMA tokens. While the campaign appears to be open to participants today, the exact mechanics an…"
     }
   ]
 }
