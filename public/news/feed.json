@@ -1,6 +1,13 @@
 {
-  "updated": "2026-02-27T05:07:43Z",
+  "updated": "2026-02-27T08:03:07Z",
   "items": [
+    {
+      "id": "625",
+      "title": "TON Wallet Introduces Yield Options for Bitcoin, Ethereum, and USDT",
+      "url": "/news/625-ton-wallet-introduces-yield-options-for-bitcoin-ethereum-and-usdt/",
+      "published_at": "2026-02-27T08:03:07Z",
+      "excerpt": "TON Wallet, a key product in the TON blockchain ecosystem, has rolled out a new feature that lets users earn yield on their Bitcoin, Ethereum, and USDT holdings. This development brings more established digital assets in…"
+    },
     {
       "id": "622",
       "title": "Toncoin Price Dips as Vaults Feature Launches in TON Wallet",
@@ -343,13 +350,6 @@
       "url": "/news/538-cardano-deepsnitch-ai-and-toncoin-spark-interest-with-2026-price-predi/",
       "published_at": "2026-02-17T08:08:27Z",
       "excerpt": "Excitement continues to grow in the cryptocurrency community as the outlook for Cardano (ADA), DeepSnitch AI, and Toncoin is brought into focus for 2026. Forecasters and market watchers are examining how each project’s f…"
-    },
-    {
-      "id": "541",
-      "title": "TON Wallet Brings Cross-Chain Deposits, Streamlining Crypto Transfers",
-      "url": "/news/541-ton-wallet-brings-cross-chain-deposits-streamlining-crypto-transfers/",
-      "published_at": "2026-02-17T05:01:55Z",
-      "excerpt": "TON Wallet has introduced a new feature enabling cross-chain deposits, aiming to make it easier for users to fund their accounts with assets from different blockchains. This update is designed to simplify the process of…"
     }
   ]
 }
