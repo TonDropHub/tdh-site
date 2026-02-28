@@ -1,6 +1,13 @@
 {
-  "updated": "2026-02-27T14:06:23Z",
+  "updated": "2026-02-28T02:02:22Z",
   "items": [
+    {
+      "id": "634",
+      "title": "TON Wallet Adds BTC, ETH, and USDT Yield Vaults for Users",
+      "url": "/news/634-ton-wallet-adds-btc-eth-and-usdt-yield-vaults-for-users/",
+      "published_at": "2026-02-28T02:02:22Z",
+      "excerpt": "TON Wallet has introduced new features aimed at expanding its capabilities, now allowing users to access yield vaults for Bitcoin (BTC), Ethereum (ETH), and Tether (USDT). This update broadens the range of assets that us…"
+    },
     {
       "id": "631",
       "title": "TON Wallet Introduces DeFi Vaults With Yield Opportunities Up to 18% APY",
@@ -343,13 +350,6 @@
       "url": "/news/544-hamster-kombat-daily-cipher-for-february-17-2026-solve-todays-puzzle-f/",
       "published_at": "2026-02-18T02:06:19Z",
       "excerpt": "Each day brings a new challenge for Hamster Kombat players, and February 17, 2026, is no different. The popular game continues its tradition of presenting a “Daily Cipher,” giving the community an engaging puzzle to solv…"
-    },
-    {
-      "id": "507",
-      "title": "TON Wallet in Telegram Adds Wrapped Bitcoin and Ethereum Support",
-      "url": "/news/507-ton-wallet-in-telegram-adds-wrapped-bitcoin-and-ethereum-support/",
-      "published_at": "2026-02-17T14:07:08Z",
-      "excerpt": "Users of the wallet integrated within Telegram now have broader crypto options at their fingertips. The TON Wallet, previously focused on native TON tokens, has expanded its capabilities to support wrapped versions of bo…"
     }
   ]
 }
