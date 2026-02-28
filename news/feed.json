@@ -1,6 +1,13 @@
 {
-  "updated": "2026-02-28T11:02:27Z",
+  "updated": "2026-02-28T14:02:42Z",
   "items": [
+    {
+      "id": "644",
+      "title": "TON Foundation Rolls Out TON Pay to Simplify Payments Across Its Ecosystem",
+      "url": "/news/644-ton-foundation-rolls-out-ton-pay-to-simplify-payments-across-its-ecosy/",
+      "published_at": "2026-02-28T14:02:42Z",
+      "excerpt": "TON Foundation has introduced TON Pay, a new payment solution aimed at making transactions easier for users and developers within its ecosystem. The initiative is designed to streamline how payments are handled, allowing…"
+    },
     {
       "id": "643",
       "title": "TON Wallet Introduces New Interest Options for Bitcoin, Ethereum, and USDT",
@@ -343,13 +350,6 @@
       "url": "/news/549-ton-foundation-teams-up-with-banxa-to-boost-stablecoin-payments-for-as/",
       "published_at": "2026-02-18T14:02:50Z",
       "excerpt": "The TON Foundation is partnering with Banxa, a digital payments provider under OSL, to advance the use of stablecoins in the Asia-Pacific region. This collaboration aims to make it easier for merchants in the area to acc…"
-    },
-    {
-      "id": "547",
-      "title": "TON Foundation teams up with Banxa to expand stablecoin payments in APAC",
-      "url": "/news/547-ton-foundation-teams-up-with-banxa-to-expand-stablecoin-payments-in-ap/",
-      "published_at": "2026-02-18T11:02:38Z",
-      "excerpt": "The TON Foundation has announced a new partnership with Banxa, a payments infrastructure provider, aiming to boost the use of stablecoin payments across the Asia-Pacific (APAC) region. Through this collaboration, users a…"
     }
   ]
 }
