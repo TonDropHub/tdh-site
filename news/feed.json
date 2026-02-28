@@ -1,6 +1,13 @@
 {
-  "updated": "2026-02-28T08:08:03Z",
+  "updated": "2026-02-28T11:02:27Z",
   "items": [
+    {
+      "id": "643",
+      "title": "TON Wallet Introduces New Interest Options for Bitcoin, Ethereum, and USDT",
+      "url": "/news/643-ton-wallet-introduces-new-interest-options-for-bitcoin-ethereum-and-us/",
+      "published_at": "2026-02-28T11:02:27Z",
+      "excerpt": "TON Wallet has rolled out new features that let users earn interest on major cryptocurrencies, including Bitcoin, Ethereum, and Tether (USDT). While the exact rates and terms have yet to be fully confirmed, this move sho…"
+    },
     {
       "id": "640",
       "title": "Hamster Kombat Shares Daily Combo for February 28, 2026",
@@ -343,13 +350,6 @@
       "url": "/news/547-ton-foundation-teams-up-with-banxa-to-expand-stablecoin-payments-in-ap/",
       "published_at": "2026-02-18T11:02:38Z",
       "excerpt": "The TON Foundation has announced a new partnership with Banxa, a payments infrastructure provider, aiming to boost the use of stablecoin payments across the Asia-Pacific (APAC) region. Through this collaboration, users a…"
-    },
-    {
-      "id": "506",
-      "title": "TON Wallet in Telegram Introduces Cross-Chain Deposit Feature",
-      "url": "/news/506-ton-wallet-in-telegram-introduces-cross-chain-deposit-feature/",
-      "published_at": "2026-02-18T08:07:57Z",
-      "excerpt": "TON Wallet, integrated within the popular messaging platform Telegram, has launched a new feature supporting cross-chain deposits. This development enables users to transfer assets from multiple blockchain networks into…"
     }
   ]
 }
