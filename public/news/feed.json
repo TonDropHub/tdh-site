@@ -1,6 +1,13 @@
 {
-  "updated": "2026-02-28T14:02:42Z",
+  "updated": "2026-03-01T02:03:08Z",
   "items": [
+    {
+      "id": "650",
+      "title": "Toncoin Remains Steady Above $1.27 After Price Slides 15% This Month",
+      "url": "/news/650-toncoin-remains-steady-above-127-after-price-slides-15-this-month/",
+      "published_at": "2026-03-01T02:03:08Z",
+      "excerpt": "Toncoin has managed to maintain a price range between $1.27 and $1.32 even after posting a significant monthly decline. Over the past month, Toncoin’s value has fallen by around 15%, reflecting a turbulent period for the…"
+    },
     {
       "id": "644",
       "title": "TON Foundation Rolls Out TON Pay to Simplify Payments Across Its Ecosystem",
@@ -343,13 +350,6 @@
       "url": "/news/553-hamster-kombat-features-daily-combo-for-february-18-play-to-earn-updat/",
       "published_at": "2026-02-19T02:03:19Z",
       "excerpt": "Fans of Hamster Kombat continue to follow the Play to Earn campaign as the game releases its daily combo for February 18, 2026. The details of today's combo drop have not been confirmed, but many players are tracking the…"
-    },
-    {
-      "id": "549",
-      "title": "TON Foundation teams up with Banxa to boost stablecoin payments for Asia-Pacific merchants",
-      "url": "/news/549-ton-foundation-teams-up-with-banxa-to-boost-stablecoin-payments-for-as/",
-      "published_at": "2026-02-18T14:02:50Z",
-      "excerpt": "The TON Foundation is partnering with Banxa, a digital payments provider under OSL, to advance the use of stablecoins in the Asia-Pacific region. This collaboration aims to make it easier for merchants in the area to acc…"
     }
   ]
 }
