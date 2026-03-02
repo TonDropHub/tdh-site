@@ -1,6 +1,13 @@
 {
-  "updated": "2026-03-02T02:03:23Z",
+  "updated": "2026-03-02T05:03:10Z",
   "items": [
+    {
+      "id": "662",
+      "title": "Tezos, Toncoin, and Polkadot Face Pressure as Geopolitical Tensions Weigh on Market",
+      "url": "/news/662-tezos-toncoin-and-polkadot-face-pressure-as-geopolitical-tensions-weig/",
+      "published_at": "2026-03-02T05:03:10Z",
+      "excerpt": "Uncertainty has gripped cryptocurrency markets following recent reports of a U.S.-Israeli strike on Iran. This escalation in geopolitical tensions has coincided with notable price declines for several digital assets, inc…"
+    },
     {
       "id": "660",
       "title": "Hamster Kombat Daily Cipher Arrives for March 2, 2026",
@@ -343,13 +350,6 @@
       "url": "/news/571-hamster-kombat-daily-combo-offers-5-million-coins-on-february-20-2026/",
       "published_at": "2026-02-20T05:02:53Z",
       "excerpt": "Hamster Kombat enthusiasts have something to look forward to on February 20, 2026, as a special in-game event brings a massive pool of 5 million coins up for grabs. Players are reporting heightened activity as they rush…"
-    },
-    {
-      "id": "568",
-      "title": "Ton Blockchain Improves AppKit and Announces Toncoin Livestream on February 20",
-      "url": "/news/568-ton-blockchain-improves-appkit-and-announces-toncoin-livestream-on-feb/",
-      "published_at": "2026-02-20T02:03:35Z",
-      "excerpt": "The Ton blockchain ecosystem has rolled out an update to its AppKit, highlighting its ongoing commitment to enhancing developer tools. With this initiative, the platform seeks to streamline the app creation process and i…"
     }
   ]
 }
