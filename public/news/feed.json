@@ -1,6 +1,13 @@
 {
-  "updated": "2026-03-03T05:02:15Z",
+  "updated": "2026-03-03T08:02:24Z",
   "items": [
+    {
+      "id": "670",
+      "title": "AlphaTON Capital Adds Leading Engineers to Boost TON Platform Development",
+      "url": "/news/670-alphaton-capital-adds-leading-engineers-to-boost-ton-platform-developm/",
+      "published_at": "2026-03-03T08:02:24Z",
+      "excerpt": "AlphaTON Capital has brought new expertise into its ranks by bringing on several recognized developers from the TON blockchain ecosystem. This move is intended to reinforce the firm’s engineering team and to ramp up thei…"
+    },
     {
       "id": "668",
       "title": "AlphaTON Capital Expands Engineering Team With Noted TON Specialists Paschenko and Pfau",
@@ -343,13 +350,6 @@
       "url": "/news/582-telegram-eyes-expanded-use-of-ton-blockchain-for-tokenized-emojis-and/",
       "published_at": "2026-02-21T08:03:14Z",
       "excerpt": "Telegram has announced plans to deepen its integration with the TON blockchain, with a special focus on bringing tokenized emojis and stickers to its platform. This move signals the messaging service’s continued commitme…"
-    },
-    {
-      "id": "580",
-      "title": "AddTon Debuts AddLabs for TON-Based Smart Contract and App Development",
-      "url": "/news/580-addton-debuts-addlabs-for-ton-based-smart-contract-and-app-development/",
-      "published_at": "2026-02-21T05:02:31Z",
-      "excerpt": "AddTon has launched AddLabs, a development platform designed for building smart contracts and applications within the TON ecosystem. This new platform is aimed at both newcomers and experienced developers who want to exp…"
     }
   ]
 }
