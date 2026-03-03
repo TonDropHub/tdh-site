@@ -1,6 +1,13 @@
 {
-  "updated": "2026-03-03T02:04:21Z",
+  "updated": "2026-03-03T05:02:15Z",
   "items": [
+    {
+      "id": "668",
+      "title": "AlphaTON Capital Expands Engineering Team With Noted TON Specialists Paschenko and Pfau",
+      "url": "/news/668-alphaton-capital-expands-engineering-team-with-noted-ton-specialists-p/",
+      "published_at": "2026-03-03T05:02:15Z",
+      "excerpt": "AlphaTON Capital has made significant additions to its leadership, bringing on Aleksej Paschenko and Andrei Pfau to strengthen its technical capabilities within the TON ecosystem. Both Paschenko and Pfau are well known f…"
+    },
     {
       "id": "666",
       "title": "Notcoin (NOT) Price Outlook: What’s Ahead Through 2030?",
@@ -343,13 +350,6 @@
       "url": "/news/580-addton-debuts-addlabs-for-ton-based-smart-contract-and-app-development/",
       "published_at": "2026-02-21T05:02:31Z",
       "excerpt": "AddTon has launched AddLabs, a development platform designed for building smart contracts and applications within the TON ecosystem. This new platform is aimed at both newcomers and experienced developers who want to exp…"
-    },
-    {
-      "id": "577",
-      "title": "Toncoin Set for Discussion in Upcoming “Real Talk” Session on 20 February 2026",
-      "url": "/news/577-toncoin-set-for-discussion-in-upcoming-real-talk-session-on-20-februar/",
-      "published_at": "2026-02-21T02:02:43Z",
-      "excerpt": "Toncoin is about to take center stage in an upcoming discussion titled “Real Talk,” scheduled for 20 February 2026. This event is expected to provide insights or analysis related to Toncoin, a digital asset that continue…"
     }
   ]
 }
