@@ -1,6 +1,13 @@
 {
-  "updated": "2026-03-05T08:03:36Z",
+  "updated": "2026-03-05T11:07:52Z",
   "items": [
+    {
+      "id": "682",
+      "title": "Tracking Toncoin: Latest Price Index and Live Performance Update",
+      "url": "/news/682-tracking-toncoin-latest-price-index-and-live-performance-update/",
+      "published_at": "2026-03-05T11:07:52Z",
+      "excerpt": "Toncoin, the native asset of The Open Network (TON), continues to attract attention from crypto enthusiasts. Its value is closely watched through leading price indexes, with investors monitoring its ongoing performance a…"
+    },
     {
       "id": "689",
       "title": "Tapswap, Bitcoin, and Ethereum: What to Know for 2026",
@@ -343,13 +350,6 @@
       "url": "/news/576-the-open-network-looks-to-one-billion-users-for-web3-growth/",
       "published_at": "2026-02-23T14:07:08Z",
       "excerpt": "The Open Network (TON) is aiming to drive Web3 adoption by making its ecosystem accessible to a worldwide audience. Leveraging its extensive user base, the project hopes to accelerate the next phase of internet developme…"
-    },
-    {
-      "id": "593",
-      "title": "Last 100 Million BlockDAG Tokens Set to Release Before March 4 Spot Trading",
-      "url": "/news/593-last-100-million-blockdag-tokens-set-to-release-before-march-4-spot-tr/",
-      "published_at": "2026-02-23T11:03:26Z",
-      "excerpt": "Interest in the BlockDAG project has soared, especially among investors who previously backed Toncoin and Chainlink. The much-anticipated final allocation of 100 million BlockDAG tokens is about to be released, drawing s…"
     }
   ]
 }
