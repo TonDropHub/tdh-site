@@ -12,7 +12,7 @@
 
   const STORAGE_KEY = "tdh_theme";
   const THEMES = new Set(["dark", "light"]);
-  const TURNSTILE_SITE_KEY = "0x4AAAAAAACnRNq6e1LBwnNt9";
+  const TURNSTILE_SITE_KEY = "0x4AAAAAACnRNq6elLBwnNt9_";
 
   let turnstileWidgetId = null;
   let turnstileScriptPromise = null;
