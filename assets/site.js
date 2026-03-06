@@ -1,492 +1,547 @@
-:root{
-  --bg:#0b1020;
-  --fg:#e9edff;
-  --muted:rgba(233,237,255,.74);
-  --muted2:rgba(233,237,255,.62);
-  --nav-bg:rgba(255,255,255,.04);
-  --nav-border:rgba(255,255,255,.10);
-  --card-bg:rgba(255,255,255,.06);
-  --card-border:rgba(255,255,255,.10);
-  --pill-bg:rgba(255,255,255,.06);
-  --pill-border:rgba(255,255,255,.12);
-  --input-bg:rgba(255,255,255,.05);
-  --input-border:rgba(255,255,255,.12);
-  --input-focus:rgba(0,200,255,.55);
-  --comment-bg:rgba(255,255,255,.05);
-  --comment-border:rgba(255,255,255,.09);
-  --success-bg:rgba(29,185,84,.14);
-  --success-border:rgba(29,185,84,.28);
-  --success-text:#89efad;
-  --error-bg:rgba(255,96,96,.14);
-  --error-border:rgba(255,96,96,.26);
-  --error-text:#ff9d9d;
-  --shadow:0 16px 50px rgba(0,0,0,.35);
-  --shadow-soft:0 10px 30px rgba(0,0,0,.28);
-  --accent1:#00c8ff;
-  --accent2:#0090f0;
-}
+/* TDH /assets/site.js (v10)
+   - Theme system
+   - Brand normalization
+   - Global comments system
+   - Cloudflare Turnstile support
+   - Safe inline comment styles (independent from style.css)
+*/
 
-*{box-sizing:border-box}
+(() => {
+  "use strict";
 
-html,body{margin:0;padding:0}
+  const STORAGE_KEY = "tdh_theme";
+  const THEMES = new Set(["dark", "light"]);
+  const TURNSTILE_SITE_KEY = "0x4AAAAAAACnLNwW5Yhqq0C3_";
+  let turnstileWidgetId = null;
 
-body{
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
-  background:
-    radial-gradient(1200px 800px at 20% 10%, rgba(54,194,255,.16), transparent 60%),
-    radial-gradient(1000px 700px at 90% 30%, rgba(124,92,255,.14), transparent 55%),
-    #0b1020;
-  color:var(--fg);
-  line-height:1.45;
-}
-
-a{color:inherit;text-decoration:none}
-
-.container{max-width:1100px;margin:0 auto;padding:26px 18px 48px}
-
-.nav{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:12px 14px;border-radius:18px;
-  background:var(--nav-bg);
-  border:1px solid var(--nav-border);
-  backdrop-filter: blur(10px);
-  box-shadow:var(--shadow-soft);
-}
-
-.nav .left{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.nav .right{display:flex;align-items:center;gap:10px;flex-shrink:0}
-
-.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
-.brand-logo{
-  width:28px;height:28px;border-radius:8px;
-  object-fit:contain;
-  background:transparent;
-  border:1px solid rgba(255,255,255,.10);
-}
-
-.wordmark{display:flex;align-items:baseline;gap:6px;font-weight:900}
-.wordmark .ton{color:#fff}
-
-.wordmark .drop{
-  background:linear-gradient(90deg,var(--accent1),var(--accent2));
-  -webkit-background-clip:text;background-clip:text;
-  -webkit-text-fill-color:transparent;color:transparent;
-}
-.wordmark .hub{
-  background:linear-gradient(90deg,var(--accent2),var(--accent1));
-  -webkit-background-clip:text;background-clip:text;
-  -webkit-text-fill-color:transparent;color:transparent;
-}
-
-.pills{display:flex;gap:8px;flex-wrap:wrap}
-.pill{
-  padding:7px 10px;border-radius:999px;
-  background:var(--pill-bg);
-  border:1px solid var(--pill-border);
-  font-weight:600;font-size:13px;
-}
-
-.pill:hover{filter:brightness(1.1)}
-
-.badge{
-  padding:6px 10px;border-radius:999px;
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.10);
-  font-weight:700;font-size:12px;opacity:.95
-}
-
-.hero{margin-top:28px}
-.h1{font-size:56px;line-height:1.05;margin:0 0 14px}
-.sub{max-width:780px;color:var(--muted);font-size:15px;margin:0}
-
-.grid{display:grid;gap:14px}
-.grid-4{grid-template-columns:repeat(4,1fr)}
-@media (max-width:1060px){
-  .grid-4{grid-template-columns:repeat(2,1fr)}
-  .h1{font-size:44px}
-}
-@media (max-width:560px){
-  .grid-4{grid-template-columns:1fr}
-  .h1{font-size:36px}
-}
-
-.card{
-  border-radius:18px;
-  padding:16px 16px 14px;
-  background:var(--card-bg);
-  border:1px solid var(--card-border);
-  box-shadow:var(--shadow-soft);
-  min-height:160px;
-}
-
-.card h2{font-size:20px;margin:0}
-
-.meta{color:var(--muted2);font-size:12px;letter-spacing:.6px;text-transform:uppercase}
-
-.excerpt{margin:0;color:var(--muted);font-size:14px;max-height:5.2em;overflow:hidden}
-
-.btnrow{margin-top:12px}
-.link-title{color:var(--fg)}
-
-.footer{margin-top:26px;color:var(--muted2);font-size:12px}
-
-/* ARTICLE */
-.article{
-  max-width:900px;
-  margin:22px auto 0;
-}
-
-.article h1{
-  margin:18px 0 0;
-  font-size:56px;
-  line-height:1.12;
-  letter-spacing:-0.02em;
-}
-
-.article .meta{
-  margin-bottom:10px;
-}
-
-.article .hr{
-  width:100%;
-  height:1px;
-  margin:18px 0 26px;
-  background:linear-gradient(90deg, rgba(255,255,255,.18), rgba(255,255,255,.05));
-  border:0;
-}
-
-.article p,
-.article li{
-  margin:0 0 22px;
-  font-size:18px;
-  line-height:1.78;
-  color:var(--fg);
-  text-align:justify;
-  text-justify:inter-word;
-  hyphens:auto;
-}
-
-.article p:last-child,
-.article li:last-child{
-  margin-bottom:0;
-}
-
-.article ul,
-.article ol{
-  margin:0 0 22px 1.4em;
-  padding:0;
-}
-
-.article strong{
-  color:#ffffff;
-}
-
-.article a{
-  color:var(--accent1);
-  text-decoration:underline;
-  text-underline-offset:3px;
-}
-
-/* COMMENTS */
-.comments{
-  margin-top:42px;
-  padding:22px;
-  border-radius:22px;
-  background:linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.035));
-  border:1px solid rgba(255,255,255,.10);
-  box-shadow:var(--shadow-soft);
-}
-
-.comments h3{
-  margin:0 0 18px;
-  font-size:28px;
-  line-height:1.1;
-  letter-spacing:-0.02em;
-}
-
-#comments-list{
-  display:grid;
-  gap:14px;
-  margin-bottom:18px;
-}
-
-.comment{
-  padding:16px 18px;
-  border-radius:18px;
-  background:var(--comment-bg);
-  border:1px solid var(--comment-border);
-  box-shadow:0 8px 22px rgba(0,0,0,.18);
-}
-
-.comment-author{
-  margin:0 0 8px;
-  font-size:14px;
-  font-weight:800;
-  letter-spacing:.02em;
-  color:#ffffff;
-}
-
-.comment-text{
-  font-size:15px;
-  line-height:1.7;
-  color:var(--muted);
-  white-space:pre-wrap;
-  word-break:break-word;
-}
-
-.comment-form{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:12px;
-  margin-top:18px;
-}
-
-.comment-form input,
-.comment-form textarea{
-  width:100%;
-  display:block;
-  padding:14px 16px;
-  border-radius:16px;
-  border:1px solid var(--input-border);
-  background:var(--input-bg);
-  color:var(--fg);
-  font:inherit;
-  outline:none;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.03);
-  transition:border-color .18s ease, box-shadow .18s ease, background .18s ease, transform .18s ease;
-}
-
-.comment-form input::placeholder,
-.comment-form textarea::placeholder{
-  color:var(--muted2);
-}
-
-.comment-form input:focus,
-.comment-form textarea:focus{
-  border-color:var(--input-focus);
-  box-shadow:0 0 0 4px rgba(0,200,255,.10);
-  background:rgba(255,255,255,.07);
-}
-
-.comment-form textarea{
-  min-height:136px;
-  resize:vertical;
-}
-
-#turnstile-container{
-  min-height:66px;
-  display:flex;
-  align-items:center;
-  justify-content:flex-start;
-}
-
-.comment-status{
-  display:none;
-  padding:12px 14px;
-  border-radius:14px;
-  font-size:14px;
-  line-height:1.5;
-  border:1px solid transparent;
-}
-
-.comment-status.success,
-.comment-status.error{
-  display:block;
-}
-
-.comment-status.success{
-  background:var(--success-bg);
-  border-color:var(--success-border);
-  color:var(--success-text);
-}
-
-.comment-status.error{
-  background:var(--error-bg);
-  border-color:var(--error-border);
-  color:var(--error-text);
-}
-
-#comment-submit{
-  width:fit-content;
-  min-width:170px;
-  padding:13px 18px;
-  border-radius:999px;
-  border:1px solid rgba(0,200,255,.28);
-  background:linear-gradient(135deg, rgba(0,200,255,.18), rgba(0,144,240,.22));
-  color:#f5fbff;
-  font:inherit;
-  font-weight:800;
-  letter-spacing:.01em;
-  cursor:pointer;
-  box-shadow:0 10px 24px rgba(0,120,255,.18);
-  transition:transform .18s ease, filter .18s ease, box-shadow .18s ease;
-}
-
-#comment-submit:hover{
-  filter:brightness(1.08);
-  transform:translateY(-1px);
-  box-shadow:0 14px 28px rgba(0,120,255,.22);
-}
-
-#comment-submit:active{
-  transform:translateY(0);
-}
-
-#comment-submit:disabled{
-  opacity:.65;
-  cursor:not-allowed;
-  transform:none;
-  box-shadow:none;
-}
-
-.comments p{
-  margin:0;
-}
-
-/* Theme toggle */
-.theme-toggle{
-  display:inline-flex;align-items:center;justify-content:center;
-  width:38px;height:34px;
-  border-radius:999px;
-  background:var(--pill-bg);
-  border:1px solid var(--pill-border);
-  cursor:pointer;
-  box-shadow:none;
-}
-.theme-toggle:hover{filter:brightness(1.1)}
-.theme-toggle:active{transform:translateY(1px)}
-.theme-toggle .icon{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-html[data-theme="dark"] .theme-toggle .icon-moon{display:none}
-html[data-theme="light"] .theme-toggle .icon-sun{display:none}
-
-/* LIGHT THEME OVERRIDES */
-html[data-theme="light"] body{
-  background:
-    radial-gradient(1200px 800px at 20% 10%, rgba(0,144,240,.12), transparent 60%),
-    radial-gradient(1000px 700px at 90% 30%, rgba(0,200,255,.10), transparent 55%),
-    #f5f7ff;
-  color:#0b1020;
-}
-html[data-theme="light"] .wordmark .ton{color:#0b1020}
-html[data-theme="light"] .brand-logo{border-color:rgba(0,0,0,.10)}
-html[data-theme="light"] .nav{background:rgba(0,0,0,.03);border-color:rgba(0,0,0,.08);box-shadow:0 10px 30px rgba(0,0,0,.10)}
-html[data-theme="light"] .pill{background:rgba(0,0,0,.04);border-color:rgba(0,0,0,.10);color:#0b1020}
-html[data-theme="light"] .badge{background:rgba(0,0,0,.05);border-color:rgba(0,0,0,.10);color:#0b1020}
-html[data-theme="light"] .card{background:rgba(0,0,0,.03);border-color:rgba(0,0,0,.08);box-shadow:0 10px 30px rgba(0,0,0,.10)}
-html[data-theme="light"] .meta{color:rgba(0,0,0,.58)}
-html[data-theme="light"] .sub,
-html[data-theme="light"] .excerpt{color:rgba(0,0,0,.74)}
-html[data-theme="light"] .footer{color:rgba(0,0,0,.60)}
-html[data-theme="light"] .article p,
-html[data-theme="light"] .article li{color:#1b2440}
-html[data-theme="light"] .article strong{color:#0b1020}
-html[data-theme="light"] .article .hr{background:linear-gradient(90deg, rgba(0,0,0,.18), rgba(0,0,0,.05))}
-html[data-theme="light"] .comments{
-  background:linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.72));
-  border-color:rgba(0,0,0,.08);
-  box-shadow:0 10px 30px rgba(0,0,0,.10);
-}
-html[data-theme="light"] .comment{
-  background:rgba(0,0,0,.025);
-  border-color:rgba(0,0,0,.07);
-  box-shadow:none;
-}
-html[data-theme="light"] .comment-author{color:#0b1020}
-html[data-theme="light"] .comment-text{color:rgba(0,0,0,.76)}
-html[data-theme="light"] .comment-form input,
-html[data-theme="light"] .comment-form textarea{
-  background:#ffffff;
-  border-color:rgba(0,0,0,.10);
-  color:#0b1020;
-}
-html[data-theme="light"] .comment-form input::placeholder,
-html[data-theme="light"] .comment-form textarea::placeholder{
-  color:rgba(0,0,0,.48);
-}
-html[data-theme="light"] .comment-form input:focus,
-html[data-theme="light"] .comment-form textarea:focus{
-  background:#ffffff;
-  box-shadow:0 0 0 4px rgba(0,144,240,.10);
-}
-html[data-theme="light"] #comment-submit{
-  color:#ffffff;
-  box-shadow:0 10px 24px rgba(0,120,255,.16);
-}
-
-@media (max-width:900px){
-  .article h1{
-    font-size:44px;
+  function getSavedTheme() {
+    try {
+      const t = localStorage.getItem(STORAGE_KEY);
+      return (t && THEMES.has(t)) ? t : null;
+    } catch {
+      return null;
+    }
   }
 
-  .article p,
-  .article li{
-    font-size:17px;
-    line-height:1.72;
-  }
-}
-
-@media (max-width:640px){
-  .container{
-    padding:20px 16px 40px;
-  }
-
-  .nav{
-    padding:10px 12px;
+  function getSystemTheme() {
+    try {
+      return window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+    } catch {
+      return "dark";
+    }
   }
 
-  .article{
-    margin-top:18px;
+  function currentTheme() {
+    const attr = document.documentElement.getAttribute("data-theme");
+    return (attr && THEMES.has(attr)) ? attr : null;
   }
 
-  .article h1{
-    font-size:34px;
-    line-height:1.16;
+  function setTheme(theme) {
+    if (!THEMES.has(theme)) theme = "dark";
+    document.documentElement.setAttribute("data-theme", theme);
+    try { localStorage.setItem(STORAGE_KEY, theme); } catch {}
   }
 
-  .article .hr{
-    margin:14px 0 20px;
+  function toggleTheme() {
+    const t = currentTheme() || getSavedTheme() || getSystemTheme();
+    setTheme(t === "dark" ? "light" : "dark");
   }
 
-  .article p,
-  .article li{
-    font-size:16px;
-    line-height:1.68;
-    text-align:left;
-    hyphens:none;
+  function ensureThemeToggle(nav) {
+    let right = nav.querySelector(".right");
+    if (!right) {
+      right = document.createElement("div");
+      right.className = "right";
+      nav.appendChild(right);
+    }
+
+    let btn = nav.querySelector("#theme-toggle");
+    if (!btn) {
+      btn = document.createElement("button");
+      btn.id = "theme-toggle";
+      btn.type = "button";
+      btn.className = "theme-toggle";
+      btn.setAttribute("aria-label", "Toggle theme");
+      btn.setAttribute("title", "Toggle theme");
+
+      btn.innerHTML = `
+        <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <line x1="12" y1="2" x2="12" y2="5"></line>
+          <line x1="12" y1="19" x2="12" y2="22"></line>
+          <line x1="2" y1="12" x2="5" y2="12"></line>
+          <line x1="19" y1="12" x2="22" y2="12"></line>
+          <line x1="4.2" y1="4.2" x2="6.3" y2="6.3"></line>
+          <line x1="17.7" y1="17.7" x2="19.8" y2="19.8"></line>
+          <line x1="17.7" y1="6.3" x2="19.8" y2="4.2"></line>
+          <line x1="4.2" y1="19.8" x2="6.3" y2="17.7"></line>
+        </svg>
+        <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 12.8A8.5 8.5 0 0 1 11.2 3 7 7 0 1 0 21 12.8z"></path>
+        </svg>
+      `.trim();
+
+      const badge = nav.querySelector(".badge");
+      if (badge && badge.parentElement === right) {
+        right.insertBefore(btn, badge);
+      } else {
+        right.insertBefore(btn, right.firstChild);
+      }
+    }
+
+    if (!btn.dataset.bound) {
+      btn.addEventListener("click", toggleTheme);
+      btn.dataset.bound = "1";
+    }
   }
 
-  .comments{
-    margin-top:32px;
-    padding:18px;
-    border-radius:18px;
+  function decorateBrand(nav) {
+    const candidates = Array.from(
+      nav.querySelectorAll("a.brand, a[href='/'], a[href=\"/\"]")
+    );
+    if (!candidates.length) return;
+
+    const brand = candidates[0];
+    brand.classList.add("brand");
+    brand.setAttribute("href", "/");
+
+    for (let i = 1; i < candidates.length; i++) {
+      const dup = candidates[i];
+      const href = (dup.getAttribute("href") || "").trim();
+      if (href === "/") dup.remove();
+    }
+
+    if (brand.querySelector(".wordmark")) return;
+
+    brand.innerHTML = `
+      <img class="brand-logo" src="/assets/logo.png" alt="TON Drop Hub" loading="eager" />
+      <span class="wordmark">
+        <span class="ton">TON</span><span class="drop">DROP</span><span class="hub">HUB</span>
+      </span>
+    `.trim();
   }
 
-  .comments h3{
-    font-size:24px;
-    margin-bottom:14px;
+  function initTheme() {
+    const t = getSavedTheme() || currentTheme() || getSystemTheme();
+    document.documentElement.setAttribute("data-theme", t);
+
+    const nav = document.querySelector(".nav");
+    if (nav) {
+      decorateBrand(nav);
+      ensureThemeToggle(nav);
+    }
   }
 
-  .comment{
-    padding:14px 14px;
-    border-radius:16px;
+  function injectCommentStyles() {
+    if (document.getElementById("tdh-comments-inline-style")) return;
+
+    const style = document.createElement("style");
+    style.id = "tdh-comments-inline-style";
+    style.textContent = `
+      #comments-root{
+        margin-top:36px;
+        margin-bottom:24px;
+        padding:22px;
+        border-radius:22px;
+        background:rgba(255,255,255,.05);
+        border:1px solid rgba(255,255,255,.10);
+        box-shadow:0 12px 32px rgba(0,0,0,.22);
+      }
+      #comments-root h3{
+        margin:0 0 14px;
+        font-size:30px;
+        line-height:1.1;
+        color:#fff;
+      }
+      #comments-list{
+        display:grid;
+        gap:12px;
+        margin:0 0 14px;
+      }
+      #comments-list p{
+        margin:0;
+        color:rgba(255,255,255,.80);
+      }
+      #comments-root .comment{
+        padding:14px 16px;
+        border-radius:16px;
+        background:rgba(255,255,255,.045);
+        border:1px solid rgba(255,255,255,.08);
+      }
+      #comments-root .comment-author{
+        margin:0 0 8px;
+        font-weight:800;
+        font-size:14px;
+        color:#fff;
+      }
+      #comments-root .comment-text{
+        font-size:15px;
+        line-height:1.65;
+        color:rgba(255,255,255,.84);
+        white-space:pre-wrap;
+        word-break:break-word;
+      }
+      #comments-root .comment-form{
+        display:grid;
+        gap:12px;
+      }
+      #comments-root .comment-row{
+        display:grid;
+        grid-template-columns:220px 1fr;
+        gap:12px;
+      }
+      #comments-root input,
+      #comments-root textarea{
+        width:100%;
+        display:block;
+        margin:0;
+        padding:14px 16px;
+        border-radius:16px;
+        border:1px solid rgba(255,255,255,.12);
+        background:rgba(255,255,255,.06);
+        color:#fff;
+        outline:none;
+        font:inherit;
+      }
+      #comments-root input::placeholder,
+      #comments-root textarea::placeholder{
+        color:rgba(255,255,255,.55);
+      }
+      #comments-root input:focus,
+      #comments-root textarea:focus{
+        border-color:rgba(0,200,255,.55);
+        box-shadow:0 0 0 4px rgba(0,200,255,.10);
+        background:rgba(255,255,255,.08);
+      }
+      #comments-root textarea{
+        min-height:130px;
+        resize:vertical;
+      }
+      #turnstile-container{
+        min-height:66px;
+        display:flex;
+        align-items:center;
+        justify-content:flex-start;
+      }
+      #comment-submit{
+        width:fit-content;
+        min-width:170px;
+        padding:13px 18px;
+        border:none;
+        border-radius:999px;
+        background:linear-gradient(135deg, rgba(0,200,255,.92), rgba(0,144,240,.92));
+        color:#fff;
+        font:inherit;
+        font-weight:800;
+        cursor:pointer;
+        box-shadow:0 10px 24px rgba(0,120,255,.24);
+      }
+      #comment-submit:hover{filter:brightness(1.08)}
+      #comment-submit:disabled{opacity:.65;cursor:not-allowed}
+      #comment-status{
+        display:none;
+        padding:12px 14px;
+        border-radius:14px;
+        font-size:14px;
+      }
+      #comment-status.success,
+      #comment-status.error{
+        display:block;
+      }
+      #comment-status.success{
+        background:rgba(29,185,84,.14);
+        border:1px solid rgba(29,185,84,.30);
+        color:#8df0b0;
+      }
+      #comment-status.error{
+        background:rgba(255,96,96,.14);
+        border:1px solid rgba(255,96,96,.28);
+        color:#ffadad;
+      }
+      html[data-theme="light"] #comments-root{
+        background:rgba(255,255,255,.86);
+        border:1px solid rgba(0,0,0,.08);
+        box-shadow:0 12px 32px rgba(0,0,0,.10);
+      }
+      html[data-theme="light"] #comments-root h3,
+      html[data-theme="light"] #comments-root .comment-author{
+        color:#0b1020;
+      }
+      html[data-theme="light"] #comments-list p,
+      html[data-theme="light"] #comments-root .comment-text{
+        color:rgba(0,0,0,.78);
+      }
+      html[data-theme="light"] #comments-root .comment{
+        background:rgba(0,0,0,.03);
+        border-color:rgba(0,0,0,.07);
+      }
+      html[data-theme="light"] #comments-root input,
+      html[data-theme="light"] #comments-root textarea{
+        background:#fff;
+        border-color:rgba(0,0,0,.10);
+        color:#0b1020;
+      }
+      html[data-theme="light"] #comments-root input::placeholder,
+      html[data-theme="light"] #comments-root textarea::placeholder{
+        color:rgba(0,0,0,.45);
+      }
+      @media (max-width:640px){
+        #comments-root{
+          padding:18px;
+          border-radius:18px;
+        }
+        #comments-root h3{
+          font-size:24px;
+        }
+        #comments-root .comment-row{
+          grid-template-columns:1fr;
+        }
+        #comment-submit{
+          width:100%;
+        }
+      }
+    `;
+    document.head.appendChild(style);
   }
 
-  .comment-form{
-    gap:10px;
+  function escapeHtml(text) {
+    return String(text || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
   }
 
-  .comment-form input,
-  .comment-form textarea{
-    padding:13px 14px;
-    border-radius:14px;
+  function articleSlug() {
+    return window.location.pathname;
   }
 
-  .comment-form textarea{
-    min-height:120px;
+  function ensureTurnstileScript() {
+    return new Promise((resolve, reject) => {
+      if (window.turnstile) {
+        resolve();
+        return;
+      }
+
+      const existing = document.querySelector('script[data-turnstile-script="1"]');
+      if (existing) {
+        existing.addEventListener("load", () => resolve(), { once: true });
+        existing.addEventListener("error", () => reject(new Error("Turnstile script failed")), { once: true });
+        return;
+      }
+
+      const script = document.createElement("script");
+      script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+      script.async = true;
+      script.defer = true;
+      script.dataset.turnstileScript = "1";
+      script.onload = () => resolve();
+      script.onerror = () => reject(new Error("Turnstile script failed"));
+      document.head.appendChild(script);
+    });
   }
 
-  #comment-submit{
-    width:100%;
-    justify-content:center;
+  async function renderTurnstile() {
+    const target = document.getElementById("turnstile-container");
+    if (!target) return;
+
+    try {
+      await ensureTurnstileScript();
+
+      if (!window.turnstile) return;
+
+      if (turnstileWidgetId !== null) {
+        try { window.turnstile.remove(turnstileWidgetId); } catch {}
+        turnstileWidgetId = null;
+      }
+
+      target.innerHTML = "";
+
+      turnstileWidgetId = window.turnstile.render(target, {
+        sitekey: TURNSTILE_SITE_KEY,
+        theme: "auto"
+      });
+    } catch (err) {
+      console.error("Turnstile error:", err);
+      target.innerHTML = `<p class="comment-status error">Captcha failed to load.</p>`;
+    }
   }
-}
+
+  async function loadComments() {
+    const list = document.getElementById("comments-list");
+    if (!list) return;
+
+    try {
+      const res = await fetch("/api/comments?slug=" + encodeURIComponent(articleSlug()));
+      const data = await res.json();
+
+      if (!Array.isArray(data) || !data.length) {
+        list.innerHTML = "<p>No comments yet.</p>";
+        return;
+      }
+
+      list.innerHTML = data.map((c) => `
+        <div class="comment">
+          <div class="comment-author">${escapeHtml(c.author)}</div>
+          <div class="comment-text">${escapeHtml(c.comment)}</div>
+        </div>
+      `).join("");
+    } catch (err) {
+      console.error("Failed to load comments:", err);
+      list.innerHTML = "<p>Failed to load comments.</p>";
+    }
+  }
+
+  async function submitComment() {
+    const nameInput = document.getElementById("comment-name");
+    const textInput = document.getElementById("comment-text");
+    const statusBox = document.getElementById("comment-status");
+    const submitBtn = document.getElementById("comment-submit");
+
+    if (!nameInput || !textInput || !statusBox || !submitBtn) return;
+
+    const author = nameInput.value.trim();
+    const comment = textInput.value.trim();
+
+    statusBox.textContent = "";
+    statusBox.className = "";
+    submitBtn.disabled = true;
+
+    if (!author || !comment) {
+      statusBox.textContent = "Fill all fields.";
+      statusBox.className = "error";
+      submitBtn.disabled = false;
+      return;
+    }
+
+    let turnstileToken = "";
+
+    try {
+      if (window.turnstile && turnstileWidgetId !== null) {
+        turnstileToken = window.turnstile.getResponse(turnstileWidgetId) || "";
+      }
+    } catch {}
+
+    if (!turnstileToken) {
+      statusBox.textContent = "Complete captcha first.";
+      statusBox.className = "error";
+      submitBtn.disabled = false;
+      return;
+    }
+
+    try {
+      const res = await fetch("/api/comments", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json"
+        },
+        body: JSON.stringify({
+          slug: articleSlug(),
+          author,
+          comment,
+          turnstileToken
+        })
+      });
+
+      const data = await res.json();
+
+      if (res.status === 429) {
+        statusBox.textContent = data.message || "Too many requests. Please wait.";
+        statusBox.className = "error";
+        await renderTurnstile();
+        submitBtn.disabled = false;
+        return;
+      }
+
+      if (res.status === 403) {
+        statusBox.textContent = "Captcha verification failed.";
+        statusBox.className = "error";
+        await renderTurnstile();
+        submitBtn.disabled = false;
+        return;
+      }
+
+      if (!res.ok) {
+        statusBox.textContent = data.message || data.error || "Error posting comment.";
+        statusBox.className = "error";
+        await renderTurnstile();
+        submitBtn.disabled = false;
+        return;
+      }
+
+      if (data.status === "pending") {
+        statusBox.textContent = data.message || "Your comment was sent for moderation.";
+        statusBox.className = "success";
+      } else {
+        statusBox.textContent = "Comment posted successfully.";
+        statusBox.className = "success";
+      }
+
+      textInput.value = "";
+      await loadComments();
+      await renderTurnstile();
+      submitBtn.disabled = false;
+    } catch (err) {
+      console.error("Failed to post comment:", err);
+      statusBox.textContent = "Network error. Try again.";
+      statusBox.className = "error";
+      await renderTurnstile();
+      submitBtn.disabled = false;
+    }
+  }
+
+  async function initComments() {
+    const article =
+      document.querySelector(".article") ||
+      document.querySelector("article");
+
+    if (!article) return;
+    if (document.getElementById("comments-root")) return;
+
+    injectCommentStyles();
+
+    const container = document.createElement("div");
+    container.id = "comments-root";
+
+    container.innerHTML = `
+      <h3>Comments</h3>
+      <div id="comments-list"></div>
+
+      <div class="comment-form">
+        <div class="comment-row">
+          <input id="comment-name" type="text" maxlength="40" placeholder="Your name" />
+          <textarea id="comment-text" maxlength="500" placeholder="Write a comment"></textarea>
+        </div>
+        <div id="turnstile-container"></div>
+        <div id="comment-status"></div>
+        <button id="comment-submit" type="button">Post Comment</button>
+      </div>
+    `;
+
+    article.appendChild(container);
+
+    const submitBtn = document.getElementById("comment-submit");
+    if (submitBtn && !submitBtn.dataset.bound) {
+      submitBtn.addEventListener("click", submitComment);
+      submitBtn.dataset.bound = "1";
+    }
+
+    await loadComments();
+    await renderTurnstile();
+  }
+
+  async function init() {
+    initTheme();
+    await initComments();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => {
+      init().catch((err) => console.error("Init error:", err));
+    });
+  } else {
+    init().catch((err) => console.error("Init error:", err));
+  }
+})();
