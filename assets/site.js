@@ -1,4 +1,4 @@
-/* TDH /assets/site.js (v11)
+/* TDH /assets/site.js (v12)
    - Theme system
    - Brand normalization
    - Global comments system
@@ -12,7 +12,7 @@
 
   const STORAGE_KEY = "tdh_theme";
   const THEMES = new Set(["dark", "light"]);
-  const TURNSTILE_SITE_KEY = "0x4AAAAAACnRNq6elLBwnNt9";
+  const TURNSTILE_SITE_KEY = "0x4AAAAAAAACnRnQ6e1LBwnNt9";
 
   let turnstileWidgetId = null;
   let turnstileScriptPromise = null;
@@ -62,6 +62,16 @@
       nav.appendChild(right);
     }
 
+    let badge = nav.querySelector(".badge");
+    if (!badge) {
+      badge = document.createElement("span");
+      badge.className = "badge";
+      badge.textContent = "MVP";
+    }
+    if (badge.parentElement !== right) {
+      right.appendChild(badge);
+    }
+
     let btn = nav.querySelector("#theme-toggle");
     if (!btn) {
       btn = document.createElement("button");
@@ -88,12 +98,9 @@
         </svg>
       `.trim();
 
-      const badge = nav.querySelector(".badge");
-      if (badge && badge.parentElement === right) {
-        right.insertBefore(btn, badge);
-      } else {
-        right.insertBefore(btn, right.firstChild);
-      }
+      right.insertBefore(btn, badge);
+    } else if (btn.parentElement !== right) {
+      right.insertBefore(btn, badge);
     }
 
     if (!btn.dataset.bound) {
@@ -104,13 +111,15 @@
 
   function decorateBrand(nav) {
     const candidates = Array.from(
-      nav.querySelectorAll("a.brand, a[href='/'], a[href=\"/\"]")
+      nav.querySelectorAll(`a.brand, a[href="/"]`)
     );
     if (!candidates.length) return;
 
     const brand = candidates[0];
     brand.classList.add("brand");
     brand.setAttribute("href", "/");
+    brand.setAttribute("aria-label", "TON Drop Hub home");
+    brand.setAttribute("title", "TON Drop Hub home");
 
     for (let i = 1; i < candidates.length; i++) {
       const dup = candidates[i];
@@ -118,13 +127,8 @@
       if (href === "/") dup.remove();
     }
 
-    if (brand.querySelector(".wordmark")) return;
-
     brand.innerHTML = `
       <img class="brand-logo" src="/assets/logo.png" alt="TON Drop Hub" loading="eager" />
-      <span class="wordmark">
-        <span class="ton">TON</span><span class="drop">DROP</span><span class="hub">HUB</span>
-      </span>
     `.trim();
   }
 
