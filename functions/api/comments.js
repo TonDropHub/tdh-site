@@ -2,7 +2,7 @@ export async function onRequest(context) {
   const { request, env } = context;
   const url = new URL(request.url);
 
-  const TURNSTILE_SECRET = "ВСТАВЬ_СЮДА_SECRET_KEY";
+  const TURNSTILE_SECRET = "0x4AAAAAACnLNk4N_2DQdXoe5Q-eVYKzyTg";
 
   function json(data, status = 200) {
     return new Response(JSON.stringify(data), {
