@@ -57,6 +57,89 @@
   </script>
 
   <link rel="stylesheet" href="/assets/style.css" />
+  <style>
+    /* Header brand cleanup: logo only, centered nav, larger clickable logo */
+    .nav .left {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      padding: 6px;
+      border-radius: 18px;
+      text-decoration: none;
+      transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease, border-color .18s ease;
+      will-change: transform;
+    }
+
+    .brand-logo {
+      display: block;
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      border-radius: 16px;
+    }
+
+    .brand:hover,
+    .brand:focus-visible {
+      transform: translateY(-1px) scale(1.03);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22), 0 0 0 1px rgba(102, 179, 255, 0.18);
+      background: rgba(255, 255, 255, 0.06);
+      outline: none;
+    }
+
+    .brand:active {
+      transform: translateY(0) scale(0.99);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+    }
+
+    .wordmark {
+      display: none !important;
+    }
+
+    .pills {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1 1 auto;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    @media (max-width: 900px) {
+      .nav .left {
+        gap: 14px;
+      }
+
+      .brand-logo {
+        width: 52px;
+        height: 52px;
+      }
+
+      .pills {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .brand {
+        padding: 4px;
+      }
+
+      .brand-logo {
+        width: 46px;
+        height: 46px;
+        border-radius: 14px;
+      }
+    }
+  </style>
   <script src="/assets/site.js" defer></script>
   <script src="/assets/home.js" defer></script>
 </head>
@@ -65,13 +148,8 @@
     <div class="nav">
       <div class="left">
         <!-- IMPORTANT: Cloudflare Pages is case-sensitive. Put the file exactly as /assets/logo.png -->
-        <a class="brand" href="/">
+        <a class="brand" href="/" aria-label="Go to homepage">
           <img class="brand-logo" src="/assets/logo.png" alt="TON Drop Hub" />
-          <span class="wordmark">
-            <span class="ton">TON</span>
-            <span class="drop">DROP</span>
-            <span class="hub">HUB</span>
-          </span>
         </a>
 
         <div class="pills">
