@@ -1,8 +1,9 @@
-/* TDH /assets/site.js (v10)
+/* TDH /assets/site.js (v11)
    - Theme system
    - Brand normalization
    - Global comments system
    - Cloudflare Turnstile support
+   - Safer Turnstile init / re-render flow
    - Safe inline comment styles (independent from style.css)
 */
 
@@ -12,7 +13,10 @@
   const STORAGE_KEY = "tdh_theme";
   const THEMES = new Set(["dark", "light"]);
   const TURNSTILE_SITE_KEY = "0x4AAAAAAACnLNuwVSYhq0C3_";
+
   let turnstileWidgetId = null;
+  let turnstileScriptPromise = null;
+  let turnstileRenderPromise = null;
 
   function getSavedTheme() {
     try {
@@ -311,21 +315,42 @@
     return String(text || "")
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;");
+      .replace(/>/g, "&gt;")
+      .replace(/\"/g, "&quot;")
+      .replace(/'/g, "&#39;");
   }
 
   function articleSlug() {
     return window.location.pathname;
   }
 
-  function ensureTurnstileScript() {
-    return new Promise((resolve, reject) => {
-      if (window.turnstile) {
-        resolve();
-        return;
-      }
+  function wait(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
 
+  async function waitForTurnstileTarget(maxAttempts = 20, delay = 150) {
+    for (let i = 0; i < maxAttempts; i++) {
+      const target = document.getElementById("turnstile-container");
+      if (target && document.body.contains(target)) {
+        return target;
+      }
+      await wait(delay);
+    }
+    return null;
+  }
+
+  function ensureTurnstileScript() {
+    if (window.turnstile) {
+      return Promise.resolve();
+    }
+
+    if (turnstileScriptPromise) {
+      return turnstileScriptPromise;
+    }
+
+    turnstileScriptPromise = new Promise((resolve, reject) => {
       const existing = document.querySelector('script[data-turnstile-script="1"]');
+
       if (existing) {
         existing.addEventListener("load", () => resolve(), { once: true });
         existing.addEventListener("error", () => reject(new Error("Turnstile script failed")), { once: true });
@@ -341,32 +366,75 @@
       script.onerror = () => reject(new Error("Turnstile script failed"));
       document.head.appendChild(script);
     });
+
+    return turnstileScriptPromise;
   }
 
-  async function renderTurnstile() {
-    const target = document.getElementById("turnstile-container");
-    if (!target) return;
+  async function renderTurnstile(force = false) {
+    if (turnstileRenderPromise && !force) {
+      return turnstileRenderPromise;
+    }
 
-    try {
-      await ensureTurnstileScript();
-
-      if (!window.turnstile) return;
-
-      if (turnstileWidgetId !== null) {
-        try { window.turnstile.remove(turnstileWidgetId); } catch {}
-        turnstileWidgetId = null;
+    turnstileRenderPromise = (async () => {
+      const target = await waitForTurnstileTarget();
+      if (!target) {
+        console.error("Turnstile target not found");
+        return;
       }
 
-      target.innerHTML = "";
+      try {
+        await ensureTurnstileScript();
 
-      turnstileWidgetId = window.turnstile.render(target, {
-        sitekey: TURNSTILE_SITE_KEY,
-        theme: "auto"
-      });
-    } catch (err) {
-      console.error("Turnstile error:", err);
-      target.innerHTML = `<p class="comment-status error">Captcha failed to load.</p>`;
-    }
+        if (!window.turnstile || typeof window.turnstile.render !== "function") {
+          throw new Error("Turnstile API unavailable");
+        }
+
+        if (turnstileWidgetId !== null) {
+          try {
+            window.turnstile.reset(turnstileWidgetId);
+            return;
+          } catch {
+            try { window.turnstile.remove(turnstileWidgetId); } catch {}
+            turnstileWidgetId = null;
+          }
+        }
+
+        target.innerHTML = "";
+
+        turnstileWidgetId = window.turnstile.render(target, {
+          sitekey: TURNSTILE_SITE_KEY,
+          theme: currentTheme() || getSavedTheme() || getSystemTheme(),
+          callback: () => {
+            const statusBox = document.getElementById("comment-status");
+            if (statusBox && statusBox.textContent === "Complete captcha first.") {
+              statusBox.textContent = "";
+              statusBox.className = "";
+            }
+          },
+          "expired-callback": () => {
+            const statusBox = document.getElementById("comment-status");
+            if (statusBox) {
+              statusBox.textContent = "Captcha expired. Please verify again.";
+              statusBox.className = "error";
+            }
+          },
+          "error-callback": () => {
+            const statusBox = document.getElementById("comment-status");
+            if (statusBox) {
+              statusBox.textContent = "Captcha failed to load. Refresh the page and try again.";
+              statusBox.className = "error";
+            }
+          }
+        });
+      } catch (err) {
+        console.error("Turnstile error:", err);
+        target.innerHTML = `<p class="comment-status error">Captcha failed to load.</p>`;
+      } finally {
+        turnstileRenderPromise = null;
+      }
+    })();
+
+    return turnstileRenderPromise;
   }
 
   async function loadComments() {
@@ -374,7 +442,16 @@
     if (!list) return;
 
     try {
-      const res = await fetch("/api/comments?slug=" + encodeURIComponent(articleSlug()));
+      const res = await fetch("/api/comments?slug=" + encodeURIComponent(articleSlug()), {
+        headers: {
+          "accept": "application/json"
+        }
+      });
+
+      if (!res.ok) {
+        throw new Error(`Comments request failed: ${res.status}`);
+      }
+
       const data = await res.json();
 
       if (!Array.isArray(data) || !data.length) {
@@ -428,6 +505,7 @@
       statusBox.textContent = "Complete captcha first.";
       statusBox.className = "error";
       submitBtn.disabled = false;
+      await renderTurnstile();
       return;
     }
 
@@ -435,7 +513,8 @@
       const res = await fetch("/api/comments", {
         method: "POST",
         headers: {
-          "content-type": "application/json"
+          "content-type": "application/json",
+          "accept": "application/json"
         },
         body: JSON.stringify({
           slug: articleSlug(),
@@ -445,20 +524,20 @@
         })
       });
 
-      const data = await res.json();
+      const data = await res.json().catch(() => ({}));
 
       if (res.status === 429) {
         statusBox.textContent = data.message || "Too many requests. Please wait.";
         statusBox.className = "error";
-        await renderTurnstile();
+        await renderTurnstile(true);
         submitBtn.disabled = false;
         return;
       }
 
       if (res.status === 403) {
-        statusBox.textContent = "Captcha verification failed.";
+        statusBox.textContent = data.message || "Captcha verification failed.";
         statusBox.className = "error";
-        await renderTurnstile();
+        await renderTurnstile(true);
         submitBtn.disabled = false;
         return;
       }
@@ -466,7 +545,7 @@
       if (!res.ok) {
         statusBox.textContent = data.message || data.error || "Error posting comment.";
         statusBox.className = "error";
-        await renderTurnstile();
+        await renderTurnstile(true);
         submitBtn.disabled = false;
         return;
       }
@@ -479,15 +558,16 @@
         statusBox.className = "success";
       }
 
+      nameInput.value = "";
       textInput.value = "";
       await loadComments();
-      await renderTurnstile();
+      await renderTurnstile(true);
       submitBtn.disabled = false;
     } catch (err) {
       console.error("Failed to post comment:", err);
       statusBox.textContent = "Network error. Try again.";
       statusBox.className = "error";
-      await renderTurnstile();
+      await renderTurnstile(true);
       submitBtn.disabled = false;
     }
   }
