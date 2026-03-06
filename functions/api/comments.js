@@ -2,9 +2,7 @@ export async function onRequest(context) {
   const { request, env } = context;
   const url = new URL(request.url);
 
-  const TURNSTILE_SECRET = "0x4AAAAAACnLNk4N_2DQdXoe5Q-eVYKzyTg";
-
-  function json(data, status = 200) {
+    function json(data, status = 200) {
     return new Response(JSON.stringify(data), {
       status,
       headers: {
@@ -57,7 +55,7 @@ export async function onRequest(context) {
   async function verifyTurnstile(token, ip) {
     const formData = new FormData();
 
-    formData.append("secret", TURNSTILE_SECRET);
+    formData.append("secret", env.TURNSTILE_SECRET);
     formData.append("response", token);
     formData.append("remoteip", ip);
 
