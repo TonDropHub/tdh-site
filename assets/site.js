@@ -1,8 +1,9 @@
-/* TDH /assets/site.js (v8)
+/* TDH /assets/site.js (v9)
    - Theme system
    - Brand normalization
    - Global comments system
    - Cloudflare Turnstile support
+   - Fixed article selector (.article first, fallback to article)
 */
 
 (() => {
@@ -86,8 +87,11 @@
       `.trim();
 
       const badge = nav.querySelector(".badge");
-      if (badge && badge.parentElement === right) right.insertBefore(btn, badge);
-      else right.insertBefore(btn, right.firstChild);
+      if (badge && badge.parentElement === right) {
+        right.insertBefore(btn, badge);
+      } else {
+        right.insertBefore(btn, right.firstChild);
+      }
     }
 
     if (!btn.dataset.bound) {
@@ -100,6 +104,7 @@
     const candidates = Array.from(
       nav.querySelectorAll("a.brand, a[href='/'], a[href=\"/\"]")
     );
+
     if (!candidates.length) return;
 
     const brand = candidates[0];
@@ -144,10 +149,6 @@
     return window.location.pathname;
   }
 
-  function isArticlePage() {
-    return !!document.querySelector("article");
-  }
-
   function ensureTurnstileScript() {
     return new Promise((resolve, reject) => {
       if (window.turnstile) {
@@ -158,7 +159,7 @@
       const existing = document.querySelector('script[data-turnstile-script="1"]');
       if (existing) {
         existing.addEventListener("load", () => resolve(), { once: true });
-        existing.addEventListener("error", () => reject(new Error("turnstile load error")), { once: true });
+        existing.addEventListener("error", () => reject(new Error("Turnstile script failed")), { once: true });
         return;
       }
 
@@ -168,88 +169,96 @@
       script.defer = true;
       script.dataset.turnstileScript = "1";
       script.onload = () => resolve();
-      script.onerror = () => reject(new Error("turnstile load error"));
+      script.onerror = () => reject(new Error("Turnstile script failed"));
       document.head.appendChild(script);
     });
   }
 
-  async function renderTurnstileWidget() {
-    const box = document.getElementById("turnstile-box");
-    if (!box) return;
+  async function renderTurnstile() {
+    const target = document.getElementById("turnstile-container");
+    if (!target) return;
 
-    await ensureTurnstileScript();
+    try {
+      await ensureTurnstileScript();
 
-    if (!window.turnstile) return;
+      if (!window.turnstile) return;
 
-    box.innerHTML = "";
-    turnstileWidgetId = window.turnstile.render(box, {
-      sitekey: TURNSTILE_SITE_KEY,
-      theme: document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark"
-    });
+      if (turnstileWidgetId !== null) {
+        try {
+          window.turnstile.remove(turnstileWidgetId);
+        } catch {}
+        turnstileWidgetId = null;
+      }
+
+      target.innerHTML = "";
+
+      turnstileWidgetId = window.turnstile.render(target, {
+        sitekey: TURNSTILE_SITE_KEY,
+        theme: "auto"
+      });
+    } catch (err) {
+      console.error("Turnstile error:", err);
+      target.innerHTML = `<p class="comment-status error">Captcha failed to load.</p>`;
+    }
   }
 
   async function loadComments() {
     const list = document.getElementById("comments-list");
     if (!list) return;
 
-    list.innerHTML = "<p>Loading comments...</p>";
-
     try {
       const res = await fetch("/api/comments?slug=" + encodeURIComponent(articleSlug()));
-      const comments = await res.json();
+      const data = await res.json();
 
-      if (!Array.isArray(comments) || !comments.length) {
+      if (!Array.isArray(data) || !data.length) {
         list.innerHTML = "<p>No comments yet.</p>";
         return;
       }
 
-      list.innerHTML = comments.map(c => `
+      list.innerHTML = data.map((c) => `
         <div class="comment">
           <div class="comment-author">${escapeHtml(c.author)}</div>
           <div class="comment-text">${escapeHtml(c.comment)}</div>
         </div>
       `).join("");
-    } catch {
+    } catch (err) {
+      console.error("Failed to load comments:", err);
       list.innerHTML = "<p>Failed to load comments.</p>";
     }
   }
 
   async function submitComment() {
-    const nameEl = document.getElementById("comment-name");
-    const textEl = document.getElementById("comment-text");
-    const statusEl = document.getElementById("comment-status");
-    const submitBtn = document.getElementById("comment-submit");
+    const nameInput = document.getElementById("comment-name");
+    const textInput = document.getElementById("comment-text");
+    const statusBox = document.getElementById("comment-status");
 
-    if (!nameEl || !textEl || !statusEl || !submitBtn) return;
+    if (!nameInput || !textInput || !statusBox) return;
 
-    const author = nameEl.value.trim();
-    const comment = textEl.value.trim();
+    const author = nameInput.value.trim();
+    const comment = textInput.value.trim();
 
-    statusEl.textContent = "";
-    statusEl.className = "comment-status";
+    statusBox.textContent = "";
+    statusBox.className = "comment-status";
 
     if (!author || !comment) {
-      statusEl.textContent = "Fill all fields.";
-      statusEl.classList.add("error");
+      statusBox.textContent = "Fill all fields.";
+      statusBox.classList.add("error");
       return;
     }
 
-    if (!window.turnstile || turnstileWidgetId === null) {
-      statusEl.textContent = "Captcha is still loading. Please wait a moment.";
-      statusEl.classList.add("error");
-      return;
-    }
+    let turnstileToken = "";
 
-    const turnstileToken = window.turnstile.getResponse(turnstileWidgetId);
+    try {
+      if (window.turnstile && turnstileWidgetId !== null) {
+        turnstileToken = window.turnstile.getResponse(turnstileWidgetId) || "";
+      }
+    } catch {}
 
     if (!turnstileToken) {
-      statusEl.textContent = "Please complete the captcha check.";
-      statusEl.classList.add("error");
+      statusBox.textContent = "Complete captcha first.";
+      statusBox.classList.add("error");
       return;
     }
-
-    submitBtn.disabled = true;
-    submitBtn.textContent = "Posting...";
 
     try {
       const res = await fetch("/api/comments", {
@@ -265,61 +274,59 @@
         })
       });
 
-      const data = await res.json().catch(() => ({}));
+      const data = await res.json();
 
-      if (res.ok) {
-        textEl.value = "";
-
-        if (window.turnstile && turnstileWidgetId !== null) {
-          window.turnstile.reset(turnstileWidgetId);
-        }
-
-        if (data.status === "pending") {
-          statusEl.textContent = data.message || "Your comment was sent for moderation.";
-          statusEl.classList.add("info");
-        } else {
-          statusEl.textContent = "Comment posted successfully.";
-          statusEl.classList.add("success");
-          await loadComments();
-        }
+      if (res.status === 429) {
+        statusBox.textContent = data.message || "Too many requests. Please wait.";
+        statusBox.classList.add("error");
         return;
       }
 
-      if (res.status === 429) {
-        statusEl.textContent = data.message || "Please wait before posting again.";
-      } else if (res.status === 403) {
-        statusEl.textContent = "Captcha verification failed. Please try again.";
+      if (res.status === 403) {
+        statusBox.textContent = "Captcha verification failed.";
+        statusBox.classList.add("error");
+        await renderTurnstile();
+        return;
+      }
+
+      if (!res.ok) {
+        statusBox.textContent = data.message || data.error || "Error posting comment.";
+        statusBox.classList.add("error");
+        await renderTurnstile();
+        return;
+      }
+
+      if (data.status === "pending") {
+        statusBox.textContent = data.message || "Your comment was sent for moderation.";
+        statusBox.classList.add("success");
       } else {
-        statusEl.textContent = data.message || data.error || "Failed to post comment.";
+        statusBox.textContent = "Comment posted successfully.";
+        statusBox.classList.add("success");
       }
 
-      statusEl.classList.add("error");
-
-      if (window.turnstile && turnstileWidgetId !== null) {
-        window.turnstile.reset(turnstileWidgetId);
-      }
-    } catch {
-      statusEl.textContent = "Network error. Please try again.";
-      statusEl.classList.add("error");
-
-      if (window.turnstile && turnstileWidgetId !== null) {
-        window.turnstile.reset(turnstileWidgetId);
-      }
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.textContent = "Post Comment";
+      textInput.value = "";
+      await loadComments();
+      await renderTurnstile();
+    } catch (err) {
+      console.error("Failed to post comment:", err);
+      statusBox.textContent = "Network error. Try again.";
+      statusBox.classList.add("error");
+      await renderTurnstile();
     }
   }
 
   async function initComments() {
-    if (!isArticlePage()) return;
+    const article =
+      document.querySelector(".article") ||
+      document.querySelector("article");
 
-    const article = document.querySelector("article");
     if (!article) return;
-    if (document.querySelector(".comments")) return;
+    if (document.getElementById("comments-root")) return;
 
-    const container = document.createElement("section");
+    const container = document.createElement("div");
+    container.id = "comments-root";
     container.className = "comments";
+
     container.innerHTML = `
       <h3>Comments</h3>
       <div id="comments-list"></div>
@@ -327,39 +334,34 @@
       <div class="comment-form">
         <input id="comment-name" type="text" maxlength="40" placeholder="Your name" />
         <textarea id="comment-text" maxlength="500" placeholder="Write a comment"></textarea>
-        <div id="turnstile-box" class="turnstile-box"></div>
-        <button id="comment-submit" type="button">Post Comment</button>
+        <div id="turnstile-container"></div>
         <div id="comment-status" class="comment-status"></div>
+        <button id="comment-submit" type="button">Post Comment</button>
       </div>
     `;
 
     article.appendChild(container);
 
     const submitBtn = document.getElementById("comment-submit");
-    if (submitBtn) {
+    if (submitBtn && !submitBtn.dataset.bound) {
       submitBtn.addEventListener("click", submitComment);
+      submitBtn.dataset.bound = "1";
     }
 
     await loadComments();
-    try {
-      await renderTurnstileWidget();
-    } catch {
-      const statusEl = document.getElementById("comment-status");
-      if (statusEl) {
-        statusEl.textContent = "Captcha failed to load.";
-        statusEl.classList.add("error");
-      }
-    }
+    await renderTurnstile();
   }
 
-  function init() {
+  async function init() {
     initTheme();
-    initComments();
+    await initComments();
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
+    document.addEventListener("DOMContentLoaded", () => {
+      init().catch((err) => console.error("Init error:", err));
+    });
   } else {
-    init();
+    init().catch((err) => console.error("Init error:", err));
   }
 })();
