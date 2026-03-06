@@ -17,6 +17,7 @@
   let turnstileWidgetId = null;
   let turnstileScriptPromise = null;
   let turnstileRenderPromise = null;
+  let turnstileAutoRetryTimer = null;
   let turnstileRefreshTimer = null;
 
   function getSavedTheme() {
@@ -53,6 +54,9 @@
   function toggleTheme() {
     const t = currentTheme() || getSavedTheme() || getSystemTheme();
     setTheme(t === "dark" ? "light" : "dark");
+    if (document.getElementById("turnstile-container")) {
+      renderTurnstile(true).catch(() => {});
+    }
   }
 
   function ensureThemeToggle(nav) {
@@ -112,6 +116,8 @@
     const brand = candidates[0];
     brand.classList.add("brand");
     brand.setAttribute("href", "/");
+    brand.setAttribute("aria-label", "Go to home page");
+    brand.setAttribute("title", "TON Drop Hub");
 
     for (let i = 1; i < candidates.length; i++) {
       const dup = candidates[i];
@@ -119,13 +125,8 @@
       if (href === "/") dup.remove();
     }
 
-    if (brand.querySelector(".wordmark")) return;
-
     brand.innerHTML = `
       <img class="brand-logo" src="/assets/logo.png" alt="TON Drop Hub" loading="eager" />
-      <span class="wordmark">
-        <span class="ton">TON</span><span class="drop">DROP</span><span class="hub">HUB</span>
-      </span>
     `.trim();
   }
 
@@ -329,20 +330,30 @@
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
-
-  function clearTurnstileRefreshTimer() {
+  function clearTurnstileTimers() {
+    if (turnstileAutoRetryTimer) {
+      clearTimeout(turnstileAutoRetryTimer);
+      turnstileAutoRetryTimer = null;
+    }
     if (turnstileRefreshTimer) {
       clearTimeout(turnstileRefreshTimer);
       turnstileRefreshTimer = null;
     }
   }
 
-  function scheduleTurnstileRefresh(delay = 2500) {
-    clearTurnstileRefreshTimer();
+  function scheduleTurnstileRetry(delay = 2500) {
+    clearTurnstileTimers();
+    turnstileAutoRetryTimer = setTimeout(() => {
+      renderTurnstile(true).catch(() => {});
+    }, delay);
+  }
+
+  function scheduleTurnstileRefresh(delay = 240000) {
+    if (turnstileRefreshTimer) {
+      clearTimeout(turnstileRefreshTimer);
+    }
     turnstileRefreshTimer = setTimeout(() => {
-      const root = document.getElementById("comments-root");
-      if (!root || !document.body.contains(root)) return;
-      renderTurnstile(true).catch((err) => console.error("Turnstile auto-refresh error:", err));
+      renderTurnstile(true).catch(() => {});
     }, delay);
   }
 
@@ -358,7 +369,7 @@
   }
 
   function ensureTurnstileScript() {
-    if (window.turnstile) {
+    if (window.turnstile && typeof window.turnstile.render === "function") {
       return Promise.resolve();
     }
 
@@ -367,11 +378,34 @@
     }
 
     turnstileScriptPromise = new Promise((resolve, reject) => {
+      const resolveWhenReady = () => {
+        let attempts = 0;
+        const maxAttempts = 80;
+        const tick = () => {
+          if (window.turnstile && typeof window.turnstile.render === "function") {
+            resolve();
+            return;
+          }
+          attempts += 1;
+          if (attempts >= maxAttempts) {
+            reject(new Error("Turnstile API unavailable"));
+            return;
+          }
+          setTimeout(tick, 100);
+        };
+        tick();
+      };
+
       const existing = document.querySelector('script[data-turnstile-script="1"]');
 
       if (existing) {
-        existing.addEventListener("load", () => resolve(), { once: true });
+        if (window.turnstile && typeof window.turnstile.render === "function") {
+          resolve();
+          return;
+        }
+        existing.addEventListener("load", resolveWhenReady, { once: true });
         existing.addEventListener("error", () => reject(new Error("Turnstile script failed")), { once: true });
+        resolveWhenReady();
         return;
       }
 
@@ -380,9 +414,12 @@
       script.async = true;
       script.defer = true;
       script.dataset.turnstileScript = "1";
-      script.onload = () => resolve();
+      script.onload = resolveWhenReady;
       script.onerror = () => reject(new Error("Turnstile script failed"));
       document.head.appendChild(script);
+    }).catch((err) => {
+      turnstileScriptPromise = null;
+      throw err;
     });
 
     return turnstileScriptPromise;
@@ -407,17 +444,13 @@
           throw new Error("Turnstile API unavailable");
         }
 
+        clearTurnstileTimers();
+
         if (turnstileWidgetId !== null) {
-          try {
-            window.turnstile.reset(turnstileWidgetId);
-            return;
-          } catch {
-            try { window.turnstile.remove(turnstileWidgetId); } catch {}
-            turnstileWidgetId = null;
-          }
+          try { window.turnstile.remove(turnstileWidgetId); } catch {}
+          turnstileWidgetId = null;
         }
 
-        clearTurnstileRefreshTimer();
         target.innerHTML = "";
 
         turnstileWidgetId = window.turnstile.render(target, {
@@ -425,15 +458,11 @@
           theme: currentTheme() || getSavedTheme() || getSystemTheme(),
           callback: () => {
             const statusBox = document.getElementById("comment-status");
-            if (statusBox && (
-              statusBox.textContent === "Complete captcha first." ||
-              statusBox.textContent === "Captcha expired. Please verify again." ||
-              statusBox.textContent === "Captcha failed to load. Refresh the page and try again."
-            )) {
+            if (statusBox && statusBox.textContent === "Complete captcha first.") {
               statusBox.textContent = "";
               statusBox.className = "";
             }
-            scheduleTurnstileRefresh(240000);
+            scheduleTurnstileRefresh();
           },
           "expired-callback": () => {
             const statusBox = document.getElementById("comment-status");
@@ -441,29 +470,24 @@
               statusBox.textContent = "Captcha expired. Reloading captcha...";
               statusBox.className = "error";
             }
-            scheduleTurnstileRefresh(600);
+            scheduleTurnstileRetry(800);
           },
           "timeout-callback": () => {
-            const statusBox = document.getElementById("comment-status");
-            if (statusBox) {
-              statusBox.textContent = "Captcha timed out. Reloading captcha...";
-              statusBox.className = "error";
-            }
-            scheduleTurnstileRefresh(600);
+            scheduleTurnstileRetry(800);
           },
           "error-callback": () => {
             const statusBox = document.getElementById("comment-status");
             if (statusBox) {
-              statusBox.textContent = "Captcha failed to load. Auto-retrying...";
+              statusBox.textContent = "Captcha failed to load. Retrying...";
               statusBox.className = "error";
             }
-            scheduleTurnstileRefresh(1500);
+            scheduleTurnstileRetry(1500);
           }
         });
       } catch (err) {
         console.error("Turnstile error:", err);
-        target.innerHTML = `<p class="comment-status error">Captcha failed to load. Auto-retrying...</p>`;
-        scheduleTurnstileRefresh(2000);
+        target.innerHTML = `<p class="comment-status error">Captcha failed to load. Retrying...</p>`;
+        scheduleTurnstileRetry(2000);
       } finally {
         turnstileRenderPromise = null;
       }
@@ -643,31 +667,31 @@
       submitBtn.dataset.bound = "1";
     }
 
-    const retryOnReturn = () => {
-      const root = document.getElementById("comments-root");
-      if (!root) return;
-      const target = document.getElementById("turnstile-container");
-      if (!target) return;
-      const hasIframe = target.querySelector("iframe");
-      if (!hasIframe) {
-        scheduleTurnstileRefresh(300);
-      }
-    };
-
-    window.addEventListener("pageshow", retryOnReturn);
-    document.addEventListener("visibilitychange", () => {
-      if (document.visibilityState === "visible") {
-        retryOnReturn();
-      }
-    });
-
-
     await loadComments();
     await renderTurnstile();
   }
 
   async function init() {
     initTheme();
+
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden && document.getElementById("turnstile-container")) {
+        renderTurnstile(true).catch(() => {});
+      }
+    });
+
+    window.addEventListener("pageshow", () => {
+      if (document.getElementById("turnstile-container")) {
+        renderTurnstile(true).catch(() => {});
+      }
+    });
+
+    window.addEventListener("focus", () => {
+      if (document.getElementById("turnstile-container")) {
+        renderTurnstile(true).catch(() => {});
+      }
+    });
+
     await initComments();
   }
 
