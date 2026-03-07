@@ -1,6 +1,13 @@
 {
-  "updated": "2026-03-07T12:27:08Z",
+  "updated": "2026-03-07T12:34:31Z",
   "items": [
+    {
+      "id": "718",
+      "title": "Toncoin targets key resistance as price steps higher after breakout",
+      "url": "/news/718-toncoin-targets-key-resistance-as-price-steps-higher-after-breakout/",
+      "published_at": "2026-03-07T12:34:31Z",
+      "excerpt": "Toncoin (TON) has recently caught the attention of traders after breaking out of a price channel and setting its sights on a key resistance level. Previously, Toncoin’s value had been moving within a narrow, predictable…"
+    },
     {
       "id": "720",
       "title": "Moongate Partners with TON Blockchain to Enhance Web3 Ticketing Payments",
@@ -343,13 +350,6 @@
       "url": "/news/613-final-hours-for-blockdags-000125-direct-sale-as-toncoin-and-litecoin-s/",
       "published_at": "2026-02-26T05:02:43Z",
       "excerpt": "BlockDAG is approaching the conclusion of its direct sale event, where the token is priced at $0.00125. Reports indicate that this sale is now in its final hours, marking a significant milestone for the project as it wra…"
-    },
-    {
-      "id": "611",
-      "title": "Hamster Kombat Daily Cipher for 26 February 2026 Released",
-      "url": "/news/611-hamster-kombat-daily-cipher-for-26-february-2026-released/",
-      "published_at": "2026-02-26T02:02:28Z",
-      "excerpt": "The Hamster Kombat team has launched the Daily Cipher challenge for 26 February 2026, inviting players to participate for a chance to solve puzzles and advance within the game. This ongoing event continues to attract bot…"
     }
   ]
 }
