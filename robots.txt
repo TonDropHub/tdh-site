@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://tdh-site-cie.pages.dev/sitemap.xml
