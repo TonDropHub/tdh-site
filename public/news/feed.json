@@ -1,6 +1,13 @@
 {
-  "updated": "2026-03-07T05:07:40Z",
+  "updated": "2026-03-07T08:07:55Z",
   "items": [
+    {
+      "id": "717",
+      "title": "Hamster Kombat Daily Cipher Returns for 7 March 2026",
+      "url": "/news/717-hamster-kombat-daily-cipher-returns-for-7-march-2026/",
+      "published_at": "2026-03-07T08:07:55Z",
+      "excerpt": "Hamster Kombat fans have a new puzzle to tackle, as the platform rolls out its Daily Cipher for 7 March 2026. This recurring feature gives players an opportunity to participate in daily activities designed to test their…"
+    },
     {
       "id": "714",
       "title": "Notcoin and Hyperliquid Enter Final Phase of Presale Ahead of 2026 Launch",
@@ -343,13 +350,6 @@
       "url": "/news/604-toncoin-sees-ongoing-correction-as-market-sentiment-turns-bearish/",
       "published_at": "2026-02-25T11:03:33Z",
       "excerpt": "Toncoin has entered a notable correction phase, with the recent trend suggesting further downward movement. The token has experienced persistent selling pressure, raising questions about where the next large support area…"
-    },
-    {
-      "id": "605",
-      "title": "TON to Disable Toncoin Bridge to Ethereum and BNB Smart Chain Starting May 10",
-      "url": "/news/605-ton-to-disable-toncoin-bridge-to-ethereum-and-bnb-smart-chain-starting/",
-      "published_at": "2026-02-25T08:04:15Z",
-      "excerpt": "The TON team has announced that it will discontinue the bridge service that allows users to transfer Toncoin (TON) between the TON blockchain and two major networks: Ethereum and BNB Smart Chain. The bridge will stop ope…"
     }
   ]
 }
