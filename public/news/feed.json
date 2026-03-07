@@ -1,6 +1,13 @@
 {
-  "updated": "2026-03-07T11:02:34Z",
+  "updated": "2026-03-07T12:27:08Z",
   "items": [
+    {
+      "id": "720",
+      "title": "Moongate Partners with TON Blockchain to Enhance Web3 Ticketing Payments",
+      "url": "/news/720-moongate-partners-with-ton-blockchain-to-enhance-web3-ticketing-paymen/",
+      "published_at": "2026-03-07T12:27:08Z",
+      "excerpt": "Moongate and TON Blockchain have announced a collaboration aimed at improving the Web3 ticketing experience. The partnership will integrate both cryptocurrency and traditional fiat payment options, with the goal of makin…"
+    },
     {
       "id": "719",
       "title": "5 Free Crypto Airdrops Available This March Without Any Investment",
@@ -343,13 +350,6 @@
       "url": "/news/611-hamster-kombat-daily-cipher-for-26-february-2026-released/",
       "published_at": "2026-02-26T02:02:28Z",
       "excerpt": "The Hamster Kombat team has launched the Daily Cipher challenge for 26 February 2026, inviting players to participate for a chance to solve puzzles and advance within the game. This ongoing event continues to attract bot…"
-    },
-    {
-      "id": "557",
-      "title": "TON Foundation expands stablecoin payment options for Asian businesses through Banxa",
-      "url": "/news/557-ton-foundation-expands-stablecoin-payment-options-for-asian-businesses/",
-      "published_at": "2026-02-25T14:01:44Z",
-      "excerpt": "The TON Foundation has unveiled a new payment processing solution designed to support stablecoin transactions for businesses operating in Asia. This initiative is being rolled out in collaboration with Banxa, a company k…"
     }
   ]
 }
