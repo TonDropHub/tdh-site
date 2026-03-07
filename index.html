@@ -15,36 +15,33 @@
 
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>TON Drop Hub — Actionable TON news</title>
+  <title>TON News, Airdrops & Telegram Mini App Updates — TON Drop Hub</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Actionable TON ecosystem news, airdrops, and quests — in one hub." />
+  <meta name="description" content="Follow TON ecosystem news, Telegram mini app updates, airdrops, quests and practical guides on TON Drop Hub." />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#0b1020" />
   <meta name="color-scheme" content="dark light" />
 
-  <!-- Canonical -->
   <link rel="canonical" href="https://tdh-site-cie.pages.dev/" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="TON Drop Hub" />
-  <meta property="og:title" content="TON Drop Hub — Actionable TON news" />
-  <meta property="og:description" content="Actionable TON ecosystem news, airdrops, and quests — in one hub." />
+  <meta property="og:title" content="TON News, Airdrops & Telegram Mini App Updates — TON Drop Hub" />
+  <meta property="og:description" content="Follow TON ecosystem news, Telegram mini app updates, airdrops, quests and practical guides on TON Drop Hub." />
   <meta property="og:url" content="https://tdh-site-cie.pages.dev/" />
   <meta property="og:image" content="https://tdh-site-cie.pages.dev/assets/og.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="TON Drop Hub — actionable TON news, airdrops and quests" />
+  <meta property="og:image:alt" content="TON Drop Hub homepage" />
 
-  <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="TON Drop Hub — Actionable TON news" />
-  <meta name="twitter:description" content="Actionable TON ecosystem news, airdrops, and quests — in one hub." />
+  <meta name="twitter:title" content="TON News, Airdrops & Telegram Mini App Updates — TON Drop Hub" />
+  <meta name="twitter:description" content="Follow TON ecosystem news, Telegram mini app updates, airdrops, quests and practical guides on TON Drop Hub." />
   <meta name="twitter:image" content="https://tdh-site-cie.pages.dev/assets/og.jpg" />
-  <meta name="twitter:image:alt" content="TON Drop Hub — actionable TON news, airdrops and quests" />
+  <meta name="twitter:image:alt" content="TON Drop Hub homepage" />
 
-  <!-- Apply theme BEFORE CSS loads (avoids flash) -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "name": "TON Drop Hub", "url": "https://tdh-site-cie.pages.dev/", "description": "TON news, airdrops, Telegram mini app updates and practical guides collected in one hub.", "inLanguage": "en"}, {"@type": "CollectionPage", "name": "TON Drop Hub", "url": "https://tdh-site-cie.pages.dev/", "description": "TON ecosystem news, Telegram mini app updates, airdrops and practical guides.", "isPartOf": {"@type": "WebSite", "name": "TON Drop Hub", "url": "https://tdh-site-cie.pages.dev/"}}, {"@type": "ItemList", "name": "Featured TON stories", "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://tdh-site-cie.pages.dev/news/719-5-free-crypto-airdrops-available-this-march-without-any-investment/", "name": "5 Free Crypto Airdrops Available This March Without Any Investment"}, {"@type": "ListItem", "position": 2, "url": "https://tdh-site-cie.pages.dev/news/717-hamster-kombat-daily-cipher-returns-for-7-march-2026/", "name": "Hamster Kombat Daily Cipher Returns for 7 March 2026"}, {"@type": "ListItem", "position": 3, "url": "https://tdh-site-cie.pages.dev/news/714-notcoin-and-hyperliquid-enter-final-phase-of-presale-ahead-of-2026-lau/", "name": "Notcoin and Hyperliquid Enter Final Phase of Presale Ahead of 2026 Launch"}, {"@type": "ListItem", "position": 4, "url": "https://tdh-site-cie.pages.dev/news/711-moongate-and-ton-blockchain-partner-to-enhance-web3-ticketing-solution/", "name": "Moongate and TON Blockchain Partner to Enhance Web3 Ticketing Solutions"}, {"@type": "ListItem", "position": 5, "url": "https://tdh-site-cie.pages.dev/news/706-memefi-daily-rewards-how-to-use-youtube-video-codes-in-2024/", "name": "MemeFi Daily Rewards: How to Use YouTube Video Codes in 2024"}, {"@type": "ListItem", "position": 6, "url": "https://tdh-site-cie.pages.dev/news/704-toncoin-whale-reportedly-returns-203k-in-unusual-on-chain-move/", "name": "Toncoin Whale Reportedly Returns $203K in Unusual On-Chain Move"}]}]}</script>
+
   <script>
     (() => {
       try {
@@ -58,7 +55,6 @@
 
   <link rel="stylesheet" href="/assets/style.css" />
   <style>
-    /* Header brand cleanup: logo only, centered nav, larger clickable logo */
     .nav .left {
       display: flex;
       align-items: center;
@@ -113,6 +109,13 @@
       gap: 10px;
     }
 
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
     @media (max-width: 900px) {
       .nav .left {
         gap: 14px;
@@ -125,6 +128,10 @@
 
       .pills {
         justify-content: flex-start;
+      }
+
+      .featured-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -147,7 +154,6 @@
   <div class="container">
     <div class="nav">
       <div class="left">
-        <!-- IMPORTANT: Cloudflare Pages is case-sensitive. Put the file exactly as /assets/logo.png -->
         <a class="brand" href="/" aria-label="Go to homepage">
           <img class="brand-logo" src="/assets/logo.png" alt="TON Drop Hub" />
         </a>
@@ -163,12 +169,10 @@
 
       <div class="right">
         <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">
-          <!-- shown in DARK theme (switch to LIGHT) -->
           <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"></path>
             <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
           </svg>
-          <!-- shown in LIGHT theme (switch to DARK) -->
           <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M21 12.8A8.5 8.5 0 0 1 11.2 3a7 7 0 1 0 9.8 9.8Z"></path>
           </svg>
@@ -179,14 +183,13 @@
     </div>
 
     <section class="hero">
-      <h1 class="h1">Actionable TON news, airdrops, and quests — in one hub.</h1>
+      <h1 class="h1">TON news, airdrops, Telegram mini app updates and practical guides in one hub.</h1>
       <p class="sub">
-        We track TON ecosystem updates, Telegram mini-apps, and quest/airdrop opportunities — and turn them into short, actionable posts.
-        This site is the core hub; Telegram/X (and later Instagram/Facebook) posts link back here.
+        TON Drop Hub collects actionable TON ecosystem news, airdrop opportunities, quests and mini app updates.
+        Use the News section for daily coverage, About for context, and the site homepage as the main entry point for content discovery.
       </p>
     </section>
 
-    <!-- 4 SECTION CARDS (each shows latest post in that section) -->
     <div class="grid grid-4" style="margin-top:16px;">
       <div class="card">
         <div class="meta">Latest in News</div>
@@ -228,6 +231,48 @@
         <div class="btnrow"><a class="pill" href="/projects/">Open →</a></div>
       </div>
     </div>
+
+    <section style="margin-top:22px;">
+      <div class="meta">Featured TON stories</div>
+      <div class="featured-grid">
+      <article class="card">
+        <div class="meta">News</div>
+        <h2 style="margin-top:10px;"><a class="link-title" href="/news/719-5-free-crypto-airdrops-available-this-march-without-any-investment/">5 Free Crypto Airdrops Available This March Without Any Investment</a></h2>
+        <p class="excerpt" style="margin-top:10px;">Several new crypto airdrop opportunities are available for participation this March, providing ways to engage with blockchain projects without requiring any initial investment. Airdrops are often used as a promotional st…</p>
+        <div class="btnrow"><a class="pill" href="/news/719-5-free-crypto-airdrops-available-this-march-without-any-investment/">Read article →</a></div>
+      </article>
+      <article class="card">
+        <div class="meta">News</div>
+        <h2 style="margin-top:10px;"><a class="link-title" href="/news/717-hamster-kombat-daily-cipher-returns-for-7-march-2026/">Hamster Kombat Daily Cipher Returns for 7 March 2026</a></h2>
+        <p class="excerpt" style="margin-top:10px;">Hamster Kombat fans have a new puzzle to tackle, as the platform rolls out its Daily Cipher for 7 March 2026. This recurring feature gives players an opportunity to participate in daily activities designed to test their…</p>
+        <div class="btnrow"><a class="pill" href="/news/717-hamster-kombat-daily-cipher-returns-for-7-march-2026/">Read article →</a></div>
+      </article>
+      <article class="card">
+        <div class="meta">News</div>
+        <h2 style="margin-top:10px;"><a class="link-title" href="/news/714-notcoin-and-hyperliquid-enter-final-phase-of-presale-ahead-of-2026-lau/">Notcoin and Hyperliquid Enter Final Phase of Presale Ahead of 2026 Launch</a></h2>
+        <p class="excerpt" style="margin-top:10px;">Notcoin and Hyperliquid, two blockchain projects, have been identified as notable presale tokens entering the last stage of their fundraising efforts ahead of a planned 2026 launch. This highlights both platforms as they…</p>
+        <div class="btnrow"><a class="pill" href="/news/714-notcoin-and-hyperliquid-enter-final-phase-of-presale-ahead-of-2026-lau/">Read article →</a></div>
+      </article>
+      <article class="card">
+        <div class="meta">News</div>
+        <h2 style="margin-top:10px;"><a class="link-title" href="/news/711-moongate-and-ton-blockchain-partner-to-enhance-web3-ticketing-solution/">Moongate and TON Blockchain Partner to Enhance Web3 Ticketing Solutions</a></h2>
+        <p class="excerpt" style="margin-top:10px;">Moongate has announced a new collaboration with TON Blockchain, with the goal of transforming how tickets are bought and managed in the Web3 space. The partnership is centered on offering both cryptocurrency and traditio…</p>
+        <div class="btnrow"><a class="pill" href="/news/711-moongate-and-ton-blockchain-partner-to-enhance-web3-ticketing-solution/">Read article →</a></div>
+      </article>
+      <article class="card">
+        <div class="meta">News</div>
+        <h2 style="margin-top:10px;"><a class="link-title" href="/news/706-memefi-daily-rewards-how-to-use-youtube-video-codes-in-2024/">MemeFi Daily Rewards: How to Use YouTube Video Codes in 2024</a></h2>
+        <p class="excerpt" style="margin-top:10px;">MemeFi is rolling out a new way for its community to get involved and earn daily rewards by using codes found in YouTube videos. This initiative seems designed to encourage users to watch specific MemeFi-related content…</p>
+        <div class="btnrow"><a class="pill" href="/news/706-memefi-daily-rewards-how-to-use-youtube-video-codes-in-2024/">Read article →</a></div>
+      </article>
+      <article class="card">
+        <div class="meta">News</div>
+        <h2 style="margin-top:10px;"><a class="link-title" href="/news/704-toncoin-whale-reportedly-returns-203k-in-unusual-on-chain-move/">Toncoin Whale Reportedly Returns $203K in Unusual On-Chain Move</a></h2>
+        <p class="excerpt" style="margin-top:10px;">A Toncoin holder, commonly referred to as a “whale” because of the size of their holdings, has reportedly returned funds worth approximately $203,000. This rare action was carried out through an on-chain message, gaining…</p>
+        <div class="btnrow"><a class="pill" href="/news/704-toncoin-whale-reportedly-returns-203k-in-unusual-on-chain-move/">Read article →</a></div>
+      </article>
+      </div>
+    </section>
 
     <div class="footer">
       <div>Disclaimer: informational only, not financial advice. Never share seed phrases.</div>
