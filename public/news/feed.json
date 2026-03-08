@@ -1,6 +1,13 @@
 {
-  "updated": "2026-03-08T11:02:49Z",
+  "updated": "2026-03-08T14:07:01Z",
   "items": [
+    {
+      "id": "710",
+      "title": "Niza Labs and PinGo Push AI and DePIN Innovation Forward on TON Blockchain",
+      "url": "/news/710-niza-labs-and-pingo-push-ai-and-depin-innovation-forward-on-ton-blockc/",
+      "published_at": "2026-03-08T14:07:01Z",
+      "excerpt": "Two rising names in tech innovation, Niza Labs and PinGo, have announced new efforts to advance artificial intelligence (AI) and Decentralized Physical Infrastructure Networks (DePIN) on the TON blockchain. Although spec…"
+    },
     {
       "id": "712",
       "title": "Toncoin Makes Technical Moves Toward $3 as Bullish Pattern Emerges",
@@ -343,13 +350,6 @@
       "url": "/news/625-ton-wallet-introduces-yield-options-for-bitcoin-ethereum-and-usdt/",
       "published_at": "2026-02-27T08:03:07Z",
       "excerpt": "TON Wallet, a key product in the TON blockchain ecosystem, has rolled out a new feature that lets users earn yield on their Bitcoin, Ethereum, and USDT holdings. This development brings more established digital assets in…"
-    },
-    {
-      "id": "622",
-      "title": "Toncoin Price Dips as Vaults Feature Launches in TON Wallet",
-      "url": "/news/622-toncoin-price-dips-as-vaults-feature-launches-in-ton-wallet/",
-      "published_at": "2026-02-27T05:07:43Z",
-      "excerpt": "Toncoin (TON) has recently experienced a significant price decline, with analysts describing the token as “heavily oversold.” This downturn coincided with the introduction of a new feature called Vaults in the official T…"
     }
   ]
 }
