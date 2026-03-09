@@ -59,6 +59,38 @@
     return s ? s.slice(0, 10) : "";
   }
 
+  function extractYears(text) {
+    const matches = String(text || "").match(/\b(20\d{2})\b/g) || [];
+    return matches.map((x) => Number(x)).filter((x) => !Number.isNaN(x));
+  }
+
+  function minAllowedYear() {
+    return new Date().getFullYear() - 1;
+  }
+
+  function hasOldYearReference(item) {
+    const text = [
+      item && item.title ? item.title : "",
+      item && (item.url || item.path) ? (item.url || item.path) : "",
+      item && (item.excerpt || item.summary || item.description)
+        ? (item.excerpt || item.summary || item.description)
+        : "",
+    ].join("\n");
+
+    const years = extractYears(text);
+    if (!years.length) return false;
+
+    return years.some((year) => year < minAllowedYear());
+  }
+
+  function pickFreshItem(items) {
+    const list = Array.isArray(items) ? items : [];
+    for (const item of list) {
+      if (!hasOldYearReference(item)) return item;
+    }
+    return null;
+  }
+
   function setCard(cfg, { title, url, date, excerpt }) {
     const t = byId(cfg.ids.title);
     const m = byId(cfg.ids.meta);
@@ -98,8 +130,7 @@
       if (!r.ok) return fallbackNoPosts(cfg);
 
       const feed = await r.json();
-      const items = Array.isArray(feed.items) ? feed.items : [];
-      const item = items[0];
+      const item = pickFreshItem(feed.items);
       if (!item) return fallbackNoPosts(cfg);
 
       const url = safeText(item.url, cfg.sectionUrl) || cfg.sectionUrl;
