@@ -1,6 +1,13 @@
 {
-  "updated": "2026-03-09T05:02:36Z",
+  "updated": "2026-03-09T08:03:20Z",
   "items": [
+    {
+      "id": "734",
+      "title": "Notcoin Faces Uncertain Path as Market Watches for Signs of Recovery",
+      "url": "/news/734-notcoin-faces-uncertain-path-as-market-watches-for-signs-of-recovery/",
+      "published_at": "2026-03-09T08:03:20Z",
+      "excerpt": "Notcoin (NOT) has attracted significant attention as the market debates its next potential move. After recent price downturns, the token appears to be at a pivotal juncture, leaving traders and observers closely monitori…"
+    },
     {
       "id": "733",
       "title": "Top 10 Anticipated Crypto Airdrops to Watch for in 2025",
@@ -343,13 +350,6 @@
       "url": "/news/634-ton-wallet-adds-btc-eth-and-usdt-yield-vaults-for-users/",
       "published_at": "2026-02-28T02:02:22Z",
       "excerpt": "TON Wallet has introduced new features aimed at expanding its capabilities, now allowing users to access yield vaults for Bitcoin (BTC), Ethereum (ETH), and Tether (USDT). This update broadens the range of assets that us…"
-    },
-    {
-      "id": "631",
-      "title": "TON Wallet Introduces DeFi Vaults With Yield Opportunities Up to 18% APY",
-      "url": "/news/631-ton-wallet-introduces-defi-vaults-with-yield-opportunities-up-to-18-ap/",
-      "published_at": "2026-02-27T14:06:23Z",
-      "excerpt": "Users of TON Wallet now have a new way to participate in decentralized finance, thanks to the platform's integration of DeFi vaults. This update gives users the opportunity to explore earning options, with reported retur…"
     }
   ]
 }
