@@ -1,6 +1,13 @@
 {
-  "updated": "2026-03-10T02:04:05Z",
+  "updated": "2026-03-10T05:02:40Z",
   "items": [
+    {
+      "id": "740",
+      "title": "The Future of Tap-to-Earn: Are Telegram Games Still Alive in 2026",
+      "url": "/news/740-the-future-of-tap-to-earn-are-telegram-games-still-alive-in-2026/",
+      "published_at": "2026-03-10T05:02:40Z",
+      "excerpt": "The world of “tap-to-earn” games once offered a simple experience with the potential for rewards to dedicated users. As we progress through 2026, questions are resurfacing about whether this model still has a place in th…"
+    },
     {
       "id": "738",
       "title": "Hamster Kombat Daily Combo for March 10, 2026: Play To Earn Insights",
@@ -343,13 +350,6 @@
       "url": "/news/650-toncoin-remains-steady-above-127-after-price-slides-15-this-month/",
       "published_at": "2026-03-01T02:03:08Z",
       "excerpt": "Toncoin has managed to maintain a price range between $1.27 and $1.32 even after posting a significant monthly decline. Over the past month, Toncoin’s value has fallen by around 15%, reflecting a turbulent period for the…"
-    },
-    {
-      "id": "644",
-      "title": "TON Foundation Rolls Out TON Pay to Simplify Payments Across Its Ecosystem",
-      "url": "/news/644-ton-foundation-rolls-out-ton-pay-to-simplify-payments-across-its-ecosy/",
-      "published_at": "2026-02-28T14:02:42Z",
-      "excerpt": "TON Foundation has introduced TON Pay, a new payment solution aimed at making transactions easier for users and developers within its ecosystem. The initiative is designed to streamline how payments are handled, allowing…"
     }
   ]
 }
