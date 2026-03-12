@@ -1,6 +1,13 @@
 {
-  "updated": "2026-03-12T08:03:22Z",
+  "updated": "2026-03-12T11:03:41Z",
   "items": [
+    {
+      "id": "769",
+      "title": "XStocks Introduces Tokenized Stocks on TON Wallet, Pepeto Leads in Exchange Infrastructure",
+      "url": "/news/769-xstocks-introduces-tokenized-stocks-on-ton-wallet-pepeto-leads-in-exch/",
+      "published_at": "2026-03-12T11:03:41Z",
+      "excerpt": "A new wave of innovation is underway in the crypto sector as xStocks launches tokenized stocks on the TON wallet. This move could open fresh pathways for digital asset enthusiasts, allowing users to explore a new realm w…"
+    },
     {
       "id": "766",
       "title": "Hamster Kombat Offers 5 Million Coins in Latest Daily Combo Challenge",
@@ -343,13 +350,6 @@
       "url": "/news/670-alphaton-capital-adds-leading-engineers-to-boost-ton-platform-developm/",
       "published_at": "2026-03-03T08:02:24Z",
       "excerpt": "AlphaTON Capital has brought new expertise into its ranks by bringing on several recognized developers from the TON blockchain ecosystem. This move is intended to reinforce the firm’s engineering team and to ramp up thei…"
-    },
-    {
-      "id": "668",
-      "title": "AlphaTON Capital Expands Engineering Team With Noted TON Specialists Paschenko and Pfau",
-      "url": "/news/668-alphaton-capital-expands-engineering-team-with-noted-ton-specialists-p/",
-      "published_at": "2026-03-03T05:02:15Z",
-      "excerpt": "AlphaTON Capital has made significant additions to its leadership, bringing on Aleksej Paschenko and Andrei Pfau to strengthen its technical capabilities within the TON ecosystem. Both Paschenko and Pfau are well known f…"
     }
   ]
 }
