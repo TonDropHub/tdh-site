@@ -1,6 +1,13 @@
 {
-  "updated": "2026-03-13T11:03:25Z",
+  "updated": "2026-03-13T14:07:24Z",
   "items": [
+    {
+      "id": "782",
+      "title": "TON Blockchain Back Online After Short Service Outage",
+      "url": "/news/782-ton-blockchain-back-online-after-short-service-outage/",
+      "published_at": "2026-03-13T14:07:24Z",
+      "excerpt": "The TON blockchain is once again operating normally after a brief service interruption. Users experienced temporary difficulties accessing the network, but services have since been restored and the platform remains stabl…"
+    },
     {
       "id": "784",
       "title": "Toncoin Price Shows Signs of Recovery, but Resistance Remains",
@@ -343,13 +350,6 @@
       "url": "/news/677-tezos-toncoin-and-polkadot-face-strong-downturn-amid-middle-east-tensi/",
       "published_at": "2026-03-04T11:07:44Z",
       "excerpt": "Several major cryptocurrencies, including Tezos, Toncoin, and Polkadot, are seeing significant declines as new geopolitical tensions emerge in the Middle East. According to recent reports, there has been a military strik…"
-    },
-    {
-      "id": "680",
-      "title": "Hamster Kombat Guide Highlights $HMSTR Token and Web3 Gaming Ecosystem",
-      "url": "/news/680-hamster-kombat-guide-highlights-hmstr-token-and-web3-gaming-ecosystem/",
-      "published_at": "2026-03-04T08:03:12Z",
-      "excerpt": "A new guide has emerged, shining a light on Hamster Kombat and its role within the expanding Web3 gaming landscape. This overview centers around the $HMSTR token, which serves as the primary digital asset for the game, a…"
     }
   ]
 }
