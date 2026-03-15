@@ -1,48 +1,34 @@
 (() => {
+  const SECTION_RULES = {
+    guides: ["guide", "how to", "tutorial", "what to know", "explained", "beginner", "walkthrough", "step by step"],
+    airdrops: ["airdrop", "airdrops", "daily combo", "daily cipher", "claim", "quest", "quests", "reward", "rewards", "tap to earn", "combo", "cipher"],
+    projects: ["partnership", "partner", "launch", "mainnet", "protocol", "mini app", "mini apps", "dao", "treasury", "project", "projects", "platform"],
+  };
+
   const CONFIG = [
     {
       key: "news",
       label: "News",
-      feed: "/news/feed.json",
       sectionUrl: "/news/",
-      ids: {
-        title: "news-title",
-        meta: "news-meta",
-        excerpt: "news-excerpt",
-      },
+      ids: { title: "news-title", meta: "news-meta", excerpt: "news-excerpt" },
     },
     {
       key: "airdrops",
       label: "Airdrops & Quests",
-      feed: "/airdrops/feed.json",
       sectionUrl: "/airdrops/",
-      ids: {
-        title: "airdrops-title",
-        meta: "airdrops-meta",
-        excerpt: "airdrops-excerpt",
-      },
+      ids: { title: "airdrops-title", meta: "airdrops-meta", excerpt: "airdrops-excerpt" },
     },
     {
       key: "guides",
       label: "Guides",
-      feed: "/guides/feed.json",
       sectionUrl: "/guides/",
-      ids: {
-        title: "guides-title",
-        meta: "guides-meta",
-        excerpt: "guides-excerpt",
-      },
+      ids: { title: "guides-title", meta: "guides-meta", excerpt: "guides-excerpt" },
     },
     {
       key: "projects",
       label: "Projects",
-      feed: "/projects/feed.json",
       sectionUrl: "/projects/",
-      ids: {
-        title: "projects-title",
-        meta: "projects-meta",
-        excerpt: "projects-excerpt",
-      },
+      ids: { title: "projects-title", meta: "projects-meta", excerpt: "projects-excerpt" },
     },
   ];
 
@@ -50,18 +36,13 @@
     return document.getElementById(id);
   }
 
-  function safeText(v, fallback = "") {
+  function text(v, fallback = "") {
     return typeof v === "string" ? v : fallback;
   }
 
-  function safeDate(v) {
-    const s = safeText(v, "");
-    return s ? s.slice(0, 10) : "";
-  }
-
-  function extractYears(text) {
-    const matches = String(text || "").match(/\b(20\d{2})\b/g) || [];
-    return matches.map((x) => Number(x)).filter((x) => !Number.isNaN(x));
+  function extractYears(raw) {
+    const matches = String(raw || "").match(/\b(20\d{2})\b/g) || [];
+    return matches.map(Number).filter((n) => !Number.isNaN(n));
   }
 
   function minAllowedYear() {
@@ -69,88 +50,81 @@
   }
 
   function hasOldYearReference(item) {
-    const text = [
-      item && item.title ? item.title : "",
-      item && (item.url || item.path) ? (item.url || item.path) : "",
-      item && (item.excerpt || item.summary || item.description)
-        ? (item.excerpt || item.summary || item.description)
-        : "",
-    ].join("\n");
-
-    const years = extractYears(text);
-    if (!years.length) return false;
-
+    const combined = [item?.title || "", item?.url || item?.path || "", item?.excerpt || item?.summary || item?.description || ""].join("\n");
+    const years = extractYears(combined);
     return years.some((year) => year < minAllowedYear());
   }
 
-  function pickFreshItem(items) {
-    const list = Array.isArray(items) ? items : [];
-    for (const item of list) {
-      if (!hasOldYearReference(item)) return item;
+  function normalize(raw) {
+    return String(raw || "")
+      .toLowerCase()
+      .replace(/https?:\/\/\S+/g, " ")
+      .replace(/[^a-z0-9]+/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function classify(item) {
+    const combined = normalize([item?.title || "", item?.excerpt || item?.summary || item?.description || "", item?.url || item?.path || ""].join(" "));
+    for (const kw of SECTION_RULES.guides) {
+      if (combined.includes(kw)) return "guides";
     }
-    return null;
+    for (const kw of SECTION_RULES.airdrops) {
+      if (combined.includes(kw)) return "airdrops";
+    }
+    for (const kw of SECTION_RULES.projects) {
+      if (combined.includes(kw)) return "projects";
+    }
+    return "news";
   }
 
-  function setCard(cfg, { title, url, date, excerpt }) {
-    const t = byId(cfg.ids.title);
-    const m = byId(cfg.ids.meta);
-    const e = byId(cfg.ids.excerpt);
-
-    if (!t || !m || !e) return;
-
-    t.textContent = title;
-    t.href = url;
-
-    const dt = date ? `${cfg.label} • ${date}` : cfg.label;
-    m.textContent = dt;
-    e.textContent = excerpt;
+  function safeDate(v) {
+    const s = text(v, "");
+    return s ? s.slice(0, 10) : "";
   }
 
-  function fallbackNoPosts(cfg) {
-    setCard(cfg, {
-      title: `No posts yet — open ${cfg.label}`,
-      url: cfg.sectionUrl,
-      date: "",
-      excerpt: "The feed is connected. Posts will appear here automatically after the next bot run.",
-    });
+  function setCard(cfg, item) {
+    const titleNode = byId(cfg.ids.title);
+    const metaNode = byId(cfg.ids.meta);
+    const excerptNode = byId(cfg.ids.excerpt);
+    if (!titleNode || !metaNode || !excerptNode) return;
+
+    titleNode.textContent = text(item?.title, `Open ${cfg.label}`);
+    titleNode.href = text(item?.url, cfg.sectionUrl) || cfg.sectionUrl;
+    const date = safeDate(item?.published_at || item?.date || "");
+    metaNode.textContent = date ? `${cfg.label} • ${date}` : cfg.label;
+    excerptNode.textContent = text(item?.excerpt || item?.summary || item?.description, "");
   }
 
-  function fallbackError(cfg) {
+  function fallback(cfg, mode) {
+    const msg = mode === "error"
+      ? "Could not load the feed right now. Try again later."
+      : "The feed is connected. Posts will appear here automatically after the next bot run.";
     setCard(cfg, {
       title: `Open ${cfg.label}`,
       url: cfg.sectionUrl,
-      date: "",
-      excerpt: "Could not load the feed right now. Try again later.",
+      excerpt: msg,
+      published_at: "",
     });
   }
 
-  async function loadSection(cfg) {
+  async function main() {
     try {
-      const r = await fetch(cfg.feed, { cache: "no-store" });
-      if (!r.ok) return fallbackNoPosts(cfg);
-
-      const feed = await r.json();
-      const item = pickFreshItem(feed.items);
-      if (!item) return fallbackNoPosts(cfg);
-
-      const url = safeText(item.url, cfg.sectionUrl) || cfg.sectionUrl;
-      const title = safeText(item.title, `Open ${cfg.label}`);
-      const excerpt = safeText(item.excerpt, "");
-      const date = safeDate(item.published_at);
-
-      setCard(cfg, { title, url, date, excerpt });
-    } catch (e) {
-      fallbackError(cfg);
+      const response = await fetch("/news/feed.json", { cache: "no-store" });
+      if (!response.ok) throw new Error(`Feed HTTP ${response.status}`);
+      const data = await response.json();
+      const items = (Array.isArray(data.items) ? data.items : []).filter((item) => !hasOldYearReference(item));
+      for (const cfg of CONFIG) {
+        const picked = items.find((item) => classify(item) === cfg.key) || (cfg.key === "news" ? items[0] : null);
+        if (picked) setCard(cfg, picked);
+        else fallback(cfg, "empty");
+      }
+    } catch (err) {
+      CONFIG.forEach((cfg) => fallback(cfg, "error"));
+      console.error(err);
     }
   }
 
-  async function main() {
-    await Promise.all(CONFIG.map(loadSection));
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", main);
-  } else {
-    main();
-  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", main);
+  else main();
 })();
