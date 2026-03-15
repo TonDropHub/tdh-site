@@ -152,7 +152,7 @@
 
     <section class="hero">
       <h1 class="h1">TON News, Airdrops &amp; Telegram Mini App Updates</h1>
-      <p class="sub">This page collects the latest TON ecosystem news, airdrop updates, project launches, and Telegram mini-app developments. Each post links to a separate article page on TON Drop Hub.</p>
+      <p class="sub">This page collects the latest TON ecosystem news, airdrop updates, project launches, and Telegram mini-app developments. It stays crawlable without relying only on JavaScript because TON Drop Hub also ships static article links and indexable hub pages.</p>
     </section>
 
     <div class="card" style="margin-top:16px;">
@@ -239,6 +239,10 @@
       <div>Disclaimer: informational only, not financial advice. Never share seed phrases.</div>
     </div>
   </div>
+
+  <noscript>
+    <div class="card" style="margin-top:16px;">News cards below are also rendered from a static feed when JavaScript is available. Use the links above to navigate the rest of the site.</div>
+  </noscript>
 
   <script>
     (async function () {
