@@ -12,23 +12,26 @@
   }catch(e){}
 })();
 </script>
-
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-
-  <title>Airdrops &amp; Quests — TON Drop Hub</title>
-
-  <!-- SEO -->
-  <meta name="description" content="Airdrops and quest tracking on TON Drop Hub. This section is under preparation and temporarily excluded from search indexing." />
-  <meta name="robots" content="noindex,follow" />
-  <meta name="googlebot" content="noindex,follow" />
+  <title>Airdrops & Quests — TON Drop Hub</title>
+  <meta name="description" content="Track TON airdrops, quests, claims, daily combos and daily ciphers in one indexable hub page." />
+  <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#0b1020" />
   <meta name="color-scheme" content="dark light" />
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://tdh-site-cie.pages.dev/airdrops/" />
-
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="TON Drop Hub" />
+  <meta property="og:title" content="Airdrops & Quests — TON Drop Hub" />
+  <meta property="og:description" content="Track TON airdrops, quests, claims, daily combos and daily ciphers in one indexable hub page." />
+  <meta property="og:url" content="https://tdh-site-cie.pages.dev/airdrops/" />
+  <meta property="og:image" content="https://tdh-site-cie.pages.dev/assets/og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Airdrops & Quests — TON Drop Hub" />
+  <meta name="twitter:description" content="Track TON airdrops, quests, claims, daily combos and daily ciphers in one indexable hub page." />
+  <meta name="twitter:image" content="https://tdh-site-cie.pages.dev/assets/og.jpg" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":"Airdrops & Quests","url":"https://tdh-site-cie.pages.dev/airdrops/","description":"Track TON airdrops, quests, claims, daily combos and daily ciphers in one indexable hub page.","isPartOf":{"@type":"WebSite","name":"TON Drop Hub","url":"https://tdh-site-cie.pages.dev/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tdh-site-cie.pages.dev/"},{"@type":"ListItem","position":2,"name":"Airdrops & Quests","item":"https://tdh-site-cie.pages.dev/airdrops/"}]}]}</script>
   <link rel="stylesheet" href="/assets/style.css" />
-<script src="/assets/site.js" defer></script>
+  <script src="/assets/site.js" defer></script>
 </head>
 <body>
   <div class="container">
@@ -47,18 +50,126 @@
     </div>
 
     <section class="hero">
-      <h1 class="h1">Airdrops &amp; Quests</h1>
-      <p class="sub">MVP placeholder. We’ll later add filters, tags, and “What to do” checklists per quest.</p>
+      <h1 class="h1">Airdrops & Quests</h1>
+      <p class="sub">Track TON airdrops, quests, claims, daily combos and daily ciphers in one indexable hub page.</p>
     </section>
 
-    <div class="card">
-      <h2>Coming soon</h2>
-      <div class="meta">This section will be filled by the same pipeline as News.</div>
+    <div class="grid grid-4" style="margin-top:16px;">
+      <article class="card">
+        <h2 style="margin-top:0;"><a class="link-title" href="/news/">News</a></h2>
+        <p class="excerpt">Go back to the main news archive for the full stream of published articles.</p>
+      </article>
+      <article class="card">
+        <h2 style="margin-top:0;"><a class="link-title" href="/airdrops/">Airdrops &amp; Quests</a></h2>
+        <p class="excerpt">Actionable claims, combos, ciphers, quests and earning-related coverage.</p>
+      </article>
+      <article class="card">
+        <h2 style="margin-top:0;"><a class="link-title" href="/guides/">Guides</a></h2>
+        <p class="excerpt">Step-by-step explainers, practical setups and useful context for TON users.</p>
+      </article>
+      <article class="card">
+        <h2 style="margin-top:0;"><a class="link-title" href="/projects/">Projects</a></h2>
+        <p class="excerpt">Partnerships, launches, protocol moves and ecosystem-level updates.</p>
+      </article>
     </div>
+
+    <section style="margin-top:22px;">
+      <div class="meta">Latest in Airdrops & Quests</div>
+      <div id="section-feed" class="grid" style="margin-top:16px; gap:16px;"></div>
+      <noscript>
+        <div class="card" style="margin-top:16px;">This section is indexable without JavaScript because the page has its own crawlable metadata, text copy and internal links. Latest cards load from the news feed when JavaScript is available.</div>
+      </noscript>
+    </section>
 
     <div class="footer">
       <div>Disclaimer: informational only, not financial advice. Never share seed phrases.</div>
     </div>
   </div>
+
+  <script>
+    (async function () {
+      const FEED_URL = "/news/feed.json";
+      const KEYWORDS = ['airdrop', 'airdrops', 'daily combo', 'daily cipher', 'claim', 'quest', 'quests', 'reward', 'rewards', 'tap to earn', 'combo', 'cipher'];
+      const root = document.getElementById("section-feed");
+
+      function escapeHtml(s) {
+        return String(s)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      function normalize(text) {
+        return String(text || "")
+          .toLowerCase()
+          .replace(/https?:\/\/\S+/g, " ")
+          .replace(/[^a-z0-9]+/g, " ")
+          .replace(/\s+/g, " ")
+          .trim();
+      }
+
+      function extractYears(text) {
+        const matches = String(text || "").match(/(20\d{2})/g) || [];
+        return matches.map(Number).filter((x) => !Number.isNaN(x));
+      }
+
+      function minAllowedYear() {
+        return new Date().getFullYear() - 1;
+      }
+
+      function hasOldYearReference(item) {
+        const combined = [item?.title || "", item?.url || item?.path || "", item?.excerpt || item?.summary || item?.description || ""].join("
+");
+        return extractYears(combined).some((year) => year < minAllowedYear());
+      }
+
+      function matchesSection(item) {
+        const hay = normalize([item?.title || "", item?.excerpt || item?.summary || item?.description || "", item?.url || item?.path || ""].join(" "));
+        return KEYWORDS.some((kw) => hay.includes(kw));
+      }
+
+      function formatDate(v) {
+        if (!v) return "";
+        const d = new Date(v);
+        if (Number.isNaN(d.getTime())) return String(v).slice(0, 10);
+        const yyyy = d.getFullYear();
+        const mm = String(d.getMonth() + 1).padStart(2, "0");
+        const dd = String(d.getDate()).padStart(2, "0");
+        return `${yyyy}-${mm}-${dd}`;
+      }
+
+      function renderEmpty() {
+        root.innerHTML = `<div class="card"><h2>No section articles yet</h2><div class="meta">Articles for this hub will appear here after the next bot run.</div></div>`;
+      }
+
+      try {
+        const res = await fetch(FEED_URL, { cache: "no-store" });
+        if (!res.ok) throw new Error("Feed HTTP " + res.status);
+        const data = await res.json();
+        const items = (Array.isArray(data.items) ? data.items : [])
+          .filter((item) => !hasOldYearReference(item))
+          .filter(matchesSection)
+          .slice(0, 30);
+
+        if (!items.length) {
+          renderEmpty();
+          return;
+        }
+
+        root.innerHTML = items.map((it) => {
+          const title = escapeHtml(it.title || "Untitled");
+          const url = escapeHtml(it.url || it.path || "#");
+          const date = escapeHtml(formatDate(it.published_at || it.date || ""));
+          const excerpt = escapeHtml((it.excerpt || it.summary || it.description || "").slice(0, 220));
+          return `<article class="card"><div class="meta">${date}</div><h2 style="margin-top:10px;"><a class="link-title" href="${url}">${title}</a></h2>${excerpt ? `<p class="excerpt" style="margin-top:10px;">${excerpt}${(it.excerpt || it.summary || it.description || "").length > 220 ? "…" : ""}</p>` : ""}<div class="btnrow"><a class="pill" href="${url}">Read article →</a></div></article>`;
+        }).join("");
+      } catch (e) {
+        root.innerHTML = `<div class="card"><h2>Feed error</h2><div class="meta">Could not load /news/feed.json. Try hard refresh (Ctrl+F5).</div></div>`;
+        console.error(e);
+      }
+    })();
+  </script>
 </body>
 </html>
