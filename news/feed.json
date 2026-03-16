@@ -1,6 +1,13 @@
 {
-  "updated": "2026-03-16T11:02:22Z",
+  "updated": "2026-03-16T14:02:10Z",
   "items": [
+    {
+      "id": "764",
+      "title": "Telegram Mini Apps See Surge in Advertiser Engagement",
+      "url": "/news/764-telegram-mini-apps-see-surge-in-advertiser-engagement/",
+      "published_at": "2026-03-16T14:02:10Z",
+      "excerpt": "Telegram’s Mini Apps are attracting growing interest as a highly interactive channel for digital advertisers. Recent updates from industry leaders indicate these lightweight applications are quickly becoming a favored ch…"
+    },
     {
       "id": "770",
       "title": "Top TON Wallets and Exchanges for Users in India to Watch in 2026",
@@ -388,14 +395,6 @@
       "url": "/news/714-notcoin-and-hyperliquid-enter-final-phase-of-presale-ahead-of-2026-lau/",
       "published_at": "2026-03-07",
       "excerpt": "Notcoin and Hyperliquid, two blockchain projects, have been identified as notable presale tokens entering the last stage of their fundraising efforts ahead…"
-    },
-    {
-      "slug": "711-moongate-and-ton-blockchain-partner-to-enhance-web3-ticketing-solution",
-      "id": "711",
-      "title": "Moongate and TON Blockchain Partner to Enhance Web3 Ticketing Solutions",
-      "url": "/news/711-moongate-and-ton-blockchain-partner-to-enhance-web3-ticketing-solution/",
-      "published_at": "2026-03-07",
-      "excerpt": "Moongate has announced a new collaboration with TON Blockchain, with the goal of transforming how tickets are bought and managed in the Web3 space. The…"
     }
   ]
 }
