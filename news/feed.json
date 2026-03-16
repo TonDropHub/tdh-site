@@ -1,6 +1,13 @@
 {
-  "updated": "2026-03-16T08:02:32Z",
+  "updated": "2026-03-16T11:02:22Z",
   "items": [
+    {
+      "id": "770",
+      "title": "Top TON Wallets and Exchanges for Users in India to Watch in 2026",
+      "url": "/news/770-top-ton-wallets-and-exchanges-for-users-in-india-to-watch-in-2026/",
+      "published_at": "2026-03-16T11:02:22Z",
+      "excerpt": "The landscape for managing and trading Toncoin (TON) is rapidly evolving in India, with a variety of wallets and exchanges addressing the increasing interest in this blockchain network. As digital assets become more inte…"
+    },
     {
       "id": "810",
       "title": "Iranian Missile Debris Reportedly Strikes US Consul Residence in Israel",
@@ -389,14 +396,6 @@
       "url": "/news/711-moongate-and-ton-blockchain-partner-to-enhance-web3-ticketing-solution/",
       "published_at": "2026-03-07",
       "excerpt": "Moongate has announced a new collaboration with TON Blockchain, with the goal of transforming how tickets are bought and managed in the Web3 space. The…"
-    },
-    {
-      "slug": "704-toncoin-whale-reportedly-returns-203k-in-unusual-on-chain-move",
-      "id": "704",
-      "title": "Toncoin Whale Reportedly Returns $203K in Unusual On-Chain Move",
-      "url": "/news/704-toncoin-whale-reportedly-returns-203k-in-unusual-on-chain-move/",
-      "published_at": "2026-03-06",
-      "excerpt": "A Toncoin holder, commonly referred to as a “whale” because of the size of their holdings, has reportedly returned funds worth approximately $203,000. This…"
     }
   ]
 }
