@@ -1,6 +1,13 @@
 {
-  "updated": "2026-03-17T05:03:28Z",
+  "updated": "2026-03-17T08:03:22Z",
   "items": [
+    {
+      "id": "819",
+      "title": "Iranian Missile Fragment Hits US Consul Residence in Israel",
+      "url": "/news/819-iranian-missile-fragment-hits-us-consul-residence-in-israel/",
+      "published_at": "2026-03-17T08:03:22Z",
+      "excerpt": "A missile fragment believed to have come from Iran struck a building associated with the US consul's residence in Israel. This incident unfolded as tensions in the region remain high. Damage was reported at the building…"
+    },
     {
       "id": "817",
       "title": "Will Remittix Surpass Zcash and Toncoin by 2026",
@@ -385,14 +392,6 @@
       "url": "/news/719-5-free-crypto-airdrops-available-this-march-without-any-investment/",
       "published_at": "2026-03-07",
       "excerpt": "Several new crypto airdrop opportunities are available for participation this March, providing ways to engage with blockchain projects without requiring…"
-    },
-    {
-      "slug": "718-toncoin-targets-key-resistance-as-price-steps-higher-after-breakout",
-      "id": "718",
-      "title": "Toncoin targets key resistance as price steps higher after breakout",
-      "url": "/news/718-toncoin-targets-key-resistance-as-price-steps-higher-after-breakout/",
-      "published_at": "2026-03-07T00:00:00Z",
-      "excerpt": "Toncoin (TON) has recently caught the attention of traders after breaking out of a price channel and setting its sights on a key resistance level…"
     }
   ]
 }
