@@ -1,6 +1,13 @@
 {
-  "updated": "2026-03-17T08:03:22Z",
+  "updated": "2026-03-17T11:03:43Z",
   "items": [
+    {
+      "id": "822",
+      "title": "TON Blockchain and Symbiosis Finance Join Forces to Enhance DeFi Cross-Chain Liquidity",
+      "url": "/news/822-ton-blockchain-and-symbiosis-finance-join-forces-to-enhance-defi-cross/",
+      "published_at": "2026-03-17T11:03:43Z",
+      "excerpt": "TON Blockchain has announced a new partnership with Symbiosis Finance to help expand decentralized finance (DeFi) across multiple blockchain networks. The collaboration aims to provide users with easier access to cross-c…"
+    },
     {
       "id": "819",
       "title": "Iranian Missile Fragment Hits US Consul Residence in Israel",
@@ -384,14 +391,6 @@
       "url": "/news/720-moongate-partners-with-ton-blockchain-to-enhance-web3-ticketing-paymen/",
       "published_at": "2026-03-07T00:00:00Z",
       "excerpt": "Moongate and TON Blockchain have announced a collaboration aimed at improving the Web3 ticketing experience. The partnership will integrate both…"
-    },
-    {
-      "slug": "719-5-free-crypto-airdrops-available-this-march-without-any-investment",
-      "id": "719",
-      "title": "5 Free Crypto Airdrops Available This March Without Any Investment",
-      "url": "/news/719-5-free-crypto-airdrops-available-this-march-without-any-investment/",
-      "published_at": "2026-03-07",
-      "excerpt": "Several new crypto airdrop opportunities are available for participation this March, providing ways to engage with blockchain projects without requiring…"
     }
   ]
 }
