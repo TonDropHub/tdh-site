@@ -1,6 +1,13 @@
 {
-  "updated": "2026-03-17T14:02:57Z",
+  "updated": "2026-03-18T02:03:55Z",
   "items": [
+    {
+      "id": "825",
+      "title": "Tonkeeper Wallet and TON Token Outlook for 2026: Storage, Trading, and Beyond",
+      "url": "/news/825-tonkeeper-wallet-and-ton-token-outlook-for-2026-storage-trading-and-be/",
+      "published_at": "2026-03-18T02:03:55Z",
+      "excerpt": "Tonkeeper remains a central digital wallet for The Open Network (TON) ecosystem, providing secure options to store, send, and manage TON tokens. As TON's popularity continues to rise, many users are already looking ahead…"
+    },
     {
       "id": "821",
       "title": "Memefi Codes and Crypto Exchange Promotions: What to Know for 2026",
@@ -382,14 +389,6 @@
       "url": "/news/712-toncoin-makes-technical-moves-toward-3-as-bullish-pattern-emerges/",
       "published_at": "2026-03-08T00:00:00Z",
       "excerpt": "Toncoin has started drawing attention from market observers following a notable shift in its price chart. Recent analysis has highlighted the emergence of…"
-    },
-    {
-      "slug": "710-niza-labs-and-pingo-push-ai-and-depin-innovation-forward-on-ton-blockc",
-      "id": "710",
-      "title": "Niza Labs and PinGo Push AI and DePIN Innovation Forward on TON Blockchain",
-      "url": "/news/710-niza-labs-and-pingo-push-ai-and-depin-innovation-forward-on-ton-blockc/",
-      "published_at": "2026-03-08T00:00:00Z",
-      "excerpt": "Two rising names in tech innovation, Niza Labs and PinGo, have announced new efforts to advance artificial intelligence (AI) and Decentralized Physical…"
     }
   ]
 }
