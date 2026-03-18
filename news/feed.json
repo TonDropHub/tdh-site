@@ -1,6 +1,13 @@
 {
-  "updated": "2026-03-18T11:03:54Z",
+  "updated": "2026-03-18T14:04:35Z",
   "items": [
+    {
+      "id": "835",
+      "title": "How to Track Toncoin Price and Understand Factors Influencing TON’s Value",
+      "url": "/news/835-how-to-track-toncoin-price-and-understand-factors-influencing-tons-val/",
+      "published_at": "2026-03-18T14:04:35Z",
+      "excerpt": "Toncoin (TON) has gained considerable attention in the digital asset space, making it important for both newcomers and experienced market followers to stay updated on its price movements. Understanding the various factor…"
+    },
     {
       "id": "834",
       "title": "TON Wallet Storage Guide 2026: How to Keep Your Toncoin Safe",
@@ -378,14 +385,6 @@
       "url": "/news/728-the-state-of-tap-to-earn-are-telegram-based-games-still-thriving-in-20/",
       "published_at": "2026-03-09T00:00:00Z",
       "excerpt": "The “tap-to-earn” gaming model—where users can earn rewards simply by interacting with games—saw a huge surge in popularity over the past few years…"
-    },
-    {
-      "slug": "705-ton-wallets-and-exchanges-a-2026-overview-for-safe-storage-and-seamles",
-      "id": "705",
-      "title": "TON Wallets and Exchanges: A 2026 Overview for Safe Storage and Seamless Trading",
-      "url": "/news/705-ton-wallets-and-exchanges-a-2026-overview-for-safe-storage-and-seamles/",
-      "published_at": "2026-03-09T00:00:00Z",
-      "excerpt": "Interest in The Open Network (TON) continues to reshape the digital asset landscape as we move further into 2026. For those involved in TON’s expanding…"
     }
   ]
 }
