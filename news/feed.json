@@ -1,6 +1,13 @@
 {
-  "updated": "2026-03-18T14:04:35Z",
+  "updated": "2026-03-19T02:03:22Z",
   "items": [
+    {
+      "id": "839",
+      "title": "TON Blockchain Collaborates With Symbiosis Finance to Improve DeFi Cross-Chain Liquidity",
+      "url": "/news/839-ton-blockchain-collaborates-with-symbiosis-finance-to-improve-defi-cro/",
+      "published_at": "2026-03-19T02:03:22Z",
+      "excerpt": "TON Blockchain is joining forces with Symbiosis Finance in an effort to strengthen cross-chain liquidity within the decentralized finance (DeFi) sector. This partnership aims to streamline the process for users who want…"
+    },
     {
       "id": "835",
       "title": "How to Track Toncoin Price and Understand Factors Influencing TON’s Value",
@@ -377,14 +384,6 @@
       "url": "/news/730-hamster-kombat-daily-combo-for-march-9-2026-play-to-earn-details-await/",
       "published_at": "2026-03-09T00:00:00Z",
       "excerpt": "Details about the latest play-to-earn combo in Hamster Kombat for March 9, 2026, have not been confirmed yet. Although the daily combo event appears to be…"
-    },
-    {
-      "slug": "728-the-state-of-tap-to-earn-are-telegram-based-games-still-thriving-in-20",
-      "id": "728",
-      "title": "The State of Tap-to-Earn: Are Telegram-Based Games Still Thriving in 2026",
-      "url": "/news/728-the-state-of-tap-to-earn-are-telegram-based-games-still-thriving-in-20/",
-      "published_at": "2026-03-09T00:00:00Z",
-      "excerpt": "The “tap-to-earn” gaming model—where users can earn rewards simply by interacting with games—saw a huge surge in popularity over the past few years…"
     }
   ]
 }
