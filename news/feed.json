@@ -1,6 +1,13 @@
 {
-  "updated": "2026-03-19T08:03:52Z",
+  "updated": "2026-03-19T11:02:26Z",
   "items": [
+    {
+      "id": "846",
+      "title": "TON Foundation Shares Plans to Transform Telegram into a Global Super App",
+      "url": "/news/846-ton-foundation-shares-plans-to-transform-telegram-into-a-global-super/",
+      "published_at": "2026-03-19T11:02:26Z",
+      "excerpt": "The TON Foundation is aiming to turn Telegram into much more than just a messaging platform. Recent discussions reveal that the organization is actively working to make Telegram a central hub for digital services, rangin…"
+    },
     {
       "id": "841",
       "title": "Notcoin Outlook: Keeping Track of Price Movements and Market Dynamics in 2026",
@@ -374,14 +381,6 @@
       "url": "/news/734-notcoin-faces-uncertain-path-as-market-watches-for-signs-of-recovery/",
       "published_at": "2026-03-09T00:00:00Z",
       "excerpt": "Notcoin (NOT) has attracted significant attention as the market debates its next potential move. After recent price downturns, the token appears to be at a…"
-    },
-    {
-      "slug": "733-top-10-anticipated-crypto-airdrops-to-watch-for-in-2025",
-      "id": "733",
-      "title": "Top 10 Anticipated Crypto Airdrops to Watch for in 2025",
-      "url": "/news/733-top-10-anticipated-crypto-airdrops-to-watch-for-in-2025/",
-      "published_at": "2026-03-09T00:00:00Z",
-      "excerpt": "Interest is building around the next wave of crypto airdrops expected in 2025, as developers and blockchain communities prepare new projects and incentives…"
     }
   ]
 }
