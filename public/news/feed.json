@@ -1,6 +1,13 @@
 {
-  "updated": "2026-03-18T14:04:35Z",
+  "updated": "2026-03-19T02:03:22Z",
   "items": [
+    {
+      "id": "839",
+      "title": "TON Blockchain Collaborates With Symbiosis Finance to Improve DeFi Cross-Chain Liquidity",
+      "url": "/news/839-ton-blockchain-collaborates-with-symbiosis-finance-to-improve-defi-cro/",
+      "published_at": "2026-03-19T02:03:22Z",
+      "excerpt": "TON Blockchain is joining forces with Symbiosis Finance in an effort to strengthen cross-chain liquidity within the decentralized finance (DeFi) sector. This partnership aims to streamline the process for users who want…"
+    },
     {
       "id": "835",
       "title": "How to Track Toncoin Price and Understand Factors Influencing TON’s Value",
@@ -343,13 +350,6 @@
       "url": "/news/732-tomarket-offers-daily-combo-with-chance-to-claim-free-toma-tokens-on-m/",
       "published_at": "2026-03-09T10:08:39Z",
       "excerpt": "Tomarket has announced a special offer for its users today, March 8, 2026. According to recent updates, users who take part in the platform’s daily combo event have a chance to claim free $TOMA tokens. Although the exact…"
-    },
-    {
-      "id": "734",
-      "title": "Notcoin Faces Uncertain Path as Market Watches for Signs of Recovery",
-      "url": "/news/734-notcoin-faces-uncertain-path-as-market-watches-for-signs-of-recovery/",
-      "published_at": "2026-03-09T08:03:20Z",
-      "excerpt": "Notcoin (NOT) has attracted significant attention as the market debates its next potential move. After recent price downturns, the token appears to be at a pivotal juncture, leaving traders and observers closely monitori…"
     }
   ]
 }
