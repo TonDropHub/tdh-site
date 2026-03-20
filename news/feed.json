@@ -1,6 +1,13 @@
 {
-  "updated": "2026-03-20T11:06:48Z",
+  "updated": "2026-03-20T14:02:45Z",
   "items": [
+    {
+      "id": "849",
+      "title": "Blum Coin Shuts Down Perpetual Positions Trading, Urges Users to Withdraw",
+      "url": "/news/849-blum-coin-shuts-down-perpetual-positions-trading-urges-users-to-withdr/",
+      "published_at": "2026-03-20T14:02:45Z",
+      "excerpt": "Blum Coin has announced that its perpetual positions trading service will be discontinued by the end of today. Users with active positions on the platform are being encouraged to withdraw their funds as soon as possible.…"
+    },
     {
       "id": "824",
       "title": "Pepeto Presale Raises $8.1M as Dogecoin, Toncoin, and Hedera Trend in Crypto",
@@ -368,14 +375,6 @@
       "url": "/news/748-toncoin-ton-2026-what-could-influence-prices-and-a-uk-user-overview/",
       "published_at": "2026-03-11T00:00:00Z",
       "excerpt": "Toncoin (TON) has recently attracted attention as analysts explore its potential path leading into 2026, particularly among users in the United Kingdom…"
-    },
-    {
-      "slug": "746-guide-to-cashing-out-memefi-rewards-in-the-uk-in-2026",
-      "id": "746",
-      "title": "Guide to Cashing Out MemeFi Rewards in the UK in 2026",
-      "url": "/news/746-guide-to-cashing-out-memefi-rewards-in-the-uk-in-2026/",
-      "published_at": "2026-03-10T00:00:00Z",
-      "excerpt": "Interest in MemeFi rewards continues to grow, especially among UK users who are looking for ways to convert their digital assets into spendable currency…"
     }
   ]
 }
