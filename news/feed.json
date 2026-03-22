@@ -1,6 +1,13 @@
 {
-  "updated": "2026-03-22T11:02:13Z",
+  "updated": "2026-03-22T14:01:46Z",
   "items": [
+    {
+      "id": "856",
+      "title": "Missile Fragment Lands in Jerusalem’s Jewish Quarter Near Western Wall",
+      "url": "/news/856-missile-fragment-lands-in-jerusalems-jewish-quarter-near-western-wall/",
+      "published_at": "2026-03-22T14:01:46Z",
+      "excerpt": "A missile fragment believed to have come from Iran landed in Jerusalem’s Old City, falling in the Jewish Quarter near two of the city’s most important religious sites—the Western Wall and the Al-Aqsa Mosque. The incident…"
+    },
     {
       "id": "812",
       "title": "An Overview of the Blum Ecosystem: Hybrid Exchange, Tokenomics, and Trading Platform",
@@ -358,14 +365,6 @@
       "url": "/news/775-could-toncoin-be-poised-for-a-significant-price-spike/",
       "published_at": "2026-03-13T00:00:00Z",
       "excerpt": "Speculation is building around Toncoin (TON) as some suggest that a major price rally could be in the works. Observers are noting current market conditions…"
-    },
-    {
-      "slug": "771-how-uk-users-can-cash-out-memefi-rewards-in-2026",
-      "id": "771",
-      "title": "How UK Users Can Cash Out MemeFi Rewards in 2026",
-      "url": "/news/771-how-uk-users-can-cash-out-memefi-rewards-in-2026/",
-      "published_at": "2026-03-12T00:00:00Z",
-      "excerpt": "MemeFi has become a familiar term among crypto enthusiasts, especially for those who enjoy blending humor with decentralized finance. For UK residents who…"
     }
   ]
 }
