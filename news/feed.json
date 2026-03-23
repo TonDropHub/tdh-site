@@ -1,6 +1,13 @@
 {
-  "updated": "2026-03-23T05:02:44Z",
+  "updated": "2026-03-23T08:01:48Z",
   "items": [
+    {
+      "id": "762",
+      "title": "Toncoin Reportedly Surpasses 12.4 Billion Tokens Sold",
+      "url": "/news/762-toncoin-reportedly-surpasses-124-billion-tokens-sold/",
+      "published_at": "2026-03-23T08:01:48Z",
+      "excerpt": "Toncoin has attracted attention in the crypto world after reports emerged that over 12.4 billion TON tokens have been sold so far. This figure points to growing activity and interest in the Toncoin ecosystem. Toncoin, kn…"
+    },
     {
       "id": "813",
       "title": "Toncoin Price Update: Latest Value and Market Overview",
@@ -355,14 +362,6 @@
       "url": "/news/782-ton-blockchain-back-online-after-short-service-outage/",
       "published_at": "2026-03-13T00:00:00Z",
       "excerpt": "The TON blockchain is once again operating normally after a brief service interruption. Users experienced temporary difficulties accessing the network, but…"
-    },
-    {
-      "slug": "778-hamster-kombat-offers-5-million-coins-in-march-13-daily-combo-event",
-      "id": "778",
-      "title": "Hamster Kombat Offers 5 Million Coins in March 13 Daily Combo Event",
-      "url": "/news/778-hamster-kombat-offers-5-million-coins-in-march-13-daily-combo-event/",
-      "published_at": "2026-03-13T00:00:00Z",
-      "excerpt": "Hamster Kombat players are in for a treat as a special daily combo is making waves on March 13, 2026. According to official information, a total of 5…"
     }
   ]
 }
