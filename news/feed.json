@@ -1,6 +1,13 @@
 {
-  "updated": "2026-03-23T08:01:48Z",
+  "updated": "2026-03-23T11:03:00Z",
   "items": [
+    {
+      "id": "761",
+      "title": "Catizen (CATI) Shares Airdrop Guide and Trading Tips for 2026",
+      "url": "/news/761-catizen-cati-shares-airdrop-guide-and-trading-tips-for-2026/",
+      "published_at": "2026-03-23T11:03:00Z",
+      "excerpt": "Catizen (CATI), a growing project in the crypto space, has introduced a dedicated guide to help its community navigate the upcoming airdrop and explore trading strategies ahead of 2026. This move comes as interest in the…"
+    },
     {
       "id": "762",
       "title": "Toncoin Reportedly Surpasses 12.4 Billion Tokens Sold",
@@ -354,14 +361,6 @@
       "url": "/news/784-toncoin-price-shows-signs-of-recovery-but-resistance-remains/",
       "published_at": "2026-03-13T00:00:00Z",
       "excerpt": "Toncoin traders have recently noticed a rebound in the coin’s market price, sparking renewed discussion about its short-term direction. While there has…"
-    },
-    {
-      "slug": "782-ton-blockchain-back-online-after-short-service-outage",
-      "id": "782",
-      "title": "TON Blockchain Back Online After Short Service Outage",
-      "url": "/news/782-ton-blockchain-back-online-after-short-service-outage/",
-      "published_at": "2026-03-13T00:00:00Z",
-      "excerpt": "The TON blockchain is once again operating normally after a brief service interruption. Users experienced temporary difficulties accessing the network, but…"
     }
   ]
 }
