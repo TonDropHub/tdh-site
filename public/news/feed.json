@@ -1,6 +1,13 @@
 {
-  "updated": "2026-03-23T05:02:44Z",
+  "updated": "2026-03-23T08:01:48Z",
   "items": [
+    {
+      "id": "762",
+      "title": "Toncoin Reportedly Surpasses 12.4 Billion Tokens Sold",
+      "url": "/news/762-toncoin-reportedly-surpasses-124-billion-tokens-sold/",
+      "published_at": "2026-03-23T08:01:48Z",
+      "excerpt": "Toncoin has attracted attention in the crypto world after reports emerged that over 12.4 billion TON tokens have been sold so far. This figure points to growing activity and interest in the Toncoin ecosystem. Toncoin, kn…"
+    },
     {
       "id": "813",
       "title": "Toncoin Price Update: Latest Value and Market Overview",
@@ -343,13 +350,6 @@
       "url": "/news/782-ton-blockchain-back-online-after-short-service-outage/",
       "published_at": "2026-03-13T14:07:24Z",
       "excerpt": "The TON blockchain is once again operating normally after a brief service interruption. Users experienced temporary difficulties accessing the network, but services have since been restored and the platform remains stabl…"
-    },
-    {
-      "id": "784",
-      "title": "Toncoin Price Shows Signs of Recovery, but Resistance Remains",
-      "url": "/news/784-toncoin-price-shows-signs-of-recovery-but-resistance-remains/",
-      "published_at": "2026-03-13T11:03:25Z",
-      "excerpt": "Toncoin traders have recently noticed a rebound in the coin’s market price, sparking renewed discussion about its short-term direction. While there has been upward momentum, analysts point out that a significant resistan…"
     }
   ]
 }
