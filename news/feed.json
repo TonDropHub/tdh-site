@@ -1,6 +1,13 @@
 {
-  "updated": "2026-03-24T05:07:26Z",
+  "updated": "2026-03-24T08:03:12Z",
   "items": [
+    {
+      "id": "860",
+      "title": "Secretbet Rolls Out Mini App for Instant Betting Access",
+      "url": "/news/860-secretbet-rolls-out-mini-app-for-instant-betting-access/",
+      "published_at": "2026-03-24T08:03:12Z",
+      "excerpt": "Secretbet has officially introduced a new mini app, giving users a streamlined way to access their betting platform directly from their mobile devices. This new feature offers an alternative to traditional web-based plat…"
+    },
     {
       "id": "805",
       "title": "APEMARS Stage 12 Sees 4,200% ROI as Hedera and Toncoin Grab Market Attention",
@@ -350,14 +357,6 @@
       "url": "/news/788-hamster-kombat-players-set-sights-on-5-million-coin-daily-combo-for-ma/",
       "published_at": "2026-03-14T00:00:00Z",
       "excerpt": "Hamster Kombat has announced that its Daily Combo event for March 14, 2026, will feature an impressive prize pool of five million coins. This update has…"
-    },
-    {
-      "slug": "787-toncoin-remains-steady-around-130-135-for-two-consecutive-days",
-      "id": "787",
-      "title": "Toncoin Remains Steady Around $1.30-$1.35 for Two Consecutive Days",
-      "url": "/news/787-toncoin-remains-steady-around-130-135-for-two-consecutive-days/",
-      "published_at": "2026-03-14T00:00:00Z",
-      "excerpt": "Toncoin’s price has shown remarkable stability over the past two days, consistently staying within the $1.30 to $1.35 range. This period of relative calm…"
     }
   ]
 }
