@@ -1,6 +1,13 @@
 {
-  "updated": "2026-03-24T08:03:12Z",
+  "updated": "2026-03-24T11:03:07Z",
   "items": [
+    {
+      "id": "862",
+      "title": "TON Foundation, Ethereum, and Solana Collaborate to Support New OWS Platform Launch",
+      "url": "/news/862-ton-foundation-ethereum-and-solana-collaborate-to-support-new-ows-plat/",
+      "published_at": "2026-03-24T11:03:07Z",
+      "excerpt": "Some of the biggest names in the blockchain industry — TON Foundation, Ethereum, and Solana — are joining forces to back the recent launch of a platform called OWS. This collaboration represents a notable move, as these…"
+    },
     {
       "id": "860",
       "title": "Secretbet Rolls Out Mini App for Instant Betting Access",
@@ -343,13 +350,6 @@
       "url": "/news/798-hamster-kombat-offers-5-million-coins-in-special-daily-combo-for-march/",
       "published_at": "2026-03-15T02:03:05Z",
       "excerpt": "Hamster Kombat players have a new reason to log in today: a fresh daily combo has launched for March 15, 2026, giving players a chance to claim up to 5 million in-game coins. The announcement has generated a lot of excit…"
-    },
-    {
-      "id": "776",
-      "title": "Toncoin Forecasts Highlight $10 Target by 2030, But Uncertainties Remain",
-      "url": "/news/776-toncoin-forecasts-highlight-10-target-by-2030-but-uncertainties-remain/",
-      "published_at": "2026-03-14T14:02:55Z",
-      "excerpt": "Interest in the future of Toncoin (TON) is growing as analysts and cryptocurrency enthusiasts speculate about its trajectory through the end of the decade. Recent projections have drawn attention to the possibility of To…"
     }
   ]
 }
