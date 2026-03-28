@@ -1,6 +1,13 @@
 {
-  "updated": "2026-03-28T11:06:53Z",
+  "updated": "2026-03-28T14:02:00Z",
   "items": [
+    {
+      "id": "702",
+      "title": "A Closer Look at Blum Crypto: Features, Fees, and Security of the Hybrid Exchange",
+      "url": "/news/702-a-closer-look-at-blum-crypto-features-fees-and-security-of-the-hybrid/",
+      "published_at": "2026-03-28T14:02:00Z",
+      "excerpt": "Blum Crypto is attracting attention as a hybrid exchange that brings together elements from both centralized and decentralized platforms. The goal of this approach is to give users more flexibility, merging the enhanced…"
+    },
     {
       "id": "715",
       "title": "Notcoin (NOT) Faces Uncertain Future as Market Watches for Direction",
@@ -343,13 +350,6 @@
       "url": "/news/835-how-to-track-toncoin-price-and-understand-factors-influencing-tons-val/",
       "published_at": "2026-03-18T14:04:35Z",
       "excerpt": "Toncoin (TON) has gained considerable attention in the digital asset space, making it important for both newcomers and experienced market followers to stay updated on its price movements. Understanding the various factor…"
-    },
-    {
-      "id": "834",
-      "title": "TON Wallet Storage Guide 2026: How to Keep Your Toncoin Safe",
-      "url": "/news/834-ton-wallet-storage-guide-2026-how-to-keep-your-toncoin-safe/",
-      "published_at": "2026-03-18T11:03:54Z",
-      "excerpt": "Details were not confirmed. A recent guide has brought attention to the best practices for securing Toncoin as we approach 2026. With more users showing interest in digital assets, understanding how to store them securel…"
     }
   ]
 }
