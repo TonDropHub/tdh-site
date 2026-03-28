@@ -1,6 +1,13 @@
 {
-  "updated": "2026-03-28T02:06:46Z",
+  "updated": "2026-03-28T05:04:14Z",
   "items": [
+    {
+      "id": "877",
+      "title": "Tomarket Announces TOMA Token Airdrop on The Open Network",
+      "url": "/news/877-tomarket-announces-toma-token-airdrop-on-the-open-network/",
+      "published_at": "2026-03-28T05:04:14Z",
+      "excerpt": "Tomarket has revealed the launch of an airdrop campaign for its TOMA token, selecting The Open Network (TON) as the hosting blockchain. This initiative aims to introduce the TOMA token to the TON ecosystem and offer new…"
+    },
     {
       "id": "868",
       "title": "Hamster Kombat HMSTR Airdrop Launches on MEXC",
@@ -343,13 +350,6 @@
       "url": "/news/828-what-to-know-about-the-2026-hamster-kombat-hmstr-token-listing-on-bitg/",
       "published_at": "2026-03-18T05:02:33Z",
       "excerpt": "Hamster Kombat’s HMSTR token is set to be listed on the crypto exchange Bitget, according to the latest available information. While excitement among community members is growing, many key details about this upcoming lis…"
-    },
-    {
-      "id": "825",
-      "title": "Tonkeeper Wallet and TON Token Outlook for 2026: Storage, Trading, and Beyond",
-      "url": "/news/825-tonkeeper-wallet-and-ton-token-outlook-for-2026-storage-trading-and-be/",
-      "published_at": "2026-03-18T02:03:55Z",
-      "excerpt": "Tonkeeper remains a central digital wallet for The Open Network (TON) ecosystem, providing secure options to store, send, and manage TON tokens. As TON's popularity continues to rise, many users are already looking ahead…"
     }
   ]
 }
