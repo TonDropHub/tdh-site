@@ -1,6 +1,13 @@
 {
-  "updated": "2026-03-31T11:01:55Z",
+  "updated": "2026-03-31T14:02:22Z",
   "items": [
+    {
+      "id": "889",
+      "title": "TON Wallet Expands Stablecoin Withdrawal Options With MoonPay Integration",
+      "url": "/news/889-ton-wallet-expands-stablecoin-withdrawal-options-with-moonpay-integrat/",
+      "published_at": "2026-03-31T14:02:22Z",
+      "excerpt": "The TON Wallet has introduced a new feature that allows users to withdraw stablecoins across multiple blockchain networks, thanks to a partnership with MoonPay. This update is designed to give users greater flexibility a…"
+    },
     {
       "id": "886",
       "title": "Toncoin Price Movements Reflected in AED Value and Market Data",
@@ -343,13 +350,6 @@
       "url": "/news/823-toncoin-price-overview-and-exchange-access-2026-uk-insights/",
       "published_at": "2026-03-21T14:02:05Z",
       "excerpt": "Toncoin, commonly abbreviated as TON, continues to generate interest within the UK’s expanding digital asset community as 2026 progresses. Many are looking for clear guidance on how to access TON, track its price movemen…"
-    },
-    {
-      "id": "826",
-      "title": "NotCoin Mining and Trading in 2026: Key Platforms, Wallets, and How to Get Started",
-      "url": "/news/826-notcoin-mining-and-trading-in-2026-key-platforms-wallets-and-how-to-ge/",
-      "published_at": "2026-03-21T11:06:33Z",
-      "excerpt": "Interest in NotCoin continues to grow, with more people exploring ways to mine and trade this digital asset. As we move further into 2026, a range of platforms and wallets are making it easier for both newcomers and expe…"
     }
   ]
 }
