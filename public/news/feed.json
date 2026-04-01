@@ -1,6 +1,13 @@
 {
-  "updated": "2026-04-01T11:03:33Z",
+  "updated": "2026-04-01T14:02:35Z",
   "items": [
+    {
+      "id": "901",
+      "title": "TON Wallet Now Embedded in Telegram Mini Apps Through Dynamic and Fireblocks",
+      "url": "/news/901-ton-wallet-now-embedded-in-telegram-mini-apps-through-dynamic-and-fire/",
+      "published_at": "2026-04-01T14:02:35Z",
+      "excerpt": "A new development is making it easier for users to interact with crypto while using Telegram Mini Apps. An embedded wallet for The Open Network (TON) has been rolled out, with support from partners Dynamic and Fireblocks…"
+    },
     {
       "id": "899",
       "title": "TON Strategy Company places major bet on Toncoin treasury, announces $558M PIPE",
@@ -343,13 +350,6 @@
       "url": "/news/856-missile-fragment-lands-in-jerusalems-jewish-quarter-near-western-wall/",
       "published_at": "2026-03-22T14:01:46Z",
       "excerpt": "A missile fragment believed to have come from Iran landed in Jerusalem’s Old City, falling in the Jewish Quarter near two of the city’s most important religious sites—the Western Wall and the Al-Aqsa Mosque. The incident…"
-    },
-    {
-      "id": "812",
-      "title": "An Overview of the Blum Ecosystem: Hybrid Exchange, Tokenomics, and Trading Platform",
-      "url": "/news/812-an-overview-of-the-blum-ecosystem-hybrid-exchange-tokenomics-and-tradi/",
-      "published_at": "2026-03-22T11:02:13Z",
-      "excerpt": "The Blum project is attracting attention with its multifaceted approach to crypto trading, offering a blend of centralized and decentralized platform features. Its ecosystem is designed to appeal to a wide range of users…"
     }
   ]
 }
