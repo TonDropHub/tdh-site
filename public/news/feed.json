@@ -1,6 +1,13 @@
 {
-  "updated": "2026-04-01T08:03:32Z",
+  "updated": "2026-04-01T11:03:33Z",
   "items": [
+    {
+      "id": "899",
+      "title": "TON Strategy Company places major bet on Toncoin treasury, announces $558M PIPE",
+      "url": "/news/899-ton-strategy-company-places-major-bet-on-toncoin-treasury-announces-55/",
+      "published_at": "2026-04-01T11:03:33Z",
+      "excerpt": "TON Strategy Company, a firm listed on NASDAQ with the ticker TONX, has revealed a significant new initiative involving Toncoin. The company is moving forward with both a substantial investment in a Toncoin treasury and…"
+    },
     {
       "id": "898",
       "title": "Exploring TONCOIN: How TON Works, Applications, and Its Core Values",
@@ -343,13 +350,6 @@
       "url": "/news/812-an-overview-of-the-blum-ecosystem-hybrid-exchange-tokenomics-and-tradi/",
       "published_at": "2026-03-22T11:02:13Z",
       "excerpt": "The Blum project is attracting attention with its multifaceted approach to crypto trading, offering a blend of centralized and decentralized platform features. Its ecosystem is designed to appeal to a wide range of users…"
-    },
-    {
-      "id": "853",
-      "title": "Hamster Kombat Releases New Daily Cipher and Combo Codes for March 18, 2026",
-      "url": "/news/853-hamster-kombat-releases-new-daily-cipher-and-combo-codes-for-march-18/",
-      "published_at": "2026-03-22T08:06:52Z",
-      "excerpt": "Hamster Kombat has introduced its latest set of daily cipher and combo codes for March 18, 2026. These codes are part of the developer’s ongoing effort to keep users engaged by providing fresh challenges and rewards in t…"
     }
   ]
 }
