@@ -1,6 +1,13 @@
 {
-  "updated": "2026-04-02T08:02:45Z",
+  "updated": "2026-04-02T11:02:49Z",
   "items": [
+    {
+      "id": "896",
+      "title": "Notcoin Market Update: Current NOT to USD Price and Trading Data",
+      "url": "/news/896-notcoin-market-update-current-not-to-usd-price-and-trading-data/",
+      "published_at": "2026-04-02T11:02:49Z",
+      "excerpt": "Notcoin, the digital asset attracting increasing attention within the crypto community, continues to experience dynamic shifts in its trading value. Traders and enthusiasts keeping an eye on the NOT to USD pair have obse…"
+    },
     {
       "id": "905",
       "title": "Exploring TONCOIN: What It Is, How It Works, and Its Real-World Applications",
@@ -343,13 +350,6 @@
       "url": "/news/761-catizen-cati-shares-airdrop-guide-and-trading-tips-for-2026/",
       "published_at": "2026-03-23T11:03:00Z",
       "excerpt": "Catizen (CATI), a growing project in the crypto space, has introduced a dedicated guide to help its community navigate the upcoming airdrop and explore trading strategies ahead of 2026. This move comes as interest in the…"
-    },
-    {
-      "id": "762",
-      "title": "Toncoin Reportedly Surpasses 12.4 Billion Tokens Sold",
-      "url": "/news/762-toncoin-reportedly-surpasses-124-billion-tokens-sold/",
-      "published_at": "2026-03-23T08:01:48Z",
-      "excerpt": "Toncoin has attracted attention in the crypto world after reports emerged that over 12.4 billion TON tokens have been sold so far. This figure points to growing activity and interest in the Toncoin ecosystem. Toncoin, kn…"
     }
   ]
 }
