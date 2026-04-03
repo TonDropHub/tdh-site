@@ -1,6 +1,13 @@
 {
-  "updated": "2026-04-03T08:02:45Z",
+  "updated": "2026-04-03T11:02:52Z",
   "items": [
+    {
+      "id": "891",
+      "title": "BlockDAG, Solana, Toncoin, and Sui Spotlighted for Their Role in Crypto Adoption",
+      "url": "/news/891-blockdag-solana-toncoin-and-sui-spotlighted-for-their-role-in-crypto-a/",
+      "published_at": "2026-04-03T11:02:52Z",
+      "excerpt": "A recent highlight in the crypto sector draws attention to four digital assets—BlockDAG, Solana, Toncoin, and Sui—as key players driving the adoption of blockchain technology. Each of these projects is attracting both de…"
+    },
     {
       "id": "893",
       "title": "Fireblocks Integrates TON Wallet Support on Telegram as Strategy Division Reports Loss",
@@ -343,13 +350,6 @@
       "url": "/news/862-ton-foundation-ethereum-and-solana-collaborate-to-support-new-ows-plat/",
       "published_at": "2026-03-24T11:03:07Z",
       "excerpt": "Some of the biggest names in the blockchain industry — TON Foundation, Ethereum, and Solana — are joining forces to back the recent launch of a platform called OWS. This collaboration represents a notable move, as these…"
-    },
-    {
-      "id": "860",
-      "title": "Secretbet Rolls Out Mini App for Instant Betting Access",
-      "url": "/news/860-secretbet-rolls-out-mini-app-for-instant-betting-access/",
-      "published_at": "2026-03-24T08:03:12Z",
-      "excerpt": "Secretbet has officially introduced a new mini app, giving users a streamlined way to access their betting platform directly from their mobile devices. This new feature offers an alternative to traditional web-based plat…"
     }
   ]
 }
