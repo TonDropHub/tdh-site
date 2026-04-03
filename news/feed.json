@@ -1,6 +1,13 @@
 {
-  "updated": "2026-04-03T11:02:52Z",
+  "updated": "2026-04-03T14:02:05Z",
   "items": [
+    {
+      "id": "890",
+      "title": "TON Strategy Company Releases 2025 Financial Update With $356.8M in Toncoin and Expanded",
+      "url": "/news/890-ton-strategy-company-releases-2025-financial-update-with-3568m-in-tonc/",
+      "published_at": "2026-04-03T14:02:05Z",
+      "excerpt": "TON Strategy Company has published its financial report for 2025, showcasing strong results and new milestones for the organization. According to the report, the company currently holds $356.8 million worth of Toncoin, m…"
+    },
     {
       "id": "891",
       "title": "BlockDAG, Solana, Toncoin, and Sui Spotlighted for Their Role in Crypto Adoption",
@@ -343,13 +350,6 @@
       "url": "/news/864-best-ton-wallets-to-consider-in-2026-for-toncoin-and-self-custody/",
       "published_at": "2026-03-24T14:03:43Z",
       "excerpt": "As the Toncoin ecosystem continues to develop, interest in reliable wallets has grown. Users are seeking secure and convenient options to store and manage their TON holdings. For many, the choice is between wallets that…"
-    },
-    {
-      "id": "862",
-      "title": "TON Foundation, Ethereum, and Solana Collaborate to Support New OWS Platform Launch",
-      "url": "/news/862-ton-foundation-ethereum-and-solana-collaborate-to-support-new-ows-plat/",
-      "published_at": "2026-03-24T11:03:07Z",
-      "excerpt": "Some of the biggest names in the blockchain industry — TON Foundation, Ethereum, and Solana — are joining forces to back the recent launch of a platform called OWS. This collaboration represents a notable move, as these…"
     }
   ]
 }
