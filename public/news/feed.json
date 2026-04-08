@@ -1,6 +1,13 @@
 {
-  "updated": "2026-04-08T11:04:45Z",
+  "updated": "2026-04-08T14:03:37Z",
   "items": [
+    {
+      "id": "938",
+      "title": "Arkham Intel Drops Support for TON Blockchain",
+      "url": "/news/938-arkham-intel-drops-support-for-ton-blockchain/",
+      "published_at": "2026-04-08T14:03:37Z",
+      "excerpt": "Arkham Intel has decided to discontinue its support for the TON blockchain, according to recent reports. This means users will no longer be able to access Arkham Intel's data and analytics services specifically for TON.…"
+    },
     {
       "id": "932",
       "title": "TON Foundation and SCRYPT Collaborate to Expand Institutional USDT Access",
@@ -343,13 +350,6 @@
       "url": "/news/884-ton-foundation-confirms-coinbase-ventures-acquisition-of-toncoin/",
       "published_at": "2026-03-30T02:02:01Z",
       "excerpt": "The TON Foundation has announced that Coinbase Ventures now holds Toncoin as part of its asset portfolio. This marks a significant development for the TON ecosystem, signaling growing institutional recognition from one o…"
-    },
-    {
-      "id": "698",
-      "title": "Notcoin (NOT) Surpasses Key Resistance Level, Sparking Fresh Speculation",
-      "url": "/news/698-notcoin-not-surpasses-key-resistance-level-sparking-fresh-speculation/",
-      "published_at": "2026-03-29T14:02:55Z",
-      "excerpt": "Notcoin (NOT) has taken center stage after breaking through a major trendline, drawing significant interest from traders and market observers. This price movement points to a possible shift in momentum and has prompted s…"
     }
   ]
 }
