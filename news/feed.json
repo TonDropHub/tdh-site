@@ -1,6 +1,13 @@
 {
-  "updated": "2026-04-08T14:03:37Z",
+  "updated": "2026-04-09T02:03:44Z",
   "items": [
+    {
+      "id": "940",
+      "title": "TON Blockchain Back Online After Outage Linked to DOGS Token Airdrop",
+      "url": "/news/940-ton-blockchain-back-online-after-outage-linked-to-dogs-token-airdrop/",
+      "published_at": "2026-04-09T02:03:44Z",
+      "excerpt": "The TON blockchain has successfully resumed operations after experiencing a temporary disruption. The outage was reportedly linked to a surge in activity surrounding the DOGS token airdrop. During the incident, TON users…"
+    },
     {
       "id": "938",
       "title": "Arkham Intel Drops Support for TON Blockchain",
@@ -343,13 +350,6 @@
       "url": "/news/883-toncoin-encounters-critical-moment-as-it-tests-the-1-mark/",
       "published_at": "2026-03-30T05:01:57Z",
       "excerpt": "Toncoin is currently at a pivotal juncture as it hovers around the $1 mark, capturing the attention of many in the crypto community who are closely watching its next moves. Whether the currency can sustain or surpass thi…"
-    },
-    {
-      "id": "884",
-      "title": "TON Foundation Confirms Coinbase Ventures Acquisition of Toncoin",
-      "url": "/news/884-ton-foundation-confirms-coinbase-ventures-acquisition-of-toncoin/",
-      "published_at": "2026-03-30T02:02:01Z",
-      "excerpt": "The TON Foundation has announced that Coinbase Ventures now holds Toncoin as part of its asset portfolio. This marks a significant development for the TON ecosystem, signaling growing institutional recognition from one o…"
     }
   ]
 }
