@@ -1,6 +1,13 @@
 {
-  "updated": "2026-04-10T11:03:08Z",
+  "updated": "2026-04-10T14:03:25Z",
   "items": [
+    {
+      "id": "957",
+      "title": "Large Holders Increase Toncoin (TON) Purchases During Recent Price Pullback",
+      "url": "/news/957-large-holders-increase-toncoin-ton-purchases-during-recent-price-pullb/",
+      "published_at": "2026-04-10T14:03:25Z",
+      "excerpt": "Several significant Toncoin (TON) investors, commonly called “whales,” have reportedly been making notable purchases as the token’s price has dipped. This uptick in large-scale accumulation may indicate that some market…"
+    },
     {
       "id": "954",
       "title": "Eiffel Tower Fragment Headed for Auction in Paris",
@@ -343,13 +350,6 @@
       "url": "/news/892-tonx-reports-soaring-2025-revenue-but-toncoin-losses-lead-to-148m-net/",
       "published_at": "2026-04-01T02:03:45Z",
       "excerpt": "TONX has released its financial results for 2025, showing a significant jump in revenue. However, these strong gains were overshadowed by losses tied to the company’s holdings in Toncoin, resulting in a net loss for the…"
-    },
-    {
-      "id": "889",
-      "title": "TON Wallet Expands Stablecoin Withdrawal Options With MoonPay Integration",
-      "url": "/news/889-ton-wallet-expands-stablecoin-withdrawal-options-with-moonpay-integrat/",
-      "published_at": "2026-03-31T14:02:22Z",
-      "excerpt": "The TON Wallet has introduced a new feature that allows users to withdraw stablecoins across multiple blockchain networks, thanks to a partnership with MoonPay. This update is designed to give users greater flexibility a…"
     }
   ]
 }
