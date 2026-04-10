@@ -1,6 +1,13 @@
 {
-  "updated": "2026-04-10T08:03:25Z",
+  "updated": "2026-04-10T11:03:08Z",
   "items": [
+    {
+      "id": "954",
+      "title": "Eiffel Tower Fragment Headed for Auction in Paris",
+      "url": "/news/954-eiffel-tower-fragment-headed-for-auction-in-paris/",
+      "published_at": "2026-04-10T11:03:08Z",
+      "excerpt": "A unique piece of Parisian history is set to go under the hammer. A fragment from the iconic Eiffel Tower is scheduled to be auctioned in the French capital. This rare item is expected to draw considerable interest from…"
+    },
     {
       "id": "951",
       "title": "Toncoin Rallies as Catchain 2.0 Upgrade Speeds Up Block Times",
@@ -343,13 +350,6 @@
       "url": "/news/889-ton-wallet-expands-stablecoin-withdrawal-options-with-moonpay-integrat/",
       "published_at": "2026-03-31T14:02:22Z",
       "excerpt": "The TON Wallet has introduced a new feature that allows users to withdraw stablecoins across multiple blockchain networks, thanks to a partnership with MoonPay. This update is designed to give users greater flexibility a…"
-    },
-    {
-      "id": "886",
-      "title": "Toncoin Price Movements Reflected in AED Value and Market Data",
-      "url": "/news/886-toncoin-price-movements-reflected-in-aed-value-and-market-data/",
-      "published_at": "2026-03-31T11:01:55Z",
-      "excerpt": "Toncoin’s trading activity continues to attract attention, with market observers closely monitoring its conversion rates, especially compared to the United Arab Emirates dirham (AED). As of today, live pricing, market ca…"
     }
   ]
 }
