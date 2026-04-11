@@ -1,6 +1,13 @@
 {
-  "updated": "2026-04-11T08:04:11Z",
+  "updated": "2026-04-11T11:03:31Z",
   "items": [
+    {
+      "id": "969",
+      "title": "Pavel Durov Reveals Ambitious 10× Speed Increase for TON Blockchain",
+      "url": "/news/969-pavel-durov-reveals-ambitious-10-speed-increase-for-ton-blockchain/",
+      "published_at": "2026-04-11T11:03:31Z",
+      "excerpt": "Pavel Durov has announced a major upgrade plan for the TON blockchain, promising a tenfold boost in its speed. This ambitious move aims to position TON as a leader in blockchain efficiency and scalability, potentially pa…"
+    },
     {
       "id": "966",
       "title": "Tomarket Daily Combo for April 11, 2026 Offers Fresh Earning Opportunities",
@@ -343,13 +350,6 @@
       "url": "/news/901-ton-wallet-now-embedded-in-telegram-mini-apps-through-dynamic-and-fire/",
       "published_at": "2026-04-01T14:02:35Z",
       "excerpt": "A new development is making it easier for users to interact with crypto while using Telegram Mini Apps. An embedded wallet for The Open Network (TON) has been rolled out, with support from partners Dynamic and Fireblocks…"
-    },
-    {
-      "id": "899",
-      "title": "TON Strategy Company places major bet on Toncoin treasury, announces $558M PIPE",
-      "url": "/news/899-ton-strategy-company-places-major-bet-on-toncoin-treasury-announces-55/",
-      "published_at": "2026-04-01T11:03:33Z",
-      "excerpt": "TON Strategy Company, a firm listed on NASDAQ with the ticker TONX, has revealed a significant new initiative involving Toncoin. The company is moving forward with both a substantial investment in a Toncoin treasury and…"
     }
   ]
 }
