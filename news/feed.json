@@ -1,6 +1,13 @@
 {
-  "updated": "2026-04-12T11:03:22Z",
+  "updated": "2026-04-12T14:02:37Z",
   "items": [
+    {
+      "id": "987",
+      "title": "Toncoin Climbs Nearly 15 Percent Following Announcement of Major Speed Boost",
+      "url": "/news/987-toncoin-climbs-nearly-15-percent-following-announcement-of-major-speed/",
+      "published_at": "2026-04-12T14:02:37Z",
+      "excerpt": "Toncoin experienced a notable price surge of 14.83%, drawing the attention of both traders and the wider crypto community. This uptick followed an announcement about a “10x Speed Upgrade” led by Pavel Durov. The planned…"
+    },
     {
       "id": "984",
       "title": "Tomarket Daily Combo Reveals Today’s Offer for April 12, 2026",
@@ -343,13 +350,6 @@
       "url": "/news/903-hamster-kombat-daily-combo-for-april-2-2026-coin-earning-update/",
       "published_at": "2026-04-03T02:07:18Z",
       "excerpt": "Fans of Hamster Kombat are closely following daily updates, especially those that introduce new opportunities to earn in-game coins. For April 2, 2026, players are eagerly awaiting the latest daily combo, which could pro…"
-    },
-    {
-      "id": "894",
-      "title": "TON Embedded Wallet Rolls Out for Telegram Mini Apps with Dynamic and Fireblocks",
-      "url": "/news/894-ton-embedded-wallet-rolls-out-for-telegram-mini-apps-with-dynamic-and/",
-      "published_at": "2026-04-02T14:03:22Z",
-      "excerpt": "A newly introduced embedded wallet for TON has been launched, aiming to simplify digital transactions within Telegram Mini Apps. The wallet is designed in collaboration with Dynamic and Fireblocks, offering a streamlined…"
     }
   ]
 }
