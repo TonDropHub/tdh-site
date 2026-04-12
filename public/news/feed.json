@@ -1,6 +1,13 @@
 {
-  "updated": "2026-04-12T02:02:38Z",
+  "updated": "2026-04-12T05:02:32Z",
   "items": [
+    {
+      "id": "978",
+      "title": "TON Blockchain to Unveil Sub-Second Transactions on April 10",
+      "url": "/news/978-ton-blockchain-to-unveil-sub-second-transactions-on-april-10/",
+      "published_at": "2026-04-12T05:02:32Z",
+      "excerpt": "TON Blockchain is gearing up for a major update that will increase transaction speeds to under one second, with the rollout set to start on April 10. This new development is designed to make the network much faster for b…"
+    },
     {
       "id": "975",
       "title": "BlockDAG, Avalanche, Litecoin, and Toncoin Gain Attention Amid Growing Market Activity",
@@ -343,13 +350,6 @@
       "url": "/news/905-exploring-toncoin-what-it-is-how-it-works-and-its-real-world-applicati/",
       "published_at": "2026-04-02T08:02:45Z",
       "excerpt": "TONCOIN has emerged as a significant player in the blockchain world, garnering attention for its distinctive take on decentralized technology. Developed on the TON (The Open Network) blockchain, TONCOIN is designed to fo…"
-    },
-    {
-      "id": "902",
-      "title": "Tomarket Daily Combo Update for April 2, 2026: What’s New Today",
-      "url": "/news/902-tomarket-daily-combo-update-for-april-2-2026-whats-new-today/",
-      "published_at": "2026-04-02T05:02:43Z",
-      "excerpt": "The Tomarket Daily Combo for April 2, 2026, is now available. This daily feature is intended to help users make informed choices about their activities on the Tomarket platform. Each day, the combo typically highlights a…"
     }
   ]
 }
