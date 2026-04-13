@@ -1,6 +1,13 @@
 {
-  "updated": "2026-04-13T05:03:19Z",
+  "updated": "2026-04-13T08:08:03Z",
   "items": [
+    {
+      "id": "995",
+      "title": "Blazpay Launches Nova-Surge Presale for 2026 Alongside Toncoin Developments",
+      "url": "/news/995-blazpay-launches-nova-surge-presale-for-2026-alongside-toncoin-develop/",
+      "published_at": "2026-04-13T08:08:03Z",
+      "excerpt": "Blazpay has announced a new initiative called Nova-Surge, marking the launch of its 2026 crypto presale. This development is drawing significant attention across the digital asset landscape, especially as Toncoin (TON) c…"
+    },
     {
       "id": "993",
       "title": "Toncoin trading volume soars by 148% as market eyes potential breakout",
@@ -343,13 +350,6 @@
       "url": "/news/891-blockdag-solana-toncoin-and-sui-spotlighted-for-their-role-in-crypto-a/",
       "published_at": "2026-04-03T11:02:52Z",
       "excerpt": "A recent highlight in the crypto sector draws attention to four digital assets—BlockDAG, Solana, Toncoin, and Sui—as key players driving the adoption of blockchain technology. Each of these projects is attracting both de…"
-    },
-    {
-      "id": "893",
-      "title": "Fireblocks Integrates TON Wallet Support on Telegram as Strategy Division Reports Loss",
-      "url": "/news/893-fireblocks-integrates-ton-wallet-support-on-telegram-as-strategy-divis/",
-      "published_at": "2026-04-03T08:02:45Z",
-      "excerpt": "Digital asset management platform Fireblocks has introduced support for TON wallets within the Telegram ecosystem, marking a notable step for the platform’s expansion of its wallet solutions. This addition provides users…"
     }
   ]
 }
