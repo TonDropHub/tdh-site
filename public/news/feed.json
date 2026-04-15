@@ -1,6 +1,13 @@
 {
-  "updated": "2026-04-15T11:02:54Z",
+  "updated": "2026-04-15T14:04:09Z",
   "items": [
+    {
+      "id": "1024",
+      "title": "TON Believers Fund Faces Questions Over Locked Assets and Modest Returns",
+      "url": "/news/1024-ton-believers-fund-faces-questions-over-locked-assets-and-modest-retur/",
+      "published_at": "2026-04-15T14:04:09Z",
+      "excerpt": "Interest in the TON Believers Fund has grown as community members take a closer look at how the project manages its assets. The fund is said to lock up a substantial amount of TON, and its handling of these assets—along…"
+    },
     {
       "id": "1018",
       "title": "Police Discover Iskander-K Warhead Fragment in Desnyanskyi, Plan Safe Detonation",
@@ -343,13 +350,6 @@
       "url": "/news/917-ton-strategy-secures-558m-boost-to-expand-toncoin-treasury-and-deepen/",
       "published_at": "2026-04-06T02:02:42Z",
       "excerpt": "A significant milestone has been reached in the TON ecosystem, as TON Strategy has reportedly raised $558 million to build what is described as the largest treasury for Toncoin. This comes at a time when the integration…"
-    },
-    {
-      "id": "642",
-      "title": "TON Wallet Adds Yield Feature for Bitcoin, Ethereum, and USDT",
-      "url": "/news/642-ton-wallet-adds-yield-feature-for-bitcoin-ethereum-and-usdt/",
-      "published_at": "2026-04-05T14:02:47Z",
-      "excerpt": "TON Wallet, the crypto wallet platform associated with the TON ecosystem, has launched a yield service for its users. Holders of Bitcoin, Ethereum, and Tether (USDT) can now earn annual yields reportedly as high as 18% d…"
     }
   ]
 }
