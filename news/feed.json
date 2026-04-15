@@ -1,6 +1,13 @@
 {
-  "updated": "2026-04-15T08:04:04Z",
+  "updated": "2026-04-15T11:02:54Z",
   "items": [
+    {
+      "id": "1018",
+      "title": "Police Discover Iskander-K Warhead Fragment in Desnyanskyi, Plan Safe Detonation",
+      "url": "/news/1018-police-discover-iskander-k-warhead-fragment-in-desnyanskyi-plan-safe-d/",
+      "published_at": "2026-04-15T11:02:54Z",
+      "excerpt": "Authorities in Desnyanskyi have reported finding a fragment from an Iskander-K missile warhead. Law enforcement teams identified the fragment and have confirmed that it will be safely neutralized through a controlled det…"
+    },
     {
       "id": "1017",
       "title": "USDT Plans Launch on TON Blockchain Following Telegram Co-Founder Speech",
@@ -343,13 +350,6 @@
       "url": "/news/642-ton-wallet-adds-yield-feature-for-bitcoin-ethereum-and-usdt/",
       "published_at": "2026-04-05T14:02:47Z",
       "excerpt": "TON Wallet, the crypto wallet platform associated with the TON ecosystem, has launched a yield service for its users. Holders of Bitcoin, Ethereum, and Tether (USDT) can now earn annual yields reportedly as high as 18% d…"
-    },
-    {
-      "id": "648",
-      "title": "TON Wallet Launches New Interest Feature for Bitcoin, Ethereum, and USDT Users",
-      "url": "/news/648-ton-wallet-launches-new-interest-feature-for-bitcoin-ethereum-and-usdt/",
-      "published_at": "2026-04-05T11:02:40Z",
-      "excerpt": "TON Wallet has announced a new feature designed to give users more ways to earn interest on their digital assets. With this update, holders of Bitcoin, Ethereum, and USDT in the TON Wallet ecosystem can now access intere…"
     }
   ]
 }
