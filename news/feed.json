@@ -1,6 +1,13 @@
 {
-  "updated": "2026-04-15T14:04:09Z",
+  "updated": "2026-04-16T02:04:16Z",
   "items": [
+    {
+      "id": "1027",
+      "title": "Toncoin Price Data Against AED Lacks Specific Updates",
+      "url": "/news/1027-toncoin-price-data-against-aed-lacks-specific-updates/",
+      "published_at": "2026-04-16T02:04:16Z",
+      "excerpt": "Recent listings have mentioned the price of Toncoin (TON) in relation to the United Arab Emirates dirham (AED), but detailed market data or statistics for today have not been confirmed. Various sources indicate that plat…"
+    },
     {
       "id": "1024",
       "title": "TON Believers Fund Faces Questions Over Locked Assets and Modest Returns",
@@ -343,13 +350,6 @@
       "url": "/news/918-blockdag-toncoin-pi-network-and-aptos-stand-out-as-ones-to-watch-for-2/",
       "published_at": "2026-04-06T05:03:34Z",
       "excerpt": "A handful of cryptocurrencies are gaining recognition for their innovation and growth potential as the 2026 market looms. Among those drawing attention are BlockDAG, Toncoin, Pi Network, and Aptos, each bringing unique q…"
-    },
-    {
-      "id": "917",
-      "title": "TON Strategy Secures $558M Boost to Expand Toncoin Treasury and Deepen Platform Integration",
-      "url": "/news/917-ton-strategy-secures-558m-boost-to-expand-toncoin-treasury-and-deepen/",
-      "published_at": "2026-04-06T02:02:42Z",
-      "excerpt": "A significant milestone has been reached in the TON ecosystem, as TON Strategy has reportedly raised $558 million to build what is described as the largest treasury for Toncoin. This comes at a time when the integration…"
     }
   ]
 }
