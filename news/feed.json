@@ -1,6 +1,13 @@
 {
-  "updated": "2026-04-16T05:02:31Z",
+  "updated": "2026-04-16T08:03:17Z",
   "items": [
+    {
+      "id": "1032",
+      "title": "Catchain 2.0 Upgrade: Potential Impact on Telegram Users and Mini Apps",
+      "url": "/news/1032-catchain-20-upgrade-potential-impact-on-telegram-users-and-mini-apps/",
+      "published_at": "2026-04-16T08:03:17Z",
+      "excerpt": "Recent developments have drawn attention to an upcoming upgrade known as Catchain 2.0, connected to The Open Network (TON) and its foundational technology. Although information so far is limited, this upgrade is expected…"
+    },
     {
       "id": "1030",
       "title": "Hamster Kombat GameDev Daily Combo and Cipher Code for 16 April 2026",
@@ -343,13 +350,6 @@
       "url": "/news/922-toncoin-faces-new-milestone-as-user-growth-sparks-attention-in-april/",
       "published_at": "2026-04-06T11:02:11Z",
       "excerpt": "Toncoin is capturing attention this April as conversations intensify about its potential surge, fueled by a spike in user numbers from a major messaging platform with over 1 billion active users. As the platform’s popula…"
-    },
-    {
-      "id": "921",
-      "title": "Hamster Kombat Daily Cipher Challenge for April 6, 2026",
-      "url": "/news/921-hamster-kombat-daily-cipher-challenge-for-april-6-2026/",
-      "published_at": "2026-04-06T08:03:21Z",
-      "excerpt": "Details for today’s Hamster Kombat Daily Cipher are in high demand, but as of now, official information about the April 6, 2026 challenge has not been confirmed. Fans of the popular mini-game are eager to uncover clues,…"
     }
   ]
 }
