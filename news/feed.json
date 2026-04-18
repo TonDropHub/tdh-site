@@ -1,6 +1,13 @@
 {
-  "updated": "2026-04-18T02:02:44Z",
+  "updated": "2026-04-18T05:02:49Z",
   "items": [
+    {
+      "id": "5",
+      "title": "TON Catchain 2.0 Upgrade: Impacts on the Network and Mini App Development",
+      "url": "/news/5-ton-catchain-20-upgrade-impacts-on-the-network-and-mini-app-developmen/",
+      "published_at": "2026-04-18T05:02:49Z",
+      "excerpt": "The TON Catchain 2.0 upgrade marks a significant step for the TON blockchain, introducing technical updates aimed at enhancing the underlying infrastructure. While direct user-facing changes have not been detailed so far…"
+    },
     {
       "id": "10",
       "title": "Top Crypto Gainers Today: BlockDAG, Toncoin, BNB, and Solana",
@@ -343,13 +350,6 @@
       "url": "/news/933-toncoin-holds-at-123-despite-platform-upgrades-and-community-support/",
       "published_at": "2026-04-08T08:04:12Z",
       "excerpt": "Toncoin has recently hovered around the $1.23 mark, showing resilience but limited upward momentum. This period has coincided with a surge of optimism in the project’s community, which had anticipated that recent network…"
-    },
-    {
-      "id": "936",
-      "title": "Tomarket Daily Combo for April 8, 2026: Maximize Earning Opportunities",
-      "url": "/news/936-tomarket-daily-combo-for-april-8-2026-maximize-earning-opportunities/",
-      "published_at": "2026-04-08T05:04:31Z",
-      "excerpt": "Online earning platforms continue to evolve, offering users new ways to optimize their crypto and digital asset portfolios. Among these, Tomarket stands out with its popular “Daily Combo” feature—a program designed to cr…"
     }
   ]
 }
