@@ -1,6 +1,13 @@
 {
-  "updated": "2026-04-18T05:02:49Z",
+  "updated": "2026-04-19T02:02:29Z",
   "items": [
+    {
+      "id": "11",
+      "title": "Tomarket Daily Combo Featured for April 19, 2026",
+      "url": "/news/11-tomarket-daily-combo-featured-for-april-19-2026/",
+      "published_at": "2026-04-19T02:02:29Z",
+      "excerpt": "The Tomarket Daily Combo for April 19, 2026, has been featured by Coin Gabbar, highlighting Tomarket’s ongoing daily update that curates earning opportunities for its users. ## Overview of the Tomarket Daily Combo Based…"
+    },
     {
       "id": "5",
       "title": "TON Catchain 2.0 Upgrade: Impacts on the Network and Mini App Development",
@@ -343,13 +350,6 @@
       "url": "/news/932-ton-foundation-and-scrypt-collaborate-to-expand-institutional-usdt-acc/",
       "published_at": "2026-04-08T11:04:45Z",
       "excerpt": "The TON Foundation has joined forces with SCRYPT to provide institutional investors with improved access to USDT. This move aims to connect large organizations with stablecoin solutions within the TON ecosystem, focusing…"
-    },
-    {
-      "id": "933",
-      "title": "Toncoin Holds at $1.23 Despite Platform Upgrades and Community Support",
-      "url": "/news/933-toncoin-holds-at-123-despite-platform-upgrades-and-community-support/",
-      "published_at": "2026-04-08T08:04:12Z",
-      "excerpt": "Toncoin has recently hovered around the $1.23 mark, showing resilience but limited upward momentum. This period has coincided with a surge of optimism in the project’s community, which had anticipated that recent network…"
     }
   ]
 }
