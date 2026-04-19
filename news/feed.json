@@ -1,6 +1,13 @@
 {
-  "updated": "2026-04-19T02:02:29Z",
+  "updated": "2026-04-19T08:02:17Z",
   "items": [
+    {
+      "id": "12",
+      "title": "Toncoin Price Drops 8.73%, Remains Below Historical Average",
+      "url": "/news/12-toncoin-price-drops-873-remains-below-historical-average/",
+      "published_at": "2026-04-19T08:02:17Z",
+      "excerpt": "Toncoin has fallen by 8.73%, remaining well under its long-term average, according to figures from Traders Union. This ongoing underperformance raises questions about the coin’s stability in the near term. The recent dro…"
+    },
     {
       "id": "11",
       "title": "Tomarket Daily Combo Featured for April 19, 2026",
@@ -343,13 +350,6 @@
       "url": "/news/938-arkham-intel-drops-support-for-ton-blockchain/",
       "published_at": "2026-04-08T14:03:37Z",
       "excerpt": "Arkham Intel has decided to discontinue its support for the TON blockchain, according to recent reports. This means users will no longer be able to access Arkham Intel's data and analytics services specifically for TON.…"
-    },
-    {
-      "id": "932",
-      "title": "TON Foundation and SCRYPT Collaborate to Expand Institutional USDT Access",
-      "url": "/news/932-ton-foundation-and-scrypt-collaborate-to-expand-institutional-usdt-acc/",
-      "published_at": "2026-04-08T11:04:45Z",
-      "excerpt": "The TON Foundation has joined forces with SCRYPT to provide institutional investors with improved access to USDT. This move aims to connect large organizations with stablecoin solutions within the TON ecosystem, focusing…"
     }
   ]
 }
